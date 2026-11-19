@@ -1,0 +1,13 @@
+{
+  "ritmo": "1 post ou story por dia + 2 Reels por semana (ter e sex)",
+  "semana": {
+    "segunda": {"formato": "post", "pilar": "Entrega e atendimento", "ideias": ["gás acabou, a gente leva", "atendimento até 20h", "peça pelo WhatsApp em 1 minuto"]},
+    "terca": {"formato": "reel", "pilar": "Humanização", "ideias": ["entregador a caminho", "bastidores da revenda", "quem atende seu pedido"]},
+    "quarta": {"formato": "story", "pilar": "Segurança e dicas", "ideias": ["como saber se o gás está acabando", "teste da espuma de sabão", "validade da mangueira e do regulador"]},
+    "quinta": {"formato": "post", "pilar": "Gás do Povo", "ideias": ["somos revenda credenciada", "o que levar para usar o Gás do Povo"]},
+    "sexta": {"formato": "reel", "pilar": "Urgência e fim de semana", "ideias": ["não deixe faltar no fim de semana", "churrasco de sábado garantido"]},
+    "sabado": {"formato": "story", "pilar": "Água 20L e combo", "ideias": ["água mineral 20L também", "peça gás e água juntos"]},
+    "domingo": {"formato": "story", "pilar": "Domingo aberto", "ideias": ["aberto domingo até 13h", "almoço de domingo sem susto"]}
+  },
+  "datas": {"12-24": "Ceia de Natal", "12-31": "Réveillon"}, "nota": "Círio de Nazaré: 2º domingo de outubro (calcular a data do ano)"
+}
