@@ -19,6 +19,19 @@ Repositório usado pela tarefa agendada diária. As artes ficam em `midia/AAAA-M
 5. Criar RASCUNHO no Metricool (blogId 7861236, draft:true, autoPublish:true) no melhor horário do dia, com legenda + CTA + hashtags locais.
 6. Atualizar `historico.json`.
 
+## Calendário inteligente (verificar TODO dia, antes da pauta)
+- Ler `calendario.json`. Para cada evento, cada janela "D-N:formato" vence na data (evento − N dias). Se vence hoje e `historico.json` ainda não tem `evento` = "<id>:<janela>", produzir essa peça.
+- Evento do calendário tem prioridade sobre a pauta do dia. Máximo de 2 rascunhos por dia (1 do calendário + 1 da pauta, ou 2 do calendário).
+- tipo "feriado": usar o horário especial 7h–13h (regra da revenda). "ponto_facultativo": não afirmar horário. "cultural"/"comercial": horário normal.
+- Story de véspera (D-1) agendar entre 17h e 19h. Story do dia (D0) agendar às 7h.
+- Datas regionais têm peso: Círio (maniçoba cozinha por dias, então o gás não pode faltar), Semana Santa, quadra junina, Aniversário de Castanhal (28/01), Adesão do Pará (15/08).
+- Em dezembro, completar o calendário do ano seguinte (regras de cálculo em `_manutencao`) e avisar o Gabriel.
+
+## Carrossel
+- Formato "carrossel": de 3 a 5 slides em feed (1080x1350). Os slides do meio usam `"SEM_CTA": true` e `"NUMERO": "2/5"`. O último slide tem CTA. Pode usar `"SEM_BOTIJAO": true` para variar.
+- No Metricool é um POST com várias URLs em `media`, na ordem.
+- Ideias que funcionam no @souparagas: histórias em sequência ("contos da cozinha sem gás"), comidas típicas por data, homenagens.
+
 ## Aprendizados dos prints (19/11/2026)
 - Logo real: "BRASIL" azul + "GÁS" vermelho, sobre faixa vermelha "PARAGÁS" com selo azul, numa caixa branca. O template reproduz isso em texto até chegar o arquivo do logo.
 - Mascote prata (botijão com olhos) já é usado pela marca e o público reconhece.

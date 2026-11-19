@@ -11,6 +11,14 @@ LAYOUT = {
 def render(spec, out, fmt="feed"):
     html = (BASE / "templates/post.html").read_text()
     vals = {**LAYOUT[fmt], **spec}
+    extra = ""
+    if spec.get("SEM_CTA"):      # slides do meio do carrossel
+        extra += ".cta,.foot{display:none}"
+    if spec.get("SEM_BOTIJAO"):
+        extra += ".bot{display:none}"
+    if spec.get("NUMERO"):       # marcador do slide, ex. "2/5"
+        extra += ".kicker::after{content:'  %s';opacity:.6}" % spec["NUMERO"]
+    html = html.replace("</style>", extra + "</style>")
     for k, v in vals.items():
         html = html.replace("{{%s}}" % k, str(v))
     with sync_playwright() as p:
