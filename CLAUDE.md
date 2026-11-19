@@ -37,3 +37,8 @@ Repositório usado pela tarefa agendada diária. As artes ficam em `midia/AAAA-M
 - Mascote prata (botijão com olhos) já é usado pela marca e o público reconhece.
 - No Leo Gás, o que mais engaja é atendente real falando pra câmera (com fundo trocado), muito mais que arte feita só com IA. Priorizar rosto humano nos Reels quando houver fotos ou vídeos em `fotos/`.
 - Se usar imagem gerada por IA, marcar isAiGenerated:true no Metricool.
+
+## Referência visual @souparagas (confirmado com Gabriel em 19/11/2026)
+- Horário confirmado: seg–sáb 7h–20h; domingos e feriados 7h–13h.
+- A Brasilgás NÃO atende pelo Zé Delivery e não participa de cupons da Paragás. Nunca citar Zé Delivery, app de terceiros ou cupom da Paragás.
+- Do @souparagas usar só a linguagem visual: vermelho com amarelo de destaque, faixa "PARAGÁS", apelido "Pratinha" para o botijão prata, carrosséis com história, comidas típicas por data, homenagens em datas comemorativas.
