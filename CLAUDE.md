@@ -18,3 +18,9 @@ Repositório usado pela tarefa agendada diária. As artes ficam em `midia/AAAA-M
 4. Commit + push em `midia/AAAA-MM-DD/`.
 5. Criar RASCUNHO no Metricool (blogId 7861236, draft:true, autoPublish:true) no melhor horário do dia, com legenda + CTA + hashtags locais.
 6. Atualizar `historico.json`.
+
+## Aprendizados dos prints (19/11/2026)
+- Logo real: "BRASIL" azul + "GÁS" vermelho, sobre faixa vermelha "PARAGÁS" com selo azul, numa caixa branca. O template reproduz isso em texto até chegar o arquivo do logo.
+- Mascote prata (botijão com olhos) já é usado pela marca e o público reconhece.
+- No Leo Gás, o que mais engaja é atendente real falando pra câmera (com fundo trocado), muito mais que arte feita só com IA. Priorizar rosto humano nos Reels quando houver fotos ou vídeos em `fotos/`.
+- Se usar imagem gerada por IA, marcar isAiGenerated:true no Metricool.
