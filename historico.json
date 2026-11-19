@@ -5,5 +5,21 @@
     "pilar": "Gás do Povo",
     "headline": "TEM GÁS DO POVO AQUI",
     "metricool_id": 433906906
+  },
+  {
+    "data": "2026-11-19",
+    "formato": "story",
+    "pilar": "Calendário",
+    "headline": "GARANTA SEU GÁS HOJE! (amanhã é feriado)",
+    "evento": "consciencia-negra-2026:D-1:story",
+    "metricool_id": 434293765
+  },
+  {
+    "data": "2026-11-20",
+    "formato": "story",
+    "pilar": "Calendário",
+    "headline": "ABERTOS ATÉ 13H.",
+    "evento": "consciencia-negra-2026:D0:story",
+    "metricool_id": 434293783
   }
 ]
