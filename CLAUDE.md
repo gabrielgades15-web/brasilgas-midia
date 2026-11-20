@@ -42,3 +42,7 @@ Repositório usado pela tarefa agendada diária. As artes ficam em `midia/AAAA-M
 - Horário confirmado: seg–sáb 7h–20h; domingos e feriados 7h–13h.
 - A Brasilgás NÃO atende pelo Zé Delivery e não participa de cupons da Paragás. Nunca citar Zé Delivery, app de terceiros ou cupom da Paragás.
 - Do @souparagas usar só a linguagem visual: vermelho com amarelo de destaque, faixa "PARAGÁS", apelido "Pratinha" para o botijão prata, carrosséis com história, comidas típicas por data, homenagens em datas comemorativas.
+
+## Informações nos rascunhos (pedido do Gabriel em 20/11/2026)
+- Story continua automático e sem legenda (o Instagram não aceita legenda em story). Mas TODO rascunho, inclusive story, leva `mediaAltText` com a descrição da arte e o texto que aparece nela, para o Gabriel ver no Metricool do que se trata.
+- Post, carrossel e reel: legenda completa sempre (gancho, benefício, WhatsApp, horário, endereço, hashtags) + `mediaAltText`.
