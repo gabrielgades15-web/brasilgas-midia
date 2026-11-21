@@ -11,6 +11,9 @@ Repositório usado pela tarefa agendada diária. As artes ficam em `midia/AAAA-M
 - Nunca inventar promoção, cupom, desconto, prazo de entrega ou preço. Se a pauta pedir oferta e não houver oferta confirmada em `ofertas.json`, troque por outro tema.
 - Conteúdo original. O Grupo Leo Gás é só referência de formato.
 
+## Skill obrigatória
+Antes de produzir qualquer peça, leia `skills/brasilgas-conteudo/SKILL.md` (ou use a skill `brasilgas-conteudo`, se estiver listada) e siga o método dela, incluindo a seção 0: usar as skills dos plugins Marketing e Social Media Skills quando estiverem disponíveis.
+
 ## Fluxo diário
 1. Ler `pauta.json` e escolher o tema do dia da semana (fuso America/Belem). Evitar repetir manchete dos últimos 14 dias (`historico.json`).
 2. Escrever o spec (KICKER, HEADLINE, SUB, CTA) e renderizar: `python3 render.py spec.json saida.png feed|story`.
