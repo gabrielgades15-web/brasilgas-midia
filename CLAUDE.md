@@ -102,8 +102,12 @@ O Gabriel autorizou a publicação automática, desde que exista o verificador e
 
 ## Google Meu Negócio (decidido pelo Gabriel em 21/11/2026)
 - WhatsApp Status fica de fora (nenhuma ferramenta publica lá).
-- Quando a marca no Metricool tiver o Google Business Profile conectado (getBrandSettings mostra o Google em networksData), TODO post de feed (não story) também vai para o Google:
+- O Google Business Profile ESTÁ conectado (confirmado em 21/11; o getBrandSettings não lista o Google, mas publicar funciona). TODO post de feed (não story) também vai para o Google:
   - mesmo createScheduledPost, com providers [{"network":"instagram"},{"network":"gmb"}] e "gmbData": {"type":"publication"};
   - o texto do Google é o mesmo da legenda, mas sem hashtags e sem emojis em excesso (o Google não usa hashtag); se precisar, criar um post separado só para gmb com texto adaptado (até 1500 caracteres);
   - incluir sempre: o que vende (gás P13 Paragás, água 20L), "Castanhal", entrega, Gás do Povo quando fizer sentido, WhatsApp e horário. Isso ajuda a aparecer em buscas como "gás perto de mim" e "entrega de gás Castanhal".
-- Se o Google ainda não estiver conectado, seguir só com o Instagram e lembrar o Gabriel no resumo, no máximo uma vez por semana.
+- Se o Metricool recusar o post no Google, publicar só no Instagram e avisar o Gabriel no resumo.
+
+## Destaques (manual, o Metricool não alimenta)
+- Destaques do perfil: Gás do Povo, Entrega, Água 20L, Onde fica, Horário (e Clientes, quando houver depoimentos).
+- Quando o story do dia combinar com um destaque, incluir no resumo uma linha: "📌 Story de hoje (HHh) cabe no destaque <nome>: abra o story e toque em Destacar."

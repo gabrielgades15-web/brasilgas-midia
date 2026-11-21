@@ -49,6 +49,8 @@ Quando uma regra daqui virar permanente, ela sobe para CLAUDE.md ou para a skill
 
 - 21/11 · Endereço oficial: Alameda Padre Rolim, 139, Castanhal (Gabriel confirmou; o Instagram mostrava 138). Atualizado no template, regras, skill e verificador. Google Meu Negócio conectado ao Metricool pelo Gabriel.
 
+- 21/11 · Destaques não podem ser alimentados por ferramenta (limite da Meta). O resumo diário avisa quando o story do dia cabe num destaque. O getBrandSettings não lista o Google, mas o post no Google foi aceito.
+
 ## Números de referência
 - 21/11 · Painel do Instagram: 830 visualizações nos últimos 30 dias, 69 seguidores, 23 posts.
 - 21/11 · 68 seguidores. Reel "Sextou" (20/11): 19 views e 2 curtidas.
