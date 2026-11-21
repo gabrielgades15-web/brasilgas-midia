@@ -35,5 +35,7 @@ Quando uma regra daqui virar permanente, ela sobe para CLAUDE.md ou para a skill
 - 21/11 · Água: divulgar só "Água / Galão 20L", nunca a marca (informada no atendimento) → regra no CLAUDE.md, na skill e no verificador.
 - 21/11 · Chegaram 16 fotos reais (fachada com Gás do Povo, letreiro PARAGÁS, estoque de P13, galões) → fotos/catalogo.json. Fotos de galão com rótulo legível ficam bloqueadas.
 
+- 21/11 · De 5 peças dos primeiros dias, 2 se perderam por ficarem como rascunho sem aprovação. Desde 21/11 o que passa no verificador sai sozinho. Primeiras peças com foto real agendadas (post 12h e story 18h).
+
 ## Números de referência
 - 21/11 · 68 seguidores. Reel "Sextou" (20/11): 19 views e 2 curtidas.

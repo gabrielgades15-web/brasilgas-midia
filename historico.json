@@ -37,5 +37,25 @@
     "gancho": "Benefício",
     "metricool_id": 436576414,
     "publicado_automatico": true
+  },
+  {
+    "data": "2026-11-21",
+    "formato": "post",
+    "pilar": "Confiança / estoque",
+    "headline": "GÁS NÃO FALTA POR AQUI",
+    "gancho": "Prova local",
+    "foto": "fotos/estoque-p13-ceu-azul.jpg",
+    "metricool_id": 436598008,
+    "publicado_automatico": true
+  },
+  {
+    "data": "2026-11-21",
+    "formato": "story",
+    "pilar": "Gás do Povo",
+    "headline": "TEM GÁS DO POVO AQUI",
+    "gancho": "Benefício",
+    "foto": "fotos/fachada-frente-gas-do-povo.jpg",
+    "metricool_id": 436598022,
+    "publicado_automatico": true
   }
 ]
