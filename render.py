@@ -4,7 +4,7 @@ from playwright.sync_api import sync_playwright
 
 BASE = pathlib.Path(__file__).parent
 LAYOUT = {
-    "feed":  dict(TTOP=50, W=1080, H=1350, KTOP=235, HTOP=300, HW=600, HSIZE=112, STOP=670, BRIGHT=40, BBOT=250, BW=380, CBOT=110, FBOT=50),
+    "feed":  dict(TTOP=50, W=1080, H=1350, KTOP=235, HTOP=300, HW=600, HSIZE=112, STOP=670, BRIGHT=40, BBOT=280, BW=360, CBOT=110, FBOT=50),
     "story": dict(TTOP=220, W=1080, H=1920, KTOP=400, HTOP=475, HW=900, HSIZE=132, STOP=775, BRIGHT=330, BBOT=500, BW=340, CBOT=300, FBOT=230),
 }
 
@@ -26,7 +26,19 @@ def render(spec, out, fmt="feed"):
         pg = b.new_page(viewport={"width": vals["W"], "height": vals["H"]})
         pg.set_content(html, wait_until="networkidle")
         pg.screenshot(path=out, type="png")
+        # relatório de layout: caixas visíveis, para o validate.py achar sobreposição/estouro
+        boxes = pg.evaluate("""() => {
+          const o = {};
+          for (const s of ['.top','.kicker','h1','.sub','.bot','.cta','.foot']) {
+            const e = document.querySelector(s);
+            if (!e || getComputedStyle(e).display === 'none') continue;
+            const r = e.getBoundingClientRect();
+            o[s] = [r.left, r.top, r.right, r.bottom];
+          }
+          return o;
+        }""")
         b.close()
+    pathlib.Path(str(out) + ".layout.json").write_text(json.dumps({"W": vals["W"], "H": vals["H"], "boxes": boxes}))
 
 if __name__ == "__main__":
     spec = json.loads(pathlib.Path(sys.argv[1]).read_text())

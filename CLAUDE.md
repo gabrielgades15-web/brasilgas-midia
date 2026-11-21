@@ -19,7 +19,7 @@ Antes de produzir qualquer peça, leia `skills/brasilgas-conteudo/SKILL.md` (ou 
 2. Escrever o spec (KICKER, HEADLINE, SUB, CTA) e renderizar: `python3 render.py spec.json saida.png feed|story`.
 3. Conferir a imagem (ler o PNG) antes de seguir.
 4. Commit + push em `midia/AAAA-MM-DD/`.
-5. Criar RASCUNHO no Metricool (blogId 7861236, draft:true, autoPublish:true) no melhor horário do dia, com legenda + CTA + hashtags locais.
+5. Rodar o VERIFICADOR (seção abaixo) e só então agendar no Metricool (blogId 7861236) no melhor horário do dia, com legenda + CTA + hashtags locais.
 6. Atualizar `historico.json`.
 
 ## Calendário inteligente (verificar TODO dia, antes da pauta)
@@ -49,3 +49,33 @@ Antes de produzir qualquer peça, leia `skills/brasilgas-conteudo/SKILL.md` (ou 
 ## Informações nos rascunhos (pedido do Gabriel em 20/11/2026)
 - Story continua automático e sem legenda (o Instagram não aceita legenda em story). Mas TODO rascunho, inclusive story, leva `mediaAltText` com a descrição da arte e o texto que aparece nela, para o Gabriel ver no Metricool do que se trata.
 - Post, carrossel e reel: legenda completa sempre (gancho, benefício, WhatsApp, horário, endereço, hashtags) + `mediaAltText`.
+
+## Publicação automática com verificador (decidido pelo Gabriel em 21/11/2026)
+O Gabriel autorizou a publicação automática, desde que exista o verificador e o relatório diário de resultados.
+- Loop de cada peça (executa → checa → melhora → repete):
+  1. renderizar com render.py (que gera `<arte>.png.layout.json`);
+  2. salvar a legenda em `.txt` e a descrição em `alt.txt`;
+  3. `python3 validate.py --formato <f> --spec <spec.json> [--spec ...] --imagem <png> [--imagem ...] --legenda <txt> --alt <alt.txt>`;
+  4. se REPROVADO, corrigir o que foi apontado e rodar de novo (no máximo 3 tentativas);
+  5. abrir a imagem final com Read e conferir com os próprios olhos (o verificador não vê estética).
+- APROVADO → agendar com `draft:false, autoPublish:true` (publica sozinho no horário).
+- REPROVADO depois de 3 tentativas → agendar com `draft:true` e avisar o Gabriel no resumo final, dizendo o que falhou.
+- Story de feriado/horário e posts do calendário seguem a mesma regra.
+
+## Relatório diário de resultados (todo dia, no início da execução)
+- Buscar no Metricool (getAnalyticsDataByMetrics, brandId 7861236) os números do dia anterior:
+  IGEV01 seguidores, IGEV43 ganhos, IGEV44 perdidos, IGEV05 visualizações, IGEV06 alcance, IGEV42 contas engajadas,
+  IGEV13 curtidas no feed, IGEV14 comentários no feed, IGEV15 salvamentos no feed, IGEV40 compartilhamentos no feed,
+  IGEV22 reels, IGEV23 views de reels, IGEV27 curtidas em reels, IGEV28 comentários em reels, IGEV29 salvamentos em reels, IGEV39 compartilhamentos de reels,
+  IGEV16 stories, IGEV18 alcance de stories.
+- Acrescentar uma linha em `metricas.csv` (data + esses campos; vazio vira 0).
+- Por peça publicada nos últimos 7 dias: buscar alcance, curtidas, comentários, salvamentos, compartilhamentos e views
+  (posts IGPO*, reels IGRE*, stories IGST*) e atualizar `metricas_posts.csv` (uma linha por peça, sobrescrevendo a anterior).
+- No resumo final ao Gabriel, mostrar: seguidores (e variação), alcance de ontem, a peça campeã dos últimos 7 dias e por que ela pode ter ido bem.
+- Usar os números para decidir: repetir o gancho/formato da campeã e evitar o da pior (sem quebrar a pauta e o calendário).
+
+## Música nos Reels
+- Reel leva música do catálogo do Instagram via `instagramData.audioConfiguration` (só `audioId`; `audioVolume` 100 e `videoVolume` 0 quando o vídeo não tem fala).
+- Escolher músicas animadas, populares no Brasil e adequadas a marca familiar (nada com palavrão ou duplo sentido). Ver `musicas.json`.
+- Se o Metricool rejeitar por haver vários candidatos, escolher o mais adequado da lista e tentar de novo com o id numérico. Guardar ids que funcionaram em `musicas.json`.
+- Se rejeitar por tipo de conta (exige conta Business ligada a uma Página do Facebook), publicar sem música, anotar em `musicas.json` ("audio_bloqueado": true) e avisar o Gabriel uma única vez.
