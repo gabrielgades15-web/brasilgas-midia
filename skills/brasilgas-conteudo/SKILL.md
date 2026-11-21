@@ -72,8 +72,9 @@ Manchete da arte: **até 40 caracteres**, com no máximo 3 linhas na arte.
 🕖 Seg a sáb, 7h às 20h | Domingos e feriados, 7h às 13h
 📍 Alameda Padre Rolim, Castanhal
 
-#Castanhal #CastanhalPA #GásDeCozinha #Paragás #Brasilgás + 1 a 3 do tema
+#Castanhal #GásDeCozinha #Brasilgás + até 2 do tema (MÁXIMO 5 hashtags: limite do Instagram desde dez/2025)
 ```
+- A busca do Instagram hoje é por palavra-chave: coloque "gás em Castanhal" / "entrega de gás" escrito na legenda.
 - Hashtags do tema: #GásDoPovo #EntregaDeGás #ÁguaMineral #CírioDeNazaré #Pará #GásCastanhal.
 - Feriado: acrescente na linha do horário "(hoje, feriado, até 13h)".
 - Preencha sempre `mediaAltText` com a descrição da arte e o texto que aparece nela.

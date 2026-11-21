@@ -1,0 +1,26 @@
+# Aprendizados da Brasilgás (loop de evolução)
+
+Cada linha: data · o que aprendemos · o que mudou no sistema. Lido pela tarefa diária e nas conversas com o Gabriel.
+Quando uma regra daqui virar permanente, ela sobe para CLAUDE.md ou para a skill.
+
+## Sobre o Gabriel e o jeito de trabalhar
+- 19/11 · Prefere opções a perguntas abertas; tom casual; quer o sistema funcionando sozinho, mas com controle.
+- 21/11 · Relatório: começar simples (números básicos) e aprimorar depois. "Peça campeã" ficou exagerado → removido.
+- 21/11 · Quer evolução constante, não só testes: o que aprendemos nas conversas deve virar regra aplicada → criado este arquivo.
+- 21/11 · Preza por economia e sofisticação: menos ferramentas, bem escolhidas.
+
+## Marca e negócio
+- 19/11 · Preço só no WhatsApp (houve post antigo com R$ 117,99; não repetir).
+- 19/11 · Horário: seg–sáb 7h–20h; domingos e feriados 7h–13h (confirmado).
+- 19/11 · Não atende pelo Zé Delivery; Paragás é só referência visual.
+- 21/11 · Norte do projeto: perfil otimizado + anúncios pagos levando ao WhatsApp.
+
+## Conteúdo e Instagram
+- 19/11 · No Leo Gás, atendente real falando pra câmera engaja de 2 a 3 vezes mais que arte só de IA.
+- 20/11 · Story não tem legenda no Instagram; a informação vai na arte e no texto alternativo.
+- 20/11 · Rascunhos não aprovados não saem (stories do feriado se perderam) → publicação automática com verificador a partir de 21/11.
+- 21/11 · Instagram limita a 5 hashtags por post desde dez/2025 (soube pela skill hashtag-strategy, confirmado) → verificador agora exige de 3 a 5.
+- 21/11 · As artes v1 estão simples demais (só texto e botijão desenhado). Falta imagem real (fotos, logo, mascote) e uma ferramenta de design.
+
+## Números de referência
+- 21/11 · 68 seguidores. Reel "Sextou" (20/11): 19 views e 2 curtidas.

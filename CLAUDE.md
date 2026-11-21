@@ -11,6 +11,9 @@ Repositório usado pela tarefa agendada diária. As artes ficam em `midia/AAAA-M
 - Nunca inventar promoção, cupom, desconto, prazo de entrega ou preço. Se a pauta pedir oferta e não houver oferta confirmada em `ofertas.json`, troque por outro tema.
 - Conteúdo original. O Grupo Leo Gás é só referência de formato.
 
+## Aprendizados (ler TODO dia)
+Leia `aprendizados.md` antes de produzir. Ele guarda o que aprendemos com o Gabriel e com os resultados. Quando algo novo for aprendido numa execução (erro, correção, resultado claro), acrescente uma linha datada lá.
+
 ## Skill obrigatória
 Antes de produzir qualquer peça, leia `skills/brasilgas-conteudo/SKILL.md` (ou use a skill `brasilgas-conteudo`, se estiver listada) e siga o método dela, incluindo a seção 0: usar as skills dos plugins Marketing e Social Media Skills quando estiverem disponíveis.
 
@@ -71,8 +74,7 @@ O Gabriel autorizou a publicação automática, desde que exista o verificador e
 - Acrescentar uma linha em `metricas.csv` (data + esses campos; vazio vira 0).
 - Por peça publicada nos últimos 7 dias: buscar alcance, curtidas, comentários, salvamentos, compartilhamentos e views
   (posts IGPO*, reels IGRE*, stories IGST*) e atualizar `metricas_posts.csv` (uma linha por peça, sobrescrevendo a anterior).
-- No resumo final ao Gabriel, mostrar: seguidores (e variação), alcance de ontem, a peça campeã dos últimos 7 dias e por que ela pode ter ido bem.
-- Usar os números para decidir: repetir o gancho/formato da campeã e evitar o da pior (sem quebrar a pauta e o calendário).
+- No resumo final ao Gabriel, mostrar SÓ o básico: seguidores (e variação), alcance, curtidas, comentários e views de reels de ontem, mais o que foi agendado hoje. Sem análise extra (pedido dele em 21/11: começar simples e aprimorar depois).
 
 ## Música nos Reels
 - Reel leva música do catálogo do Instagram via `instagramData.audioConfiguration` (só `audioId`; `audioVolume` 100 e `videoVolume` 0 quando o vídeo não tem fala).
