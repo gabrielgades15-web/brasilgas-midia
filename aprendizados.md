@@ -47,6 +47,8 @@ Quando uma regra daqui virar permanente, ela sobe para CLAUDE.md ou para a skill
 
 - 21/11 · Metricool não publica no Status do WhatsApp (nenhuma ferramenta publica). Foco no Google Meu Negócio, que a Brasilgás já tem: posts de feed também vão para o Google quando a conexão existir.
 
+- 21/11 · Endereço oficial: Alameda Padre Rolim, 139, Castanhal (Gabriel confirmou; o Instagram mostrava 138). Atualizado no template, regras, skill e verificador. Google Meu Negócio conectado ao Metricool pelo Gabriel.
+
 ## Números de referência
 - 21/11 · Painel do Instagram: 830 visualizações nos últimos 30 dias, 69 seguidores, 23 posts.
 - 21/11 · 68 seguidores. Reel "Sextou" (20/11): 19 views e 2 curtidas.

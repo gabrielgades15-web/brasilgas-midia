@@ -38,7 +38,7 @@ Se os plugins não estiverem disponíveis, siga só esta skill: ela é suficient
 - Dados exatamente assim:
   - WhatsApp (91) 98222-7035 e (91) 98548-0434;
   - seg–sáb 7h–20h, domingos e feriados 7h–13h;
-  - Alameda Padre Rolim, Castanhal.
+  - Alameda Padre Rolim, 139, Castanhal.
 - Feriado oficial: horário 7h–13h. Ponto facultativo (Carnaval, Corpus Christi): não afirmar horário.
 - Concorrentes (Grupo Leo Gás) são só referência de formato. Nunca citar nome nem copiar arte ou texto.
 - Imagem gerada por IA → `isAiGenerated: true` no Metricool.
@@ -71,7 +71,7 @@ Manchete da arte: **até 40 caracteres**, com no máximo 3 linhas na arte.
 
 📲 Chame no WhatsApp: (91) 98222-7035 ou (91) 98548-0434
 🕖 Seg a sáb, 7h às 20h | Domingos e feriados, 7h às 13h
-📍 Alameda Padre Rolim, Castanhal
+📍 Alameda Padre Rolim, 139, Castanhal
 
 #Castanhal #GásDeCozinha #Brasilgás + até 2 do tema (MÁXIMO 5 hashtags: limite do Instagram desde dez/2025)
 ```

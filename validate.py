@@ -111,8 +111,8 @@ def main():
                     erros.append(f"legenda: falta o WhatsApp {tel}")
             if not HORARIO_OK.search(leg) or not FERIADO_OK.search(leg):
                 erros.append("legenda: falta o horário (7h às 20h e 7h às 13h)")
-            if "Alameda Padre Rolim" not in leg:
-                erros.append("legenda: falta o endereço")
+            if "Alameda Padre Rolim, 139" not in leg:
+                erros.append("legenda: falta o endereço (Alameda Padre Rolim, 139, Castanhal)")
             n_hash = len(re.findall(r"#\w+", leg))
             if not 3 <= n_hash <= 5:
                 erros.append(f"legenda: {n_hash} hashtags (o Instagram aceita no máximo 5; use de 3 a 5)")

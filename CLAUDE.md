@@ -6,7 +6,7 @@ Repositório usado pela tarefa agendada diária. As artes ficam em `midia/AAAA-M
 - Preço NUNCA aparece em arte nem legenda (preço só no WhatsApp).
 - Botijão P13 sempre prata, sem logo. Mascote prata e P13 nunca lado a lado.
 - Brasilgás é revenda autorizada; Paragás é a marca do gás.
-- Dados fixos: WhatsApp (91) 98222-7035 e 98548-0434; seg–sáb 7h–20h, domingos e feriados 7h–13h; Alameda Padre Rolim, Castanhal.
+- Dados fixos: WhatsApp (91) 98222-7035 e 98548-0434; seg–sáb 7h–20h, domingos e feriados 7h–13h; Alameda Padre Rolim, 139, Castanhal.
 - Gás do Povo: revenda credenciada (pode citar).
 - Nunca inventar promoção, cupom, desconto, prazo de entrega ou preço. Se a pauta pedir oferta e não houver oferta confirmada em `ofertas.json`, troque por outro tema.
 - Conteúdo original. O Grupo Leo Gás é só referência de formato.

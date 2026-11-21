@@ -24,7 +24,7 @@ Pediu no zap, a gente leva 👇
 
 > O link do WhatsApp já está no perfil, por isso a bio termina com 👇 apontando para ele.
 > Categoria do perfil: "Serviço de entrega de gás" ou "Distribuidora de gás".
-> Endereço no perfil: Alameda Padre Rolim, Castanhal-PA (ativa o botão "Como chegar").
+> Endereço no perfil: Alameda Padre Rolim, 139, Castanhal-PA (ativa o botão "Como chegar").
 
 ## Destaques (ordem sugerida)
 | Destaque | Capa | Story dentro |
