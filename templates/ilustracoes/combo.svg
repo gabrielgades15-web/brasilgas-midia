@@ -1,5 +1,5 @@
-<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg">
-<svg x="0" y="40" width="200" height="260" viewBox="0 0 200 260">
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+<svg x="0" y="0" width="230" height="300" viewBox="0 0 200 260" preserveAspectRatio="xMidYMax meet">
  <defs><linearGradient id="bm" x1="0" x2="1"><stop offset="0" stop-color="#8d939b"/><stop offset=".35" stop-color="#f4f6f8"/><stop offset=".6" stop-color="#c9ced4"/><stop offset="1" stop-color="#7c828a"/></linearGradient></defs>
  <rect x="62" y="6" width="76" height="46" rx="12" fill="none" stroke="url(#bm)" stroke-width="12"/>
  <rect x="90" y="40" width="20" height="22" fill="url(#bm)"/>
@@ -8,7 +8,7 @@
  <rect x="30" y="182" width="140" height="6" fill="#6f757c" opacity=".5"/>
  <path d="M45 236 L45 256 L155 256 L155 236" fill="none" stroke="url(#bm)" stroke-width="10"/>
 </svg>
-<svg x="210" y="0" width="230" height="300" viewBox="0 0 220 300">
+<svg x="250" y="0" width="230" height="300" viewBox="0 0 220 292" preserveAspectRatio="xMidYMax meet">
  <defs>
   <linearGradient id="ggw" x1="0" x2="1">
    <stop offset="0" stop-color="#4FA9E8"/><stop offset=".35" stop-color="#BFE6FF"/><stop offset=".6" stop-color="#7CC4F2"/><stop offset="1" stop-color="#2F86C9"/>

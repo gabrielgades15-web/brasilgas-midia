@@ -2,31 +2,32 @@
 <html><head><meta charset="utf-8">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{width:{{W}}px;height:{{H}}px;font-family:'Montserrat',sans-serif;overflow:hidden;
- background:radial-gradient(circle at 70% 35%,#F2283A 0%,#E1061A 45%,#A30F1C 100%);color:#fff;position:relative}
-.top{position:absolute;top:{{TTOP}}px;left:60px;right:60px;display:flex;justify-content:space-between;align-items:center}
+body{width:{{W}}px;height:{{H}}px;font-family:'Montserrat',sans-serif;overflow:hidden;color:#fff;
+ background:radial-gradient(circle at 70% 35%,#F2283A 0%,#E1061A 45%,#A30F1C 100%);
+ display:flex;flex-direction:column;padding:{{PT}}px 64px {{PB}}px}
+.top{display:flex;justify-content:space-between;align-items:center;flex:none}
 .logo{background:#fff;border-radius:18px;padding:14px 22px 16px;line-height:1;box-shadow:0 8px 24px rgba(0,0,0,.18)}
-.logo .w{font-family:'Montserrat';font-weight:900;font-size:50px;letter-spacing:1px;color:#1D4FA3}
+.logo .w{font-weight:900;font-size:50px;letter-spacing:1px;color:#1D4FA3}
 .logo .w i{font-style:normal;color:#E1061A}
-.logo .p{margin-top:8px;background:#E1061A;color:#fff;font-family:'Montserrat';font-weight:800;font-size:30px;letter-spacing:3px;text-align:center;padding:6px 10px;border-radius:4px}
+.logo .p{margin-top:8px;background:#E1061A;color:#fff;font-weight:800;font-size:30px;letter-spacing:3px;text-align:center;padding:6px 10px;border-radius:4px}
 .selo{background:#1C3A8C;border-radius:40px;padding:12px 26px;font-weight:800;font-size:24px;letter-spacing:1px}
-.kicker{position:absolute;left:60px;top:{{KTOP}}px;background:#FFC72C;color:#A30F1C;font-weight:900;font-size:30px;padding:10px 22px;border-radius:10px;text-transform:uppercase}
-h1{position:absolute;left:60px;top:{{HTOP}}px;width:{{HW}}px;font-family:'Anton';font-size:{{HSIZE}}px;line-height:1.02;text-transform:uppercase;text-shadow:0 6px 0 rgba(0,0,0,.18)}
-.sub{position:absolute;left:60px;top:{{STOP}}px;width:{{HW}}px;font-weight:800;font-size:36px;line-height:1.25}
-.bot svg{width:100%;height:auto;display:block}
-.bot{position:absolute;right:{{BRIGHT}}px;bottom:{{BBOT}}px;width:{{BW}}px}
-.cta{position:absolute;left:60px;right:60px;bottom:{{CBOT}}px;background:#A30F1C;border-radius:26px;padding:26px 30px;display:flex;align-items:center;gap:24px}
+.texto{flex:none;margin-top:{{GAP1}}px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.kicker{background:#FFC72C;color:#A30F1C;font-weight:900;font-size:30px;padding:10px 24px;border-radius:10px;text-transform:uppercase}
+h1{margin-top:22px;font-family:'Anton';font-size:{{HSIZE}}px;line-height:1.02;text-transform:uppercase;text-shadow:0 6px 0 rgba(0,0,0,.18);max-width:{{HW}}px}
+.sub{margin-top:22px;font-weight:800;font-size:{{SSIZE}}px;line-height:1.3;max-width:{{SW}}px}
+.ilu{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:{{IPAD}}px 0}
+.bot{height:100%;max-width:{{BMAX}}px;display:flex;align-items:center;justify-content:center}
+.bot svg{height:100%;width:auto;max-width:100%;display:block}
+.cta{flex:none;background:#A30F1C;border-radius:26px;padding:24px 30px;display:flex;align-items:center;gap:24px}
 .wa{width:86px;height:86px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;flex:none}
 .cta b{display:block;font-family:'Anton';font-size:52px;letter-spacing:1px}
 .cta span{font-weight:700;font-size:24px;opacity:.95}
-.foot{position:absolute;left:60px;right:60px;bottom:{{FBOT}}px;text-align:center;font-weight:700;font-size:22px;opacity:.9}
+.foot{flex:none;margin-top:22px;text-align:center;font-weight:700;font-size:23px;line-height:1.45;opacity:.95}
 </style></head><body>
 <div class="top"><div class="logo"><div class="w">BRASIL<i>GÁS</i></div><div class="p">PARAGÁS</div></div><div class="selo">REVENDA AUTORIZADA</div></div>
-<div class="kicker">{{KICKER}}</div>
-<h1>{{HEADLINE}}</h1>
-<div class="sub">{{SUB}}</div>
-<div class="bot">{{ILUSTRACAO_SVG}}</div>
+<div class="texto"><div class="kicker">{{KICKER}}</div><h1>{{HEADLINE}}</h1><div class="sub">{{SUB}}</div></div>
+<div class="ilu"><div class="bot">{{ILUSTRACAO_SVG}}</div></div>
 <div class="cta"><div class="wa"><svg width="52" height="52" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></div>
 <div><b>(91) 98222-7035</b><span>{{CTA}}</span></div></div>
-<div class="foot">Seg–Sáb 7h–20h · Dom e feriados 7h–13h · Castanhal</div>
+<div class="foot">Segunda a sábado, das 7h às 20h · Domingos e feriados, das 7h às 13h<br>Alameda Padre Rolim · Castanhal</div>
 </body></html>

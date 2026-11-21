@@ -63,9 +63,9 @@ def checar_layout(img, erros):
     for nome, (l, t, r, b) in bx.items():
         if l < 0 or t < 0 or r > W + 1 or b > H + 1:
             erros.append(f"{img}: '{nome}' sai da arte")
-    textos = [k for k in bx if k != ".bot"]
+    textos = [k for k in bx if k not in (".bot",".bot svg")]
     pares = [(a, c) for i, a in enumerate(textos) for c in textos[i + 1:]]
-    pares += [(".bot", k) for k in textos if ".bot" in bx and k not in (".top",)]
+    pares += [(".bot svg", k) for k in textos if ".bot svg" in bx and k not in (".top",)]
     for a, c in pares:
         if a not in bx or c not in bx:
             continue

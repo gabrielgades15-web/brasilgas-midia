@@ -26,5 +26,8 @@ Quando uma regra daqui virar permanente, ela sobe para CLAUDE.md ou para a skill
 
 - 21/11 · Água 20L ainda é fase experimental: vende, mas não era divulgada por falta de identidade. Gabriel pediu um mascote/sticker do galão → criado o mascote galão azul sorridente (templates/ilustracoes/galao.svg) e o combo botijão + galão. Peças de água usam "ILUSTRACAO": "galao" ou "combo".
 
+- 21/11 · Layout v1.1 a pedido do Gabriel: texto centralizado e distribuído (antes ficava espremido no topo), mascotes alinhados pela base, rodapé com os dias por extenso ("Segunda a sábado, das 7h às 20h · Domingos e feriados, das 7h às 13h"). O template passou a usar layout em coluna (flex), que se ajusta sozinho e evita sobreposição.
+- 21/11 · Gabriel: "estou começando a gostar desta nossa marca" → manter esta linha visual (vermelho, logo em caixa branca, faixa amarela, título Anton centralizado, mascotes).
+
 ## Números de referência
 - 21/11 · 68 seguidores. Reel "Sextou" (20/11): 19 views e 2 curtidas.

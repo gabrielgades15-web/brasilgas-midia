@@ -4,8 +4,9 @@ from playwright.sync_api import sync_playwright
 
 BASE = pathlib.Path(__file__).parent
 LAYOUT = {
-    "feed":  dict(TTOP=50, W=1080, H=1350, KTOP=235, HTOP=300, HW=600, HSIZE=112, STOP=670, BRIGHT=40, BBOT=280, BW=360, CBOT=110, FBOT=50),
-    "story": dict(TTOP=220, W=1080, H=1920, KTOP=400, HTOP=475, HW=900, HSIZE=132, STOP=775, BRIGHT=330, BBOT=500, BW=340, CBOT=300, FBOT=230),
+    # PT/PB: margens de segurança (no story, a interface do Instagram cobre topo e base)
+    "feed":  dict(W=1080, H=1350, PT=56, PB=44, GAP1=46, HSIZE=104, HW=900, SSIZE=32, SW=860, IPAD=24, BMAX=700),
+    "story": dict(W=1080, H=1920, PT=210, PB=240, GAP1=96, HSIZE=128, HW=920, SSIZE=36, SW=880, IPAD=30, BMAX=860),
 }
 
 def render(spec, out, fmt="feed"):
@@ -13,19 +14,11 @@ def render(spec, out, fmt="feed"):
     vals = {**LAYOUT[fmt], **spec}
     ilu = spec.get("ILUSTRACAO", "botijao")   # botijao | galao | combo
     vals["ILUSTRACAO_SVG"] = (BASE / "templates/ilustracoes" / f"{ilu}.svg").read_text()
-    if ilu == "combo":
-        if fmt == "story":
-            vals["BW"] = 760
-            vals["BRIGHT"] = (vals["W"] - vals["BW"]) // 2
-        else:  # feed: combo menor, encostado à direita, abaixo do texto
-            vals["BW"], vals["BRIGHT"] = 380, 30
-    elif ilu == "galao":
-        vals["BW"] = int(vals["BW"] * 1.05)
     extra = ""
     if spec.get("SEM_CTA"):      # slides do meio do carrossel
         extra += ".cta,.foot{display:none}"
     if spec.get("SEM_BOTIJAO"):
-        extra += ".bot{display:none}"
+        extra += ".ilu{visibility:hidden}"
     if spec.get("NUMERO"):       # marcador do slide, ex. "2/5"
         extra += ".kicker::after{content:'  %s';opacity:.6}" % spec["NUMERO"]
     html = html.replace("</style>", extra + "</style>")
@@ -39,7 +32,7 @@ def render(spec, out, fmt="feed"):
         # relatório de layout: caixas visíveis, para o validate.py achar sobreposição/estouro
         boxes = pg.evaluate("""() => {
           const o = {};
-          for (const s of ['.top','.kicker','h1','.sub','.bot','.cta','.foot']) {
+          for (const s of ['.top','.kicker','h1','.sub','.bot svg','.cta','.foot']) {
             const e = document.querySelector(s);
             if (!e || getComputedStyle(e).display === 'none') continue;
             const r = e.getBoundingClientRect();
