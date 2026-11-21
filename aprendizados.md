@@ -55,6 +55,8 @@ Quando uma regra daqui virar permanente, ela sobe para CLAUDE.md ou para a skill
 
 - 21/11 · Gabriel criou perfil novo no Google (Brasil Gás) em vez de renomear o Mastergas (estava desativado). Perfil novo precisa de verificação do Google antes de aceitar posts; antigo deve ficar como "Fechado permanentemente" para não duplicar.
 
+- 21/11 · Perfil novo do Google "Brasilgás" verificado (selo azul). Posts no Google religados; primeiro às 12h15.
+
 ## Números de referência
 - 21/11 · Painel do Instagram: 830 visualizações nos últimos 30 dias, 69 seguidores, 23 posts.
 - 21/11 · 68 seguidores. Reel "Sextou" (20/11): 19 views e 2 curtidas.

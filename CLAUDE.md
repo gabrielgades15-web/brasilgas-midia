@@ -101,7 +101,7 @@ O Gabriel autorizou a publicação automática, desde que exista o verificador e
 - Se rejeitar por tipo de conta (exige conta Business ligada a uma Página do Facebook), publicar sem música, anotar em `musicas.json` ("audio_bloqueado": true) e avisar o Gabriel uma única vez.
 
 ## Google Meu Negócio (decidido pelo Gabriel em 21/11/2026)
-- ⏸️ PAUSADO desde 21/11: o Gabriel criou um perfil NOVO "Brasil Gás" (o antigo Mastergas estava desativado). O Metricool já mostra gbpData = accounts/112417994926351507670/locations/14825802374355006683. NÃO publicar no Google até o Gabriel confirmar que esse é o perfil novo E que ele está verificado pelo Google. Ele avisa na conversa e esta linha é removida. Há um post guardado em rascunho (uuid -3943898250265735726) para soltar quando religar.
+- ✅ ATIVO desde 21/11: perfil novo "Brasilgás" verificado (location 14825802374355006683). Primeiro post no Google em 21/11 às 12h15.
 - WhatsApp Status fica de fora (nenhuma ferramenta publica lá).
 - O Google Business Profile ESTÁ conectado (confirmado em 21/11; o getBrandSettings não lista o Google, mas publicar funciona). TODO post de feed (não story) também vai para o Google:
   - mesmo createScheduledPost, com providers [{"network":"instagram"},{"network":"gmb"}] e "gmbData": {"type":"publication"};
