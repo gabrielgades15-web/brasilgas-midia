@@ -28,5 +28,14 @@
     "pilar": "Urgência e fim de semana",
     "headline": "FIM DE SEMANA GARANTIDO",
     "metricool_id": 435258053
+  },
+  {
+    "data": "2026-11-21",
+    "formato": "story",
+    "pilar": "Água 20L e combo",
+    "headline": "GÁS E ÁGUA NUM PEDIDO SÓ",
+    "gancho": "Benefício",
+    "metricool_id": 436485651,
+    "publicado_automatico": true
   }
 ]

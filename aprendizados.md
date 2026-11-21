@@ -22,5 +22,7 @@ Quando uma regra daqui virar permanente, ela sobe para CLAUDE.md ou para a skill
 - 21/11 · Instagram limita a 5 hashtags por post desde dez/2025 (soube pela skill hashtag-strategy, confirmado) → verificador agora exige de 3 a 5.
 - 21/11 · As artes v1 estão simples demais (só texto e botijão desenhado). Falta imagem real (fotos, logo, mascote) e uma ferramenta de design.
 
+- 21/11 · Métricas do dia anterior às 5h30: seguidores e alcance ainda vêm 0 (Metricool atualiza com atraso); stories antigos não aparecem em IGST. No relatório, usar o último seguidor não-zero e marcar como "ainda não atualizado".
+
 ## Números de referência
 - 21/11 · 68 seguidores. Reel "Sextou" (20/11): 19 views e 2 curtidas.
