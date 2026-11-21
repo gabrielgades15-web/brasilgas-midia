@@ -5,8 +5,8 @@ from playwright.sync_api import sync_playwright
 BASE = pathlib.Path(__file__).parent
 LAYOUT = {
     # PT/PB: margens de segurança (no story, a interface do Instagram cobre topo e base)
-    "feed":  dict(W=1080, H=1350, PT=56, PB=44, GAP1=46, HSIZE=104, HW=900, SSIZE=32, SW=860, IPAD=24, BMAX=700),
-    "story": dict(W=1080, H=1920, PT=210, PB=240, GAP1=96, HSIZE=128, HW=920, SSIZE=36, SW=880, IPAD=30, BMAX=860),
+    "feed":  dict(W=1080, H=1350, PT=56, PB=44, GAP1=58, CSIZE=64, CSUB=28, HSIZE=104, HW=900, SSIZE=32, SW=860, IPAD=24, BMAX=700),
+    "story": dict(W=1080, H=1920, PT=210, PB=240, GAP1=110, CSIZE=72, CSUB=30, HSIZE=128, HW=920, SSIZE=36, SW=880, IPAD=30, BMAX=860),
 }
 
 def render(spec, out, fmt="feed"):
@@ -17,11 +17,13 @@ def render(spec, out, fmt="feed"):
     extra = ""
     if spec.get("FOTO"):   # foto real de fundo, com véu vermelho por cima para o texto ler bem
         import base64
-        b64 = base64.b64encode((BASE / spec["FOTO"]).read_bytes()).decode()
-        extra += ("body{background:linear-gradient(180deg,rgba(163,15,28,.95) 0%%,rgba(200,6,26,.82) 34%%,rgba(225,6,26,.12) 52%%,"
-                  "rgba(225,6,26,.12) 70%%,rgba(120,8,20,.92) 88%%),url(data:image/jpeg;base64,%s) center/cover}" % b64)
+        from tratar_foto import tratar
+        b64 = base64.b64encode(tratar(BASE / spec["FOTO"]).read_bytes()).decode()
+        extra += ("body{background:linear-gradient(180deg,rgba(163,15,28,.95) 0%%,rgba(200,6,26,.80) 32%%,rgba(225,6,26,.06) 50%%,"
+                  "rgba(120,8,20,.15) 62%%,rgba(110,6,18,.94) 84%%),url(data:image/jpeg;base64,%s) center/cover}" % b64)
         if not spec.get("ILUSTRACAO"):
             extra += ".ilu{visibility:hidden}"
+        extra += ".texto .sub{display:none}.sub2{display:block}"   # frase desce para a base da foto
     if spec.get("SEM_CTA"):      # slides do meio do carrossel
         extra += ".cta,.foot{display:none}"
     if spec.get("SEM_BOTIJAO"):
@@ -39,7 +41,7 @@ def render(spec, out, fmt="feed"):
         # relatório de layout: caixas visíveis, para o validate.py achar sobreposição/estouro
         boxes = pg.evaluate("""() => {
           const o = {};
-          for (const s of ['.top','.kicker','h1','.sub','.bot svg','.cta','.foot']) {
+          for (const s of ['.top','.kicker','h1','.sub','.sub2','.bot svg','.cta','.foot']) {
             const e = document.querySelector(s);
             if (!e || getComputedStyle(e).display === 'none') continue;
             const r = e.getBoundingClientRect();
