@@ -45,6 +45,8 @@ Quando uma regra daqui virar permanente, ela sobe para CLAUDE.md ou para a skill
 - 21/11 · Perfil todo atualizado pelo Gabriel: usuário agora é @brasilgas_caicara, nome "Brasilgás | Gás e Água em Castanhal", bio nova, categoria, endereço, destaques e foto de perfil com o logo oficial (opção A). Primeira publicação 100% automática: story da água às 10h.
 - 21/11 · Próxima etapa decidida: anúncios pagos a partir de segunda (23/11).
 
+- 21/11 · Metricool não publica no Status do WhatsApp (nenhuma ferramenta publica). Foco no Google Meu Negócio, que a Brasilgás já tem: posts de feed também vão para o Google quando a conexão existir.
+
 ## Números de referência
 - 21/11 · Painel do Instagram: 830 visualizações nos últimos 30 dias, 69 seguidores, 23 posts.
 - 21/11 · 68 seguidores. Reel "Sextou" (20/11): 19 views e 2 curtidas.

@@ -99,3 +99,11 @@ O Gabriel autorizou a publicação automática, desde que exista o verificador e
 - Escolher músicas animadas, populares no Brasil e adequadas a marca familiar (nada com palavrão ou duplo sentido). Ver `musicas.json`.
 - Se o Metricool rejeitar por haver vários candidatos, escolher o mais adequado da lista e tentar de novo com o id numérico. Guardar ids que funcionaram em `musicas.json`.
 - Se rejeitar por tipo de conta (exige conta Business ligada a uma Página do Facebook), publicar sem música, anotar em `musicas.json` ("audio_bloqueado": true) e avisar o Gabriel uma única vez.
+
+## Google Meu Negócio (decidido pelo Gabriel em 21/11/2026)
+- WhatsApp Status fica de fora (nenhuma ferramenta publica lá).
+- Quando a marca no Metricool tiver o Google Business Profile conectado (getBrandSettings mostra o Google em networksData), TODO post de feed (não story) também vai para o Google:
+  - mesmo createScheduledPost, com providers [{"network":"instagram"},{"network":"gmb"}] e "gmbData": {"type":"publication"};
+  - o texto do Google é o mesmo da legenda, mas sem hashtags e sem emojis em excesso (o Google não usa hashtag); se precisar, criar um post separado só para gmb com texto adaptado (até 1500 caracteres);
+  - incluir sempre: o que vende (gás P13 Paragás, água 20L), "Castanhal", entrega, Gás do Povo quando fizer sentido, WhatsApp e horário. Isso ajuda a aparecer em buscas como "gás perto de mim" e "entrega de gás Castanhal".
+- Se o Google ainda não estiver conectado, seguir só com o Instagram e lembrar o Gabriel no resumo, no máximo uma vez por semana.
