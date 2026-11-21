@@ -33,6 +33,7 @@ Se os plugins não estiverem disponíveis, siga só esta skill: ela é suficient
 - **Nunca preço**, em arte ou legenda. Preço só no WhatsApp.
 - **Nunca inventar** promoção, cupom, desconto, brinde, prazo de entrega ("em 30 min") ou sorteio. Oferta só se estiver em `ofertas.json`.
 - **Nunca citar** Zé Delivery, apps de terceiros ou cupons da Paragás.
+- **Água:** só "Água", "Água 20L" ou "Galão 20L". Nunca a marca da água (ela é dita no atendimento).
 - Botijão sempre **prata, sem logo**. O mascote prata nunca aparece ao lado de um P13.
 - Dados exatamente assim:
   - WhatsApp (91) 98222-7035 e (91) 98548-0434;

@@ -33,6 +33,16 @@ Antes de produzir qualquer peça, leia `skills/brasilgas-conteudo/SKILL.md` (ou 
 - Datas regionais têm peso: Círio (maniçoba cozinha por dias, então o gás não pode faltar), Semana Santa, quadra junina, Aniversário de Castanhal (28/01), Adesão do Pará (15/08).
 - Em dezembro, completar o calendário do ano seguinte (regras de cálculo em `_manutencao`) e avisar o Gabriel.
 
+## Água (regra do Gabriel, 21/11)
+- Divulgar só "Água", "Água 20L", "Galão 20L", "Galão de água 20L" e variações. NUNCA citar marca da água (a marca é informada no atendimento).
+- Foto real com rótulo de marca de água legível não pode ser usada (ver fotos/catalogo.json).
+
+## Fotos reais
+- `fotos/catalogo.json` lista as fotos da revenda (fachada, estoque de P13, galões) com descrição e uso. Usar só as com "liberada": true.
+- Usar no spec: `"FOTO": "fotos/<arquivo>.jpg"` → foto de fundo com véu vermelho (topo e base escuros, meio mostra a foto). Pode combinar com ILUSTRACAO, mas o normal é foto sem ilustração.
+- Usar foto real em pelo menos metade das peças da semana (gente real e loja real engajam mais que desenho).
+- Prioridade: fachada com Gás do Povo e letreiro PARAGÁS (confiança, loja física) e pilhas de P13 prata (tem gás).
+
 ## Ilustrações
 - Spec aceita `"ILUSTRACAO": "botijao"` (padrão), `"galao"` (mascote da água 20L) ou `"combo"` (botijão + galão, para gás e água juntos).
 - Peça sobre água 20L SEMPRE usa "galao" ou "combo". Nunca só o botijão.

@@ -32,5 +32,8 @@ Quando uma regra daqui virar permanente, ela sobe para CLAUDE.md ou para a skill
 - 21/11 · LOGO OFICIAL decidido: o do Instagram/placa (BRASIL azul + GÁS vermelho + faixa vermelha PARAGÁS, em caixa branca). O logo antigo do Canva (GÁS cinza + ícone azul do botijão) fica aposentado. O template já reproduz o oficial em texto; falta só o arquivo em alta.
 - 21/11 · Canva conectado, plano grátis: exporta PNG/JPG, mas não com fundo transparente. O ambiente da tarefa não baixa arquivos do Canva (rede bloqueada); para usar arte do Canva, passar o link de exportação direto ao Metricool.
 
+- 21/11 · Água: divulgar só "Água / Galão 20L", nunca a marca (informada no atendimento) → regra no CLAUDE.md, na skill e no verificador.
+- 21/11 · Chegaram 16 fotos reais (fachada com Gás do Povo, letreiro PARAGÁS, estoque de P13, galões) → fotos/catalogo.json. Fotos de galão com rótulo legível ficam bloqueadas.
+
 ## Números de referência
 - 21/11 · 68 seguidores. Reel "Sextou" (20/11): 19 views e 2 curtidas.

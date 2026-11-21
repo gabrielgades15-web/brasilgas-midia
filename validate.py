@@ -24,6 +24,7 @@ PROIBIDO = [
     (r"\bifood\b", "iFood"),
     (r"\bem\s+\d+\s*min", "prazo de entrega"),
     (r"l[ée]o\s*g[áa]s", "nome de concorrente"),
+    (r"nova\s*[áa]gua|bel[áa]gua|\bindai[áa]|\bcrystal\b|\bminalba|[áa]gua\s+mineral\s+\w+\s+20", "marca de água (só 'Água' / 'Galão 20L')"),
     (r"\bsupergasbras|\bultragaz|\bliquig[áa]s|\bcopagaz", "outra distribuidora"),
 ]
 HORARIO_OK = re.compile(r"7h\s*(às|a|–|-)\s*20h", re.I)
@@ -120,6 +121,8 @@ def main():
                 avisos.append("gancho (1ª linha) longo demais: o Instagram corta em ~90 caracteres")
     if not a.alt or not pathlib.Path(a.alt).read_text().strip():
         erros.append("mediaAltText (descrição da arte) obrigatório")
+    else:
+        checar_texto(pathlib.Path(a.alt).read_text(), "descrição", erros, permitir_oferta)
 
     for w in avisos:
         print("AVISO:", w)

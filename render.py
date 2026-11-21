@@ -15,6 +15,13 @@ def render(spec, out, fmt="feed"):
     ilu = spec.get("ILUSTRACAO", "botijao")   # botijao | galao | combo
     vals["ILUSTRACAO_SVG"] = (BASE / "templates/ilustracoes" / f"{ilu}.svg").read_text()
     extra = ""
+    if spec.get("FOTO"):   # foto real de fundo, com véu vermelho por cima para o texto ler bem
+        import base64
+        b64 = base64.b64encode((BASE / spec["FOTO"]).read_bytes()).decode()
+        extra += ("body{background:linear-gradient(180deg,rgba(163,15,28,.95) 0%%,rgba(200,6,26,.82) 34%%,rgba(225,6,26,.12) 52%%,"
+                  "rgba(225,6,26,.12) 70%%,rgba(120,8,20,.92) 88%%),url(data:image/jpeg;base64,%s) center/cover}" % b64)
+        if not spec.get("ILUSTRACAO"):
+            extra += ".ilu{visibility:hidden}"
     if spec.get("SEM_CTA"):      # slides do meio do carrossel
         extra += ".cta,.foot{display:none}"
     if spec.get("SEM_BOTIJAO"):
