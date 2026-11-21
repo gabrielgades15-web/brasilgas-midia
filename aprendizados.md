@@ -51,6 +51,8 @@ Quando uma regra daqui virar permanente, ela sobe para CLAUDE.md ou para a skill
 
 - 21/11 · Destaques não podem ser alimentados por ferramenta (limite da Meta). O resumo diário avisa quando o story do dia cabe num destaque. O getBrandSettings não lista o Google, mas o post no Google foi aceito.
 
+- 21/11 · O perfil do Google Maps ainda está como "Mastergas" (bandeira antiga). Posts no Google pausados até a troca de nome. Guia de atualização em perfil/google.md.
+
 ## Números de referência
 - 21/11 · Painel do Instagram: 830 visualizações nos últimos 30 dias, 69 seguidores, 23 posts.
 - 21/11 · 68 seguidores. Reel "Sextou" (20/11): 19 views e 2 curtidas.
