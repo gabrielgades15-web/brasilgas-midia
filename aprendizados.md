@@ -29,5 +29,8 @@ Quando uma regra daqui virar permanente, ela sobe para CLAUDE.md ou para a skill
 - 21/11 · Layout v1.1 a pedido do Gabriel: texto centralizado e distribuído (antes ficava espremido no topo), mascotes alinhados pela base, rodapé com os dias por extenso ("Segunda a sábado, das 7h às 20h · Domingos e feriados, das 7h às 13h"). O template passou a usar layout em coluna (flex), que se ajusta sozinho e evita sobreposição.
 - 21/11 · Gabriel: "estou começando a gostar desta nossa marca" → manter esta linha visual (vermelho, logo em caixa branca, faixa amarela, título Anton centralizado, mascotes).
 
+- 21/11 · LOGO OFICIAL decidido: o do Instagram/placa (BRASIL azul + GÁS vermelho + faixa vermelha PARAGÁS, em caixa branca). O logo antigo do Canva (GÁS cinza + ícone azul do botijão) fica aposentado. O template já reproduz o oficial em texto; falta só o arquivo em alta.
+- 21/11 · Canva conectado, plano grátis: exporta PNG/JPG, mas não com fundo transparente. O ambiente da tarefa não baixa arquivos do Canva (rede bloqueada); para usar arte do Canva, passar o link de exportação direto ao Metricool.
+
 ## Números de referência
 - 21/11 · 68 seguidores. Reel "Sextou" (20/11): 19 views e 2 curtidas.

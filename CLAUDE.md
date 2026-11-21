@@ -43,7 +43,7 @@ Antes de produzir qualquer peça, leia `skills/brasilgas-conteudo/SKILL.md` (ou 
 - Ideias que funcionam no @souparagas: histórias em sequência ("contos da cozinha sem gás"), comidas típicas por data, homenagens.
 
 ## Aprendizados dos prints (19/11/2026)
-- Logo real: "BRASIL" azul + "GÁS" vermelho, sobre faixa vermelha "PARAGÁS" com selo azul, numa caixa branca. O template reproduz isso em texto até chegar o arquivo do logo.
+- LOGO OFICIAL (decidido em 21/11): "BRASIL" azul + "GÁS" vermelho, sobre faixa vermelha "PARAGÁS", numa caixa branca. Nunca usar o logo antigo do Canva (GÁS cinza + ícone azul).
 - Mascote prata (botijão com olhos) já é usado pela marca e o público reconhece.
 - No Leo Gás, o que mais engaja é atendente real falando pra câmera (com fundo trocado), muito mais que arte feita só com IA. Priorizar rosto humano nos Reels quando houver fotos ou vídeos em `fotos/`.
 - Se usar imagem gerada por IA, marcar isAiGenerated:true no Metricool.
