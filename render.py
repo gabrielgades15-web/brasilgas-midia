@@ -11,6 +11,16 @@ LAYOUT = {
 def render(spec, out, fmt="feed"):
     html = (BASE / "templates/post.html").read_text()
     vals = {**LAYOUT[fmt], **spec}
+    ilu = spec.get("ILUSTRACAO", "botijao")   # botijao | galao | combo
+    vals["ILUSTRACAO_SVG"] = (BASE / "templates/ilustracoes" / f"{ilu}.svg").read_text()
+    if ilu == "combo":
+        if fmt == "story":
+            vals["BW"] = 760
+            vals["BRIGHT"] = (vals["W"] - vals["BW"]) // 2
+        else:  # feed: combo menor, encostado à direita, abaixo do texto
+            vals["BW"], vals["BRIGHT"] = 380, 30
+    elif ilu == "galao":
+        vals["BW"] = int(vals["BW"] * 1.05)
     extra = ""
     if spec.get("SEM_CTA"):      # slides do meio do carrossel
         extra += ".cta,.foot{display:none}"

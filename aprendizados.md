@@ -24,5 +24,7 @@ Quando uma regra daqui virar permanente, ela sobe para CLAUDE.md ou para a skill
 
 - 21/11 · Métricas do dia anterior às 5h30: seguidores e alcance ainda vêm 0 (Metricool atualiza com atraso); stories antigos não aparecem em IGST. No relatório, usar o último seguidor não-zero e marcar como "ainda não atualizado".
 
+- 21/11 · Água 20L ainda é fase experimental: vende, mas não era divulgada por falta de identidade. Gabriel pediu um mascote/sticker do galão → criado o mascote galão azul sorridente (templates/ilustracoes/galao.svg) e o combo botijão + galão. Peças de água usam "ILUSTRACAO": "galao" ou "combo".
+
 ## Números de referência
 - 21/11 · 68 seguidores. Reel "Sextou" (20/11): 19 views e 2 curtidas.

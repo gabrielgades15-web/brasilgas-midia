@@ -33,6 +33,10 @@ Antes de produzir qualquer peça, leia `skills/brasilgas-conteudo/SKILL.md` (ou 
 - Datas regionais têm peso: Círio (maniçoba cozinha por dias, então o gás não pode faltar), Semana Santa, quadra junina, Aniversário de Castanhal (28/01), Adesão do Pará (15/08).
 - Em dezembro, completar o calendário do ano seguinte (regras de cálculo em `_manutencao`) e avisar o Gabriel.
 
+## Ilustrações
+- Spec aceita `"ILUSTRACAO": "botijao"` (padrão), `"galao"` (mascote da água 20L) ou `"combo"` (botijão + galão, para gás e água juntos).
+- Peça sobre água 20L SEMPRE usa "galao" ou "combo". Nunca só o botijão.
+
 ## Carrossel
 - Formato "carrossel": de 3 a 5 slides em feed (1080x1350). Os slides do meio usam `"SEM_CTA": true` e `"NUMERO": "2/5"`. O último slide tem CTA. Pode usar `"SEM_BOTIJAO": true` para variar.
 - No Metricool é um POST com várias URLs em `media`, na ordem.

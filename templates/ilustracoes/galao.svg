@@ -1,0 +1,37 @@
+<svg viewBox="0 0 220 300" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="gw" x1="0" x2="1">
+   <stop offset="0" stop-color="#4FA9E8"/><stop offset=".35" stop-color="#BFE6FF"/><stop offset=".6" stop-color="#7CC4F2"/><stop offset="1" stop-color="#2F86C9"/>
+  </linearGradient>
+  <linearGradient id="gwater" x1="0" x2="0" y1="0" y2="1">
+   <stop offset="0" stop-color="#3D9BE0"/><stop offset="1" stop-color="#1D6FB8"/>
+  </linearGradient>
+  <clipPath id="body"><path d="M40 92 Q40 70 70 66 L150 66 Q180 70 180 92 L180 262 Q180 286 150 288 L70 288 Q40 286 40 262Z"/></clipPath>
+ </defs>
+ <!-- gargalo e tampa -->
+ <rect x="92" y="22" width="36" height="22" rx="5" fill="#1C3A8C"/>
+ <rect x="88" y="16" width="44" height="12" rx="4" fill="#2B57C4"/>
+ <path d="M86 44 L134 44 L146 68 L74 68Z" fill="url(#gw)" opacity=".95"/>
+ <!-- alça -->
+ <path d="M150 74 Q196 74 196 118 Q196 150 168 150" fill="none" stroke="#5DB3EC" stroke-width="12" stroke-linecap="round"/>
+ <!-- corpo -->
+ <path d="M40 92 Q40 70 70 66 L150 66 Q180 70 180 92 L180 262 Q180 286 150 288 L70 288 Q40 286 40 262Z" fill="url(#gw)" opacity=".92"/>
+ <g clip-path="url(#body)">
+  <path d="M30 128 Q70 116 110 128 T190 128 L190 300 L30 300Z" fill="url(#gwater)" opacity=".85"/>
+  <rect x="40" y="168" width="140" height="6" fill="#fff" opacity=".18"/>
+  <rect x="40" y="226" width="140" height="6" fill="#fff" opacity=".18"/>
+ </g>
+ <!-- brilho -->
+ <path d="M58 96 Q56 150 60 250" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity=".55" fill="none"/>
+ <!-- rosto -->
+ <ellipse cx="88" cy="176" rx="17" ry="20" fill="#fff"/>
+ <ellipse cx="134" cy="176" rx="17" ry="20" fill="#fff"/>
+ <circle cx="92" cy="180" r="9" fill="#13294F"/><circle cx="138" cy="180" r="9" fill="#13294F"/>
+ <circle cx="95" cy="176" r="3" fill="#fff"/><circle cx="141" cy="176" r="3" fill="#fff"/>
+ <path d="M90 212 Q111 236 132 212" fill="#13294F"/>
+ <path d="M98 220 Q111 230 124 220 Q111 226 98 220Z" fill="#E1061A"/>
+ <ellipse cx="72" cy="206" rx="9" ry="5" fill="#FF8FA3" opacity=".6"/>
+ <ellipse cx="150" cy="206" rx="9" ry="5" fill="#FF8FA3" opacity=".6"/>
+ <!-- gota -->
+ <path d="M200 40 Q212 58 200 66 Q188 58 200 40Z" fill="#BFE6FF"/>
+</svg>
