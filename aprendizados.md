@@ -37,5 +37,10 @@ Quando uma regra daqui virar permanente, ela sobe para CLAUDE.md ou para a skill
 
 - 21/11 · De 5 peças dos primeiros dias, 2 se perderam por ficarem como rascunho sem aprovação. Desde 21/11 o que passa no verificador sai sozinho. Primeiras peças com foto real agendadas (post 12h e story 18h).
 
+- 21/11 · Layout v1.2 a pedido do Gabriel: mais respiro entre título e topo (acento encostava), frase desce para a base da foto, botão do WhatsApp maior e centralizado. Fotos passam por tratamento leve automático (tratar_foto.py: contraste, cor, nitidez, vinheta), "mais bonitas sem exagero".
+- 21/11 · Logo em texto do template é o LOGO OFICIAL (aprovado pelo Gabriel).
+- 21/11 · Atendimento no WhatsApp é orgânico (feito por pessoas, respostas prontas já existem): não automatizar atendimento.
+- 21/11 · Link do WhatsApp já está no perfil. Feitos: bio (3 opções), 6 capas de destaque, 5 stories de destaque e 6 peças de anúncio (pasta perfil/ e anuncios/).
+
 ## Números de referência
 - 21/11 · 68 seguidores. Reel "Sextou" (20/11): 19 views e 2 curtidas.

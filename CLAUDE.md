@@ -40,8 +40,12 @@ Antes de produzir qualquer peça, leia `skills/brasilgas-conteudo/SKILL.md` (ou 
 ## Fotos reais
 - `fotos/catalogo.json` lista as fotos da revenda (fachada, estoque de P13, galões) com descrição e uso. Usar só as com "liberada": true.
 - Usar no spec: `"FOTO": "fotos/<arquivo>.jpg"` → foto de fundo com véu vermelho (topo e base escuros, meio mostra a foto). Pode combinar com ILUSTRACAO, mas o normal é foto sem ilustração.
+- A foto é tratada automaticamente (tratar_foto.py) e a frase (SUB) vai para a base da foto, acima do botão do WhatsApp.
 - Usar foto real em pelo menos metade das peças da semana (gente real e loja real engajam mais que desenho).
 - Prioridade: fachada com Gás do Povo e letreiro PARAGÁS (confiança, loja física) e pilhas de P13 prata (tem gás).
+
+## Atendimento
+- O atendimento no WhatsApp é orgânico (pessoas). O conteúdo só leva a pessoa até lá; nunca prometer resposta automática.
 
 ## Ilustrações
 - Spec aceita `"ILUSTRACAO": "botijao"` (padrão), `"galao"` (mascote da água 20L) ou `"combo"` (botijão + galão, para gás e água juntos).
