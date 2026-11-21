@@ -57,6 +57,8 @@ Quando uma regra daqui virar permanente, ela sobe para CLAUDE.md ou para a skill
 
 - 21/11 · Perfil novo do Google "Brasilgás" verificado (selo azul). Posts no Google religados; primeiro às 12h15.
 
+- 21/11 · Conferido às 12h20: post do Instagram das 12h PUBLICADO (primeiro após trocar o usuário para @brasilgas_caicara, a conexão continuou funcionando) e primeiro post no Google (perfil Brasilgás) PUBLICADO às 12h15.
+
 ## Números de referência
 - 21/11 · Painel do Instagram: 830 visualizações nos últimos 30 dias, 69 seguidores, 23 posts.
 - 21/11 · 68 seguidores. Reel "Sextou" (20/11): 19 views e 2 curtidas.
