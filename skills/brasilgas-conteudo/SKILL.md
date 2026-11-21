@@ -5,7 +5,7 @@ description: Cria artes, legendas, carrosséis, stories e roteiros de Reels para
 
 # Conteúdo Brasilgás
 
-Use esta skill sempre que for produzir qualquer peça para o @brasilgas7035: arte de post, story, carrossel, Reel, legenda, gancho, hashtags ou ideia de pauta.
+Use esta skill sempre que for produzir qualquer peça para o @brasilgas_caicara (antigo @brasilgas7035): arte de post, story, carrossel, Reel, legenda, gancho, hashtags ou ideia de pauta.
 
 ## 0. Plugins de apoio (use quando estiverem disponíveis na sessão)
 Antes de escrever, veja se as skills dos plugins **Marketing** (Anthropic) e **Social Media Skills** estão listadas. Se estiverem, carregue as que servem para a peça do dia e aplique o método delas. **As regras desta skill sempre vencem em caso de conflito** (preço, dados de contato, tom, P13 prata).

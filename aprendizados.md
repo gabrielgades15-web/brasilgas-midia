@@ -42,5 +42,9 @@ Quando uma regra daqui virar permanente, ela sobe para CLAUDE.md ou para a skill
 - 21/11 · Atendimento no WhatsApp é orgânico (feito por pessoas, respostas prontas já existem): não automatizar atendimento.
 - 21/11 · Link do WhatsApp já está no perfil. Feitos: bio (3 opções), 6 capas de destaque, 5 stories de destaque e 6 peças de anúncio (pasta perfil/ e anuncios/).
 
+- 21/11 · Perfil todo atualizado pelo Gabriel: usuário agora é @brasilgas_caicara, nome "Brasilgás | Gás e Água em Castanhal", bio nova, categoria, endereço, destaques e foto de perfil com o logo oficial (opção A). Primeira publicação 100% automática: story da água às 10h.
+- 21/11 · Próxima etapa decidida: anúncios pagos a partir de segunda (23/11).
+
 ## Números de referência
+- 21/11 · Painel do Instagram: 830 visualizações nos últimos 30 dias, 69 seguidores, 23 posts.
 - 21/11 · 68 seguidores. Reel "Sextou" (20/11): 19 views e 2 curtidas.
