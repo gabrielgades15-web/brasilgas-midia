@@ -62,3 +62,5 @@ Quando uma regra daqui virar permanente, ela sobe para CLAUDE.md ou para a skill
 ## Números de referência
 - 21/11 · Painel do Instagram: 830 visualizações nos últimos 30 dias, 69 seguidores, 23 posts.
 - 21/11 · 68 seguidores. Reel "Sextou" (20/11): 19 views e 2 curtidas.
+
+- 22/11 · Manchete de story que quebra deixando uma palavra sozinha ("13H") fica feia, e o verificador não pega → manchete curta (até ~15 caracteres) para caber em 1 linha, ou conferir a quebra no Read.

@@ -57,5 +57,15 @@
     "foto": "fotos/fachada-frente-gas-do-povo.jpg",
     "metricool_id": 436607615,
     "publicado_automatico": true
+  },
+  {
+    "data": "2026-11-22",
+    "formato": "story",
+    "pilar": "Domingo aberto",
+    "headline": "ABERTO ATÉ 13H",
+    "gancho": "Urgência leve",
+    "foto": "fotos/fachada-esquina-completa.jpg",
+    "metricool_id": 437370677,
+    "publicado_automatico": true
   }
 ]
