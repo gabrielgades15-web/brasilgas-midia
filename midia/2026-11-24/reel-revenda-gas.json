@@ -1,0 +1,74 @@
+{
+ "TRANSICAO": 0.5,
+ "CENAS": [
+  {
+   "FOTO": "fotos/estoque-p13-ceu-azul.jpg",
+   "DUR": 4.0,
+   "DE": {
+    "x": 0.62,
+    "y": 0.55,
+    "zoom": 1.0
+   },
+   "PARA": {
+    "x": 0.45,
+    "y": 0.55,
+    "zoom": 1.4
+   },
+   "KICKER": "Gás de cozinha em Castanhal",
+   "HEADLINE": "O gás acabou?<br>A gente leva",
+   "SEM_CTA": true
+  },
+  {
+   "FOTO": "fotos/fachada-paragas-lateral-2.jpg",
+   "DUR": 3.5,
+   "DE": {
+    "x": 0.4,
+    "y": 0.5,
+    "zoom": 1.0
+   },
+   "PARA": {
+    "x": 0.18,
+    "y": 0.42,
+    "zoom": 1.2
+   },
+   "KICKER": "Revenda autorizada Paragás",
+   "HEADLINE": "Botijão P13 original",
+   "SEM_CTA": true
+  },
+  {
+   "FOTO": "fotos/fachada-frente-gas-do-povo.jpg",
+   "DUR": 3.5,
+   "DE": {
+    "x": 0.3,
+    "y": 0.52,
+    "zoom": 1.1
+   },
+   "PARA": {
+    "x": 0.45,
+    "y": 0.5,
+    "zoom": 1.45
+   },
+   "KICKER": "Revenda credenciada",
+   "HEADLINE": "Tem Gás do Povo<br>aqui",
+   "SEM_CTA": true
+  },
+  {
+   "FOTO": "fotos/estoque-p13-alcas-ceu.jpg",
+   "DUR": 4.5,
+   "DE": {
+    "x": 0.5,
+    "y": 0.5,
+    "zoom": 1.05
+   },
+   "PARA": {
+    "x": 0.55,
+    "y": 0.45,
+    "zoom": 1.3
+   },
+   "KICKER": "Entrega de gás e água",
+   "HEADLINE": "Pediu no zap,<br>o gás chegou",
+   "SUB": "Botijão P13 Paragás e água 20L até a sua porta.",
+   "CTA": "Chame no WhatsApp"
+  }
+ ]
+}
