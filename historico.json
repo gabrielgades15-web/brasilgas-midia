@@ -83,17 +83,18 @@
   {
     "data": "2026-11-24",
     "formato": "reel",
-    "pilar": "Humanização / loja física (Motion Reel)",
-    "headline": "A LOJA VERMELHA DA ESQUINA",
-    "gancho": "Pergunta direta + prova local",
+    "pilar": "Produto / entrega (Motion Reel)",
+    "headline": "O GÁS ACABOU? A GENTE LEVA",
+    "gancho": "Dor imediata (gás acabou) + solução",
     "fotos": [
-      "fachada-esquina-completa",
+      "estoque-p13-ceu-azul",
       "fachada-paragas-lateral-2",
       "fachada-frente-gas-do-povo",
-      "estoque-p13-ceu-azul"
+      "estoque-p13-alcas-ceu"
     ],
-    "metricool_id": 438279892,
+    "metricool_id": 439057710,
     "publicado_automatico": true,
-    "musica": "sem (catálogo de áudio 403)"
+    "musica": "sem (catálogo de áudio 403)",
+    "obs": "substituiu 'A loja vermelha da esquina' a pedido do Gabriel em 23/11 (o termo não dizia que é revenda de gás)"
   }
 ]
