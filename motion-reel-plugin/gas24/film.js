@@ -11,20 +11,22 @@ const DISPLAY = 'Display', UI = 'UI';
 const HITS = [
   [0, 'hook: ACABOU O GÁS?', 'impact'],
   [0.5, 'kicker', 'click'],
-  [4, 'A GENTE LEVA', 'thud', { pitch: 140, to: 60 }],
-  [5, 'SUA RECARGA', 'pop', { pitch: 'E5' }],
+  [3, 'A GENTE LEVA', 'thud', { pitch: 140, to: 60 }],
+  [4, 'SUA RECARGA', 'pop', { pitch: 'E5' }],
   [7.5, 'whip to the shop', 'whoosh', { len: 0.5 }],
   [8, 'drop: revenda autorizada', 'impact'],
-  [9, 'RECARGA PARAGÁS', 'pop', { pitch: 'G5' }],
-  [12, 'camera lands on the sign', 'tick'],
-  [14, 'cut: Gás do Povo', 'thud', { pitch: 120, to: 55 }],
-  [15, 'TEM GÁS DO POVO', 'pop', { pitch: 'B5' }],
-  [20, 'cut: entrega', 'click'],
-  [20.5, 'PEDIU NO ZAP', 'pop', { pitch: 'D6' }],
-  [23, 'água 20L slides in', 'whoosh', { len: 0.4, from: 2400, to: 600 }],
-  [25.5, 'red wipe', 'riser', { len: 0.6 }],
-  [26, 'end card', 'impact'],
-  [27, 'WhatsApp button', 'bell', { pitch: 'G6' }],
+  [8.8, 'PARAGÁS', 'pop', { pitch: 'G5' }],
+  [16.5, 'whip to Gás do Povo', 'whoosh', { len: 0.5 }],
+  [17, 'TEM GÁS DO POVO', 'thud', { pitch: 120, to: 55 }],
+  [17.8, 'AQUI', 'pop', { pitch: 'B5' }],
+  [25.5, 'whip to entrega', 'whoosh', { len: 0.5 }],
+  [26, 'PEDIU NO ZAP', 'click'],
+  [27, 'CHEGA', 'pop', { pitch: 'D6' }],
+  [30, 'água 20L slides in', 'whoosh', { len: 0.4, from: 2400, to: 600 }],
+  [35.4, 'red wipe', 'riser', { len: 0.6 }],
+  [36, 'end card', 'impact'],
+  [37, 'WhatsApp button', 'bell', { pitch: 'G6' }],
+  [42, 'button pulse', 'bell', { pitch: 'D6' }],
 ];
 
 // ---------------------------------------------------------------- helpers
@@ -91,7 +93,7 @@ const LX = S.x + 4;
 
 // ---------------------------------------------------------------- S1 hook (u 0..8): P13 row, camera pushes in
 function sHook(ctx, u, IMG, slide = 0) {
-  const z = 1.0 * (1.32 / 1.0) ** E.inOutSine(prog(u, -1, 8));          // log-space dolly
+  const z = 1.0 * (1.32 / 1.0) ** E.inOutSine(prog(u, -1, 8.2));
   photo(ctx, IMG.p13, 0.5, 0.58, z, slide, 0);
   ctx.save(); ctx.translate(slide, 0);
   veil(ctx);
@@ -99,76 +101,72 @@ function sHook(ctx, u, IMG, slide = 0) {
   pill(ctx, 'RECARGA DE GÁS EM CASTANHAL', LX, S.y + 160, 40, C.yellow, C.redDeep, u, 0.5);
   headline(ctx, 'ACABOU', LX, S.y + 430, 190, u, -0.2);
   headline(ctx, 'O GÁS?', LX, S.y + 610, 190, u, 0.6, C.yellow);
-  // answer lands on beat 4, bottom third
-  headline(ctx, 'A GENTE LEVA', LX, H - 640, 132, u, 4);
-  headline(ctx, 'SUA RECARGA', LX, H - 495, 132, u, 5, C.yellow);
+  headline(ctx, 'A GENTE LEVA', LX, H - 640, 132, u, 3);
+  headline(ctx, 'SUA RECARGA', LX, H - 495, 132, u, 4, C.yellow);
   ctx.restore();
 }
 
-// ---------------------------------------------------------------- S2 revenda autorizada (u 8..14): pan along the wall to the PARAGÁS sign
+// ---------------------------------------------------------------- S2 revenda autorizada (u 8..17): already framed on the PARAGÁS sign, slow push
 function sShop(ctx, u, IMG, slide = 0) {
-  const p = E.inOutCubic(prog(u, 7.5, 12.2));
-  const fx = lerp(0.5, 0.17, p), z = 1.0 * (1.28) ** p;
-  photo(ctx, IMG.lateral, fx, 0.30, z, slide, 0);
+  const p = E.inOutSine(prog(u, 7.5, 17));
+  photo(ctx, IMG.lateral, lerp(0.21, 0.16, p), 0.36, 1.18 * (1.32 / 1.18) ** p, slide, 0);
   ctx.save(); ctx.translate(slide, 0);
   veil(ctx, 0.95);
-  pill(ctx, 'REVENDA AUTORIZADA PARAGÁS', LX, S.y + 40, 40, C.blue, C.white, u, 8.3);
-  headline(ctx, 'RECARGA', LX, S.y + 330, 170, u, 8.8);
-  headline(ctx, 'PARAGÁS', LX, S.y + 490, 170, u, 9.4, C.yellow);
-  headline(ctx, 'ORIGINAL', LX, S.y + 625, 120, u, 10.2);
+  pill(ctx, 'REVENDA AUTORIZADA PARAGÁS', LX, S.y + 40, 40, C.blue, C.white, u, 7.6);
+  headline(ctx, 'RECARGA', LX, S.y + 330, 170, u, 7.8);
+  headline(ctx, 'PARAGÁS', LX, S.y + 490, 170, u, 8.6, C.yellow);
+  headline(ctx, 'ORIGINAL', LX, S.y + 625, 120, u, 9.6);
   ctx.restore();
 }
 
-// ---------------------------------------------------------------- S3 Gás do Povo (u 14..20): push in to the banner
-function sPovo(ctx, u, IMG) {
-  const z = 1.05 * (1.6 / 1.05) ** E.outCubic(prog(u, 14, 20.5));
-  photo(ctx, IMG.frente, 0.44, 0.47, z);
+// ---------------------------------------------------------------- S3 Gás do Povo (u 17..26): push in to the banner
+function sPovo(ctx, u, IMG, slide = 0) {
+  const z = 1.05 * (1.5 / 1.05) ** E.inOutSine(prog(u, 16.5, 26));
+  photo(ctx, IMG.frente, 0.44, 0.47, z, slide, 0);
+  ctx.save(); ctx.translate(slide, 0);
   veil(ctx, 0.95);
-  pill(ctx, 'REVENDA CREDENCIADA', LX, S.y + 40, 40, C.yellow, C.redDeep, u, 14);
-  headline(ctx, 'TEM GÁS', LX, S.y + 330, 170, u, 14.3);
-  headline(ctx, 'DO POVO', LX, S.y + 490, 170, u, 14.9, C.yellow);
-  headline(ctx, 'AQUI', LX, S.y + 625, 120, u, 15.7);
+  pill(ctx, 'REVENDA CREDENCIADA', LX, S.y + 40, 40, C.yellow, C.redDeep, u, 16.6);
+  headline(ctx, 'TEM GÁS', LX, S.y + 330, 170, u, 16.8);
+  headline(ctx, 'DO POVO', LX, S.y + 490, 170, u, 17.4, C.yellow);
+  headline(ctx, 'AQUI', LX, S.y + 625, 120, u, 18.2);
+  ctx.restore();
 }
 
-// ---------------------------------------------------------------- S4 entrega (u 20..26): alças, then the 20 L card slides in
-function sEntrega(ctx, u, IMG) {
-  const z = 1.08 * (1.3 / 1.08) ** E.inOutSine(prog(u, 20, 26));
-  photo(ctx, IMG.alcas, 0.52, 0.55, z);
+// ---------------------------------------------------------------- S4 entrega (u 26..36): alças, then the 20 L card slides in
+function sEntrega(ctx, u, IMG, slide = 0) {
+  const z = 1.08 * (1.3 / 1.08) ** E.inOutSine(prog(u, 25.5, 36));
+  photo(ctx, IMG.alcas, 0.52, 0.55, z, slide, 0);
+  ctx.save(); ctx.translate(slide, 0);
   veil(ctx);
-  pill(ctx, 'ENTREGA EM CASA', LX, S.y + 40, 40, C.yellow, C.redDeep, u, 20);
-  headline(ctx, 'PEDIU NO ZAP,', LX, S.y + 290, 140, u, 20.2);
-  headline(ctx, 'SUA RECARGA', LX, S.y + 430, 140, u, 21.2, C.yellow);
-  headline(ctx, 'CHEGA', LX, S.y + 570, 140, u, 21.8);
-  // water card: real photo in a tilted card, springs up from below on beat 23
-  const k = springU(u, 23, SPRING.bouncy);
+  pill(ctx, 'ENTREGA EM CASA', LX, S.y + 40, 40, C.yellow, C.redDeep, u, 25.6);
+  headline(ctx, 'PEDIU NO ZAP,', LX, S.y + 290, 140, u, 25.8);
+  headline(ctx, 'SUA RECARGA', LX, S.y + 430, 140, u, 26.6, C.yellow);
+  headline(ctx, 'CHEGA', LX, S.y + 570, 140, u, 27.2);
+  const k = springU(u, 30, SPRING.bouncy);
   if (k > 0.001) {
     const w = 430, h = 560, cx = W - 72 - w / 2 + 10, cy = lerp(H + h, S.y + S.h - h / 2 - 20, k);
-    ctx.save(); ctx.translate(cx, cy); ctx.rotate(-0.06 + 0.03 * wobble(u - 23, 1.6, 3));
+    ctx.save(); ctx.translate(cx, cy); ctx.rotate(-0.06 + 0.03 * wobble(u - 30, 1.6, 3));
     rrect(ctx, -w / 2 - 10, -h / 2 - 10, w + 20, h + 20, 30); ctx.fillStyle = C.white; ctx.fill();
     rrect(ctx, -w / 2, -h / 2, w, h, 22); ctx.save(); ctx.clip();
     const s = Math.max(w / IMG.agua.width, h / IMG.agua.height) * 1.15;
     ctx.drawImage(IMG.agua, -IMG.agua.width * s * 0.5, -IMG.agua.height * s * 0.62, IMG.agua.width * s, IMG.agua.height * s);
     ctx.restore(); ctx.restore();
   }
-  const kp = springU(u, 23.4, SPRING.snappy);
-  if (kp > 0.001) pill(ctx, '+ ÁGUA 20L', LX, S.y + 760, 56, C.yellow, C.redDeep, u, 23.4);
-  if (kp > 0.001) pill(ctx, 'NO MESMO PEDIDO', LX, S.y + 880, 40, C.white, C.redDeep, u, 23.7);
+  pill(ctx, '+ ÁGUA 20L', LX, S.y + 760, 56, C.yellow, C.redDeep, u, 30.4);
+  pill(ctx, 'NO MESMO PEDIDO', LX, S.y + 880, 40, C.white, C.redDeep, u, 31);
+  ctx.restore();
 }
 
-// ---------------------------------------------------------------- S5 end card (u 26..32)
+// ---------------------------------------------------------------- S5 end card (u 36..48, 5.6 s on screen)
 function sEnd(ctx, u, IMG) {
   fill(ctx, C.red);
-  // soft darker band behind the footer for structure (flat, not a gradient)
   ctx.fillStyle = C.redDeep; ctx.fillRect(0, S.y + 960, W, H - S.y - 960);
-  const kl = springU(u, 26, SPRING.bouncy);
-  logo(ctx, IMG.logo, W / 2, S.y + 170, 600, kl);
-  // headline
-  headlineC(ctx, 'CHAME NO', S.y + 590, 150, u, 26.4);
-  headlineC(ctx, 'WHATSAPP', S.y + 740, 150, u, 26.8, C.yellow);
-  // button: springs in on 27, one pulse on 28
-  const kb = springU(u, 27, SPRING.bouncy);
+  logo(ctx, IMG.logo, W / 2, S.y + 170, 600, springU(u, 36, SPRING.bouncy));
+  headlineC(ctx, 'CHAME NO', S.y + 590, 150, u, 36.4);
+  headlineC(ctx, 'WHATSAPP', S.y + 740, 150, u, 36.8, C.yellow);
+  const kb = springU(u, 37, SPRING.bouncy);
   if (kb > 0.001) {
-    const pulse = 1 + 0.06 * Math.max(0, wobble(u - 28, 1.4, 4));
+    const pulse = 1 + 0.06 * Math.max(0, wobble(u - 38, 1.4, 4)) + 0.06 * Math.max(0, wobble(u - 42, 1.4, 4));
     const bw = 860, bh = 190, cx = W / 2, cy = S.y + 860;
     ctx.save(); ctx.translate(cx, cy); ctx.scale(kb * pulse, kb * pulse);
     rrect(ctx, -bw / 2, -bh / 2, bw, bh, 34); ctx.fillStyle = C.green; ctx.fill();
@@ -176,7 +174,7 @@ function sEnd(ctx, u, IMG) {
     text(ctx, 'PEÇA SUA RECARGA', 0, 72, font(34, 800, UI), C.white, 'center', 2);
     ctx.restore();
   }
-  const kf2 = E.outQuint(prog(u, 27.6, 28.4));
+  const kf2 = E.outQuint(prog(u, 37.8, 38.8));
   if (kf2 > 0) {
     const f = font(36, 800, UI), y0 = S.y + 1070 + (1 - kf2) * 40;
     ctx.globalAlpha = kf2;
@@ -185,6 +183,14 @@ function sEnd(ctx, u, IMG) {
     text(ctx, 'ALAMEDA PADRE ROLIM, 139 · CASTANHAL', W / 2, y0 + 112, f, C.yellow, 'center');
     ctx.globalAlpha = 1;
   }
+}
+
+// whip: A slides out left while B slides in from the right, both fully drawn (veil + type), no empty frame
+function whip(ctx, u, IMG, A, B, u0) {
+  const p = E.inOutCubic(prog(u, u0, u0 + 0.6));
+  const xa = -p * W, xb = (1 - p) * W;
+  ctx.save(); ctx.beginPath(); ctx.rect(xa, 0, W, H); ctx.clip(); A(ctx, u, IMG, xa); ctx.restore();
+  ctx.save(); ctx.beginPath(); ctx.rect(xb, 0, W, H); ctx.clip(); B(ctx, u, IMG, xb); ctx.restore();
 }
 
 M.film({
@@ -197,18 +203,15 @@ M.film({
   hits: HITS,
   draw(ctx, u, t, IMG) {
     if (u < 7.5) return sHook(ctx, u, IMG);
-    if (u < 8.15) {                     // whip: hook slides out left while the shop slides in, both on screen
-      const p = E.inOutCubic(prog(u, 7.5, 8.15));
-      sHook(ctx, u, IMG, -p * W);
-      sShop(ctx, u, IMG, (1 - p) * W);
-      return;
-    }
-    if (u < 14) return sShop(ctx, u, IMG);
-    if (u < 20) return sPovo(ctx, u, IMG);
-    if (u < 25.5) return sEntrega(ctx, u, IMG);
-    if (u < 26) {                       // red wipe up from the bottom carries into the end card
+    if (u < 8.1) return whip(ctx, u, IMG, sHook, sShop, 7.5);
+    if (u < 16.5) return sShop(ctx, u, IMG);
+    if (u < 17.1) return whip(ctx, u, IMG, sShop, sPovo, 16.5);
+    if (u < 25.5) return sPovo(ctx, u, IMG);
+    if (u < 26.1) return whip(ctx, u, IMG, sPovo, sEntrega, 25.5);
+    if (u < 35.4) return sEntrega(ctx, u, IMG);
+    if (u < 36) {
       sEntrega(ctx, u, IMG);
-      const p = E.inCubic(prog(u, 25.5, 26));
+      const p = E.inCubic(prog(u, 35.4, 36));
       ctx.fillStyle = C.red; ctx.fillRect(0, H * (1 - p), W, H * p);
       return;
     }
