@@ -75,9 +75,25 @@
     "headline": "FAZ ENTREGA? FAZ SIM!",
     "gancho": "Pergunta direta (demanda real do WhatsApp)",
     "foto": "fotos/fachada-frente-gas-do-povo.jpg",
-    "metricool_id": 438257271,
-    "metricool_id_gmb": 438257273,
+    "metricool_id": 438279690,
+    "metricool_id_gmb": 438279698,
     "publicado_automatico": true,
     "obs": "arte refeita (v2) em 23/11 de madrugada: a lateral virava muro vermelho"
+  },
+  {
+    "data": "2026-11-24",
+    "formato": "reel",
+    "pilar": "Humanização / loja física (Motion Reel)",
+    "headline": "A LOJA VERMELHA DA ESQUINA",
+    "gancho": "Pergunta direta + prova local",
+    "fotos": [
+      "fachada-esquina-completa",
+      "fachada-paragas-lateral-2",
+      "fachada-frente-gas-do-povo",
+      "estoque-p13-ceu-azul"
+    ],
+    "metricool_id": 438279892,
+    "publicado_automatico": true,
+    "musica": "sem (catálogo de áudio 403)"
   }
 ]

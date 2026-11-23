@@ -1,6 +1,6 @@
 {
   "_obs": "Músicas para Reels. A tarefa preenche 'ids_ok' com ids numéricos que funcionaram.",
-  "audio_bloqueado": false,
+  "audio_bloqueado": true,
   "buscas_sugeridas": [
     "Sextou",
     "forró instrumental",
@@ -10,5 +10,6 @@
     "samba instrumental",
     "funk instrumental leve"
   ],
-  "ids_ok": []
+  "ids_ok": [],
+  "_bloqueio": "23/11: Metricool respondeu 403 no catálogo de áudio (conta não é Business ligada a Página do Facebook). Destrava quando ligar Instagram + Página no Meta Business. Gabriel avisado em 23/11."
 }

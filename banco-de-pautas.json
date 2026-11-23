@@ -2,15 +2,95 @@
   "_como_usar": "Banco de ideias (método 2 de skills/brasilgas-conteudo/prompts-crescimento.md). A rodada diária pega daqui quando a pauta do dia tiver ideia já usada. Atualizado no 1º domingo do mês e pela leitura semanal (método 7). 'origem': demanda comprovada (pergunta real) ou hipótese.",
   "atualizado_em": "2026-11-23",
   "ideias": [
-    {"categoria": "DESCOBERTAS", "tema": "Como usar o Gás do Povo", "headline": "GÁS DO POVO EM 3 PASSOS", "formato": "carrossel", "origem": "demanda comprovada (CPF/código/taxa em 46 pedidos)", "nota": 5, "usada": false},
-    {"categoria": "DESEJOS", "tema": "Pedir pelo WhatsApp é rápido", "headline": "PEDIU NO ZAP, CHEGOU", "formato": "post", "origem": "demanda comprovada ('faz entrega?' em 41 pedidos)", "nota": 5, "usada": false},
-    {"categoria": "PROBLEMAS", "tema": "Gás acabou no meio do almoço", "headline": "ACABOU O GÁS NO ALMOÇO?", "formato": "reel", "origem": "hipótese", "nota": 4, "usada": false},
-    {"categoria": "DESCOBERTAS", "tema": "Quanto tempo dura um P13", "headline": "QUANTO DURA UM P13?", "formato": "carrossel", "origem": "hipótese", "nota": 4, "usada": false},
-    {"categoria": "ERROS", "tema": "Deixar o gás acabar no fim de semana", "headline": "NÃO DEIXE PRA ÚLTIMA HORA", "formato": "story", "origem": "hipótese", "nota": 3, "usada": false},
-    {"categoria": "ERROS", "tema": "Mangueira e regulador vencidos", "headline": "SUA MANGUEIRA ESTÁ VENCIDA?", "formato": "story", "origem": "hipótese", "nota": 3, "usada": false},
-    {"categoria": "OPORTUNIDADES", "tema": "Gás para comércio (padaria, lanchonete)", "headline": "SEU COMÉRCIO NÃO PODE PARAR", "formato": "post", "origem": "demanda comprovada (pedidos de padaria/comércio)", "nota": 4, "usada": false},
-    {"categoria": "OPORTUNIDADES", "tema": "Gás e água no mesmo pedido", "headline": "GÁS E ÁGUA NUM PEDIDO SÓ", "formato": "post", "origem": "demanda comprovada (53 pedidos com os dois)", "nota": 4, "usada": true},
-    {"categoria": "DESEJOS", "tema": "Indique um vizinho", "headline": "INDICOU, AJUDOU O VIZINHO", "formato": "story", "origem": "demanda comprovada (indicação espontânea); sem prêmio, nada de brinde", "nota": 3, "usada": false},
-    {"categoria": "PROBLEMAS", "tema": "3 sinais de que o gás está acabando", "headline": "3 SINAIS QUE O GÁS VAI ACABAR", "formato": "carrossel", "origem": "hipótese", "nota": 4, "usada": false}
+    {
+      "categoria": "DESCOBERTAS",
+      "tema": "Como usar o Gás do Povo",
+      "headline": "GÁS DO POVO EM 3 PASSOS",
+      "formato": "carrossel",
+      "origem": "demanda comprovada (CPF/código/taxa em 46 pedidos)",
+      "nota": 5,
+      "usada": false
+    },
+    {
+      "categoria": "DESEJOS",
+      "tema": "Pedir pelo WhatsApp é rápido",
+      "headline": "PEDIU NO ZAP, CHEGOU",
+      "formato": "post",
+      "origem": "demanda comprovada ('faz entrega?' em 41 pedidos)",
+      "nota": 5,
+      "usada": true
+    },
+    {
+      "categoria": "PROBLEMAS",
+      "tema": "Gás acabou no meio do almoço",
+      "headline": "ACABOU O GÁS NO ALMOÇO?",
+      "formato": "reel",
+      "origem": "hipótese",
+      "nota": 4,
+      "usada": false
+    },
+    {
+      "categoria": "DESCOBERTAS",
+      "tema": "Quanto tempo dura um P13",
+      "headline": "QUANTO DURA UM P13?",
+      "formato": "carrossel",
+      "origem": "hipótese",
+      "nota": 4,
+      "usada": false
+    },
+    {
+      "categoria": "ERROS",
+      "tema": "Deixar o gás acabar no fim de semana",
+      "headline": "NÃO DEIXE PRA ÚLTIMA HORA",
+      "formato": "story",
+      "origem": "hipótese",
+      "nota": 3,
+      "usada": false
+    },
+    {
+      "categoria": "ERROS",
+      "tema": "Mangueira e regulador vencidos",
+      "headline": "SUA MANGUEIRA ESTÁ VENCIDA?",
+      "formato": "story",
+      "origem": "hipótese",
+      "nota": 3,
+      "usada": false
+    },
+    {
+      "categoria": "OPORTUNIDADES",
+      "tema": "Gás para comércio (padaria, lanchonete)",
+      "headline": "SEU COMÉRCIO NÃO PODE PARAR",
+      "formato": "post",
+      "origem": "demanda comprovada (pedidos de padaria/comércio)",
+      "nota": 4,
+      "usada": false
+    },
+    {
+      "categoria": "OPORTUNIDADES",
+      "tema": "Gás e água no mesmo pedido",
+      "headline": "GÁS E ÁGUA NUM PEDIDO SÓ",
+      "formato": "post",
+      "origem": "demanda comprovada (53 pedidos com os dois)",
+      "nota": 4,
+      "usada": true
+    },
+    {
+      "categoria": "DESEJOS",
+      "tema": "Indique um vizinho",
+      "headline": "INDICOU, AJUDOU O VIZINHO",
+      "formato": "story",
+      "origem": "demanda comprovada (indicação espontânea); sem prêmio, nada de brinde",
+      "nota": 3,
+      "usada": false
+    },
+    {
+      "categoria": "PROBLEMAS",
+      "tema": "3 sinais de que o gás está acabando",
+      "headline": "3 SINAIS QUE O GÁS VAI ACABAR",
+      "formato": "carrossel",
+      "origem": "hipótese",
+      "nota": 4,
+      "usada": false
+    }
   ]
 }
