@@ -93,11 +93,23 @@
       "estoque-p13-alcas-ceu",
       "porta-grade-galoes"
     ],
-    "metricool_id": 439523646,
+    "metricool_id": 439539856,
     "publicado_automatico": true,
     "musica": "trilha sintetizada dentro do vídeo (plugin Motion Reel), sem catálogo do Instagram",
     "obs": "substituiu 'A loja vermelha da esquina' a pedido do Gabriel em 23/11 (o termo não dizia que é revenda de gás)",
     "arquivo": "midia/2026-11-24/reel-recarga-motion-v2.mp4",
-    "duracao_s": 22.5
+    "duracao_s": 22.5,
+    "obs2": "23/11 20h34: no Metricool está como RASCUNHO (draft:true) às 18h; só publica se o Gabriel aprovar"
+  },
+  {
+    "data": "2026-11-24",
+    "formato": "story",
+    "pilar": "Indicação / comunidade",
+    "headline": "INDICA A GENTE?",
+    "gancho": "Pergunta direta",
+    "foto": "fotos/estoque-p13-ceu-azul.jpg",
+    "evento": null,
+    "metricool_id": null,
+    "publicado_automatico": true
   }
 ]
