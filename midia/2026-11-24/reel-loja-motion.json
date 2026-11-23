@@ -1,0 +1,74 @@
+{
+ "TRANSICAO": 0.5,
+ "CENAS": [
+  {
+   "FOTO": "fotos/fachada-esquina-completa.jpg",
+   "DUR": 4.0,
+   "DE": {
+    "x": 0.7,
+    "y": 0.52,
+    "zoom": 1.0
+   },
+   "PARA": {
+    "x": 0.24,
+    "y": 0.47,
+    "zoom": 1.45
+   },
+   "KICKER": "Conhece a Brasilgás?",
+   "HEADLINE": "A loja vermelha da esquina",
+   "SEM_CTA": true
+  },
+  {
+   "FOTO": "fotos/fachada-paragas-lateral-2.jpg",
+   "DUR": 3.5,
+   "DE": {
+    "x": 0.45,
+    "y": 0.5,
+    "zoom": 1.0
+   },
+   "PARA": {
+    "x": 0.14,
+    "y": 0.38,
+    "zoom": 1.6
+   },
+   "KICKER": "Revenda autorizada",
+   "HEADLINE": "Gás Paragás de verdade",
+   "SEM_CTA": true
+  },
+  {
+   "FOTO": "fotos/fachada-frente-gas-do-povo.jpg",
+   "DUR": 3.5,
+   "DE": {
+    "x": 0.3,
+    "y": 0.52,
+    "zoom": 1.1
+   },
+   "PARA": {
+    "x": 0.45,
+    "y": 0.5,
+    "zoom": 1.45
+   },
+   "KICKER": "Revenda credenciada",
+   "HEADLINE": "Gás do Povo também",
+   "SEM_CTA": true
+  },
+  {
+   "FOTO": "fotos/estoque-p13-ceu-azul.jpg",
+   "DUR": 4.5,
+   "DE": {
+    "x": 0.4,
+    "y": 0.55,
+    "zoom": 1.05
+   },
+   "PARA": {
+    "x": 0.58,
+    "y": 0.55,
+    "zoom": 1.3
+   },
+   "KICKER": "Entrega em Castanhal",
+   "HEADLINE": "Pediu no zap, chegou",
+   "SUB": "Gás P13 Paragás e água 20L até a sua porta.",
+   "CTA": "Chame no WhatsApp"
+  }
+ ]
+}

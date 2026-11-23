@@ -49,6 +49,11 @@ A tarefa roda às 20h34 (America/Belem) e produz as peças de AMANHÃ. Elas entr
 - Usar foto real em pelo menos metade das peças da semana (gente real e loja real engajam mais que desenho).
 - Prioridade: fachada com Gás do Povo e letreiro PARAGÁS (confiança, loja física) e pilhas de P13 prata (tem gás).
 
+## Motion Reel (desde 23/11/2026)
+- Fotos de fachada deitadas e de longe estão BLOQUEADAS para post e story (no recorte vertical o letreiro sai do quadro e sobra muro vermelho). Ficam reservadas para o Motion Reel: `motion_reel.py` + `skills/motion-reel/SKILL.md`. A câmera desliza até o `foco_letreiro` do catálogo.
+- Reel sem vídeo gravado = Motion Reel. A cada lote novo de fotos, marcar no catálogo as que servem para Motion Reel.
+- Fotos novas devem ser tiradas em pé, com o letreiro ou o produto no centro e de perto.
+
 ## Atendimento
 - O atendimento no WhatsApp é orgânico (pessoas). O conteúdo só leva a pessoa até lá; nunca prometer resposta automática.
 

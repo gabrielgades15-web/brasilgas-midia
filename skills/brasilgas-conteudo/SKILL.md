@@ -103,6 +103,8 @@ Ideias:
 - comidas típicas da data (maniçoba, pato no tucupi, peixe da Semana Santa, comidas juninas).
 
 ### Reel (12 a 18 s, 1080x1920)
+- Sem vídeo gravado → **Motion Reel** (`skills/motion-reel/SKILL.md`): fotos reais com a câmera deslizando até o letreiro.
+- Foto de fachada deitada nunca vai em post ou story (o letreiro sai do recorte); só em Motion Reel.
 - Roteiro em 4 telas: **gancho (0–3 s) → problema → solução Brasilgás → CTA com WhatsApp**.
 - Se houver fotos ou vídeos reais em `fotos/`, eles vêm primeiro. **Rosto humano engaja muito mais** (no Leo Gás, atendente falando pra câmera teve de 2 a 3 vezes mais curtidas que arte só de IA).
 - Roteiro de fala para gravação (talking head, 15–30 s):

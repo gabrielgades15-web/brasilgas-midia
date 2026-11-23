@@ -9,7 +9,11 @@ LAYOUT = {
     "story": dict(W=1080, H=1920, PT=210, PB=240, GAP1=110, CSIZE=72, CSUB=30, HSIZE=128, HW=920, SSIZE=36, SW=880, IPAD=30, BMAX=860),
 }
 
-def render(spec, out, fmt="feed"):
+VEU = ("linear-gradient(180deg,rgba(163,15,28,.95) 0%,rgba(200,6,26,.80) 32%,rgba(225,6,26,.06) 50%,"
+       "rgba(120,8,20,.15) 62%,rgba(110,6,18,.94) 84%)")
+
+def render(spec, out, fmt="feed", overlay=False):
+    """overlay=True: PNG transparente (só véu + textos), usado pelo motion_reel.py por cima da foto em movimento."""
     html = (BASE / "templates/post.html").read_text()
     vals = {**LAYOUT[fmt], **spec}
     ilu = spec.get("ILUSTRACAO", "botijao")   # botijao | galao | combo
@@ -24,6 +28,13 @@ def render(spec, out, fmt="feed"):
         if not spec.get("ILUSTRACAO"):
             extra += ".ilu{visibility:hidden}"
         extra += ".texto .sub{display:none}.sub2{display:block}"   # frase desce para a base da foto
+    if overlay:   # sem foto: véu vermelho translúcido + textos, fundo transparente
+        extra += "html,body{background:transparent!important}body{background-image:%s!important}" % VEU
+        if not spec.get("ILUSTRACAO"):
+            extra += ".ilu{visibility:hidden}"
+        extra += ".texto .sub{display:none}.sub2{display:block}"
+        if not spec.get("SUB"):
+            extra += ".sub2{visibility:hidden}"
     if spec.get("SEM_CTA"):      # slides do meio do carrossel
         extra += ".cta,.foot{display:none}"
     if spec.get("SEM_BOTIJAO"):
@@ -37,7 +48,7 @@ def render(spec, out, fmt="feed"):
         b = p.chromium.launch(executable_path="/usr/bin/google-chrome", args=["--no-sandbox"])
         pg = b.new_page(viewport={"width": vals["W"], "height": vals["H"]})
         pg.set_content(html, wait_until="networkidle")
-        pg.screenshot(path=out, type="png")
+        pg.screenshot(path=out, type="png", omit_background=overlay)
         # relatório de layout: caixas visíveis, para o validate.py achar sobreposição/estouro
         boxes = pg.evaluate("""() => {
           const o = {};
