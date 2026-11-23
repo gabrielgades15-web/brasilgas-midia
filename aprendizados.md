@@ -64,3 +64,7 @@ Quando uma regra daqui virar permanente, ela sobe para CLAUDE.md ou para a skill
 - 21/11 · 68 seguidores. Reel "Sextou" (20/11): 19 views e 2 curtidas.
 
 - 22/11 · Manchete de story que quebra deixando uma palavra sozinha ("13H") fica feia, e o verificador não pega → manchete curta (até ~15 caracteres) para caber em 1 linha, ou conferir a quebra no Read.
+
+- 23/11 · Gabriel trouxe 7 prompts de crescimento (@gurudoprompt) → viraram métodos fixos em skills/brasilgas-conteudo/prompts-crescimento.md (auditoria mensal, banco de pautas, carrossel, reel, plano de 7 dias aos domingos, funil, ciclo semanal MANTER/CORRIGIR/REPETIR/INTERROMPER). Criado banco-de-pautas.json com ideias tiradas das perguntas reais do WhatsApp.
+- 23/11 · Gabriel quer ver as peças na véspera: a tarefa diária passou para 20h34 e produz as peças de AMANHÃ, já agendadas (publicam sozinhas; ele revisa à noite e pode editar ou apagar). Escolheu essa opção em vez de rascunho, que se perde quando não é aprovado.
+- 23/11 · Foto estoque-p13-pilha-1 em close mostra botijões gastos/enferrujados → evitar como foto principal (anotado no catálogo).

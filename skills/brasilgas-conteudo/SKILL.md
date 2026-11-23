@@ -24,6 +24,9 @@ Antes de escrever, veja se as skills dos plugins **Marketing** (Anthropic) e **S
 
 Se os plugins não estiverem disponíveis, siga só esta skill: ela é suficiente.
 
+### 0.1 Métodos de crescimento (obrigatórios, desde 23/11/2026)
+Leia `prompts-crescimento.md` (nesta pasta). Carrossel → método 3 (engenharia reversa da promessa). Reel → método 4 (storyboard de retenção). Domingo → método 5 (plano de 7 dias). 1º domingo do mês → métodos 1 e 2. Toda legenda segue o funil do método 6 (CTA leva ao WhatsApp, onde quem atende é gente).
+
 ## 1. Quem é a Brasilgás
 - Revenda **autorizada Paragás** em Castanhal-PA. Vende gás P13 (botijão prata) e água mineral 20L, com entrega. Revenda credenciada do **Gás do Povo**.
 - Objetivo de toda peça: **gerar conversa no WhatsApp que vira pedido.** Curtida é bônus.
@@ -123,5 +126,5 @@ Datas de `calendario.json` têm prioridade sobre a pauta.
 - [ ] Manchete com até 40 caracteres, texto sem sobreposição (abri a imagem e conferi).
 - [ ] Português revisado (acentos: Gás, Paragás, Castanhal, Círio).
 - [ ] Legenda no formato da seção 5 (post/carrossel/reel) e `mediaAltText` preenchido.
-- [ ] Rascunho (`draft: true`), nunca publicação direta.
+- [ ] Passou no verificador → agendado na véspera (`draft:false, autoPublish:true`); reprovado 3 vezes → `draft:true` e aviso ao Gabriel.
 - [ ] Gancho diferente dos últimos 7 dias (`historico.json`).

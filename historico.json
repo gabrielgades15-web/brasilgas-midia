@@ -67,5 +67,16 @@
     "foto": "fotos/fachada-esquina-completa.jpg",
     "metricool_id": 437370677,
     "publicado_automatico": true
+  },
+  {
+    "data": "2026-11-23",
+    "formato": "post",
+    "pilar": "Entrega e atendimento",
+    "headline": "FAZ ENTREGA? FAZ SIM!",
+    "gancho": "Pergunta direta (demanda real do WhatsApp)",
+    "foto": "fotos/fachada-paragas-lateral-1.jpg",
+    "metricool_id": 438257271,
+    "metricool_id_gmb": 438257273,
+    "publicado_automatico": true
   }
 ]

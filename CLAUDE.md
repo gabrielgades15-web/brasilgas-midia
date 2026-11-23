@@ -17,17 +17,22 @@ Leia `aprendizados.md` antes de produzir. Ele guarda o que aprendemos com o Gabr
 ## Skill obrigatória
 Antes de produzir qualquer peça, leia `skills/brasilgas-conteudo/SKILL.md` (ou use a skill `brasilgas-conteudo`, se estiver listada) e siga o método dela, incluindo a seção 0: usar as skills dos plugins Marketing e Social Media Skills quando estiverem disponíveis.
 
-## Fluxo diário
-1. Ler `pauta.json` e escolher o tema do dia da semana (fuso America/Belem). Evitar repetir manchete dos últimos 14 dias (`historico.json`).
-2. Escrever o spec (KICKER, HEADLINE, SUB, CTA) e renderizar: `python3 render.py spec.json saida.png feed|story`.
+## Fluxo diário (prévia na véspera, decidido pelo Gabriel em 23/11/2026)
+A tarefa roda às 20h34 (America/Belem) e produz as peças de AMANHÃ. Elas entram no Metricool já agendadas (publicam sozinhas no horário); o Gabriel vê a prévia à noite e pode editar ou apagar até a hora de publicar.
+1. Data-alvo = amanhã (fuso America/Belem). Ler `calendario.json` (janelas que vencem na data-alvo), depois `plano-semana.json` (se existir e cobrir a data-alvo), depois `pauta.json` e `banco-de-pautas.json`. Evitar repetir manchete dos últimos 14 dias (`historico.json`).
+2. Escrever o spec (KICKER, HEADLINE, SUB, CTA) e renderizar: `python3 render.py spec.json saida.png feed|story`, em `midia/<data-alvo>/`.
 3. Conferir a imagem (ler o PNG) antes de seguir.
-4. Commit + push em `midia/AAAA-MM-DD/`.
-5. Rodar o VERIFICADOR (seção abaixo) e só então agendar no Metricool (blogId 7861236) no melhor horário do dia, com legenda + CTA + hashtags locais.
-6. Atualizar `historico.json`.
+4. Commit + push em `midia/<data-alvo>/`.
+5. Rodar o VERIFICADOR (seção abaixo) e só então agendar no Metricool (blogId 7861236) na data-alvo, no melhor horário, com legenda + CTA + hashtags locais.
+6. Atualizar `historico.json` (campo `data` = data-alvo).
+7. Domingo: além das peças de segunda, rodar o método 5 (planejar 7 dias) e gravar `plano-semana.json`. No 1º domingo do mês, rodar também os métodos 1 e 2 (auditoria + banco de pautas).
+
+## Métodos de crescimento (7 prompts, desde 23/11/2026)
+`skills/brasilgas-conteudo/prompts-crescimento.md` tem os 7 métodos adaptados (auditoria, ideias, carrossel, reel, plano de 7 dias, funil seguidor→cliente e ciclo semanal de aprendizado) e diz quando cada um roda. Carrossel usa sempre o método 3 e reel o método 4. Regra comum: não inventar métricas nem resultados.
 
 ## Calendário inteligente (verificar TODO dia, antes da pauta)
-- Ler `calendario.json`. Para cada evento, cada janela "D-N:formato" vence na data (evento − N dias). Se vence hoje e `historico.json` ainda não tem `evento` = "<id>:<janela>", produzir essa peça.
-- Evento do calendário tem prioridade sobre a pauta do dia. Máximo de 2 rascunhos por dia (1 do calendário + 1 da pauta, ou 2 do calendário).
+- Ler `calendario.json`. Para cada evento, cada janela "D-N:formato" vence na data (evento − N dias). Se vence na data-alvo (amanhã, ver Fluxo diário) e `historico.json` ainda não tem `evento` = "<id>:<janela>", produzir essa peça.
+- Evento do calendário tem prioridade sobre a pauta do dia. Máximo de 2 peças por dia (1 do calendário + 1 da pauta, ou 2 do calendário).
 - tipo "feriado": usar o horário especial 7h–13h (regra da revenda). "ponto_facultativo": não afirmar horário. "cultural"/"comercial": horário normal.
 - Story de véspera (D-1) agendar entre 17h e 19h. Story do dia (D0) agendar às 7h.
 - Datas regionais têm peso: Círio (maniçoba cozinha por dias, então o gás não pode faltar), Semana Santa, quadra junina, Aniversário de Castanhal (28/01), Adesão do Pará (15/08).
@@ -79,7 +84,7 @@ O Gabriel autorizou a publicação automática, desde que exista o verificador e
   3. `python3 validate.py --formato <f> --spec <spec.json> [--spec ...] --imagem <png> [--imagem ...] --legenda <txt> --alt <alt.txt>`;
   4. se REPROVADO, corrigir o que foi apontado e rodar de novo (no máximo 3 tentativas);
   5. abrir a imagem final com Read e conferir com os próprios olhos (o verificador não vê estética).
-- APROVADO → agendar com `draft:false, autoPublish:true` (publica sozinho no horário).
+- APROVADO → agendar com `draft:false, autoPublish:true` (publica sozinho no horário; como é agendado na véspera às 20h34, o Gabriel tem a noite para revisar).
 - REPROVADO depois de 3 tentativas → agendar com `draft:true` e avisar o Gabriel no resumo final, dizendo o que falhou.
 - Story de feriado/horário e posts do calendário seguem a mesma regra.
 
