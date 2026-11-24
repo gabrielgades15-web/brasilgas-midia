@@ -1,4 +1,4 @@
-"""Renderiza artes Brasilgás a partir do template HTML (feed 1080x1350 ou story 1080x1920)."""
+"""Renderiza artes Brasilgás a partir do template HTML (feed 1080x1350, quadrado 1080x1080 ou story 1080x1920)."""
 import sys, json, pathlib
 from playwright.sync_api import sync_playwright
 
@@ -6,6 +6,8 @@ BASE = pathlib.Path(__file__).parent
 LAYOUT = {
     # PT/PB: margens de segurança (no story, a interface do Instagram cobre topo e base)
     "feed":  dict(W=1080, H=1350, PT=56, PB=44, GAP1=58, CSIZE=64, CSUB=28, HSIZE=104, HW=900, SSIZE=32, SW=860, IPAD=24, BMAX=700),
+    # quadrado: anúncio do WhatsApp (app Business corta tudo em 1:1)
+    "quadrado": dict(W=1080, H=1080, PT=40, PB=30, GAP1=34, CSIZE=54, CSUB=24, HSIZE=92, HW=960, SSIZE=28, SW=900, IPAD=18, BMAX=560),
     "story": dict(W=1080, H=1920, PT=210, PB=240, GAP1=110, CSIZE=72, CSUB=30, HSIZE=128, HW=920, SSIZE=36, SW=880, IPAD=30, BMAX=860),
 }
 
