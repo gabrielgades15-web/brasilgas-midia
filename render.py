@@ -6,8 +6,8 @@ BASE = pathlib.Path(__file__).parent
 LAYOUT = {
     # PT/PB: margens de segurança (no story, a interface do Instagram cobre topo e base)
     "feed":  dict(W=1080, H=1350, PT=56, PB=44, GAP1=58, CSIZE=64, CSUB=28, HSIZE=104, HW=900, SSIZE=32, SW=860, IPAD=24, BMAX=700),
-    # quadrado: anúncio do WhatsApp (app Business corta tudo em 1:1)
-    "quadrado": dict(W=1080, H=1080, PT=40, PB=30, GAP1=34, CSIZE=54, CSUB=24, HSIZE=92, HW=960, SSIZE=28, SW=900, IPAD=18, BMAX=560),
+    # quadrado: anúncio do WhatsApp (1:1). PB alto: o botão "WhatsApp" do anúncio cobre o canto de baixo
+    "quadrado": dict(W=1080, H=1080, PT=36, PB=150, GAP1=26, CSIZE=50, CSUB=22, HSIZE=86, HW=960, SSIZE=26, SW=900, IPAD=16, BMAX=420),
     "story": dict(W=1080, H=1920, PT=210, PB=240, GAP1=110, CSIZE=72, CSUB=30, HSIZE=128, HW=920, SSIZE=36, SW=880, IPAD=30, BMAX=860),
 }
 
@@ -30,6 +30,8 @@ def render(spec, out, fmt="feed", overlay=False):
         if not spec.get("ILUSTRACAO"):
             extra += ".ilu{visibility:hidden}"
         extra += ".texto .sub{display:none}.sub2{display:block}"   # frase desce para a base da foto
+        if not spec.get("SUB"):
+            extra += ".sub2{display:none}"   # sem frase: a foto respira (ex.: anúncio quadrado)
     if overlay:   # sem foto: véu vermelho translúcido + textos, fundo transparente
         extra += "html,body{background:transparent!important}body{background-image:%s!important}" % VEU
         if not spec.get("ILUSTRACAO"):
