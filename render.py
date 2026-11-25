@@ -18,7 +18,7 @@ def render(spec, out, fmt="feed", overlay=False):
     """overlay=True: PNG transparente (só véu + textos), usado pelo motion_reel.py por cima da foto em movimento."""
     html = (BASE / "templates/post.html").read_text()
     import base64 as _b64   # logo oficial vetorial (Brasilgás + bandeira Paragás), desde 25/11
-    html = html.replace("{{LOGO_SRC}}", "data:image/svg+xml;base64," + _b64.b64encode((BASE / "logo/brasilgas-logo-caixa.svg").read_bytes()).decode())
+    html = html.replace("{{LOGO_SRC}}", "data:image/svg+xml;base64," + _b64.b64encode((BASE / "logo/brasilgas-placa.svg").read_bytes()).decode())
     vals = {**LAYOUT[fmt], **spec}
     ilu = spec.get("ILUSTRACAO", "botijao")   # botijao | galao | combo
     vals["ILUSTRACAO_SVG"] = (BASE / "templates/ilustracoes" / f"{ilu}.svg").read_text()

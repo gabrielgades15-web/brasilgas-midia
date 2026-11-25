@@ -150,6 +150,85 @@ def png(svg_txt, saida, largura):
         b.close()
 
 
+# ---------- Logo da placa da loja (o original da Brasilgás, pedido do Gabriel em 25/11 às 18h) ----------
+AZUL_PLACA, CINZA_PLACA, VERM_PLACA = "#1F5BD0", "#8F8F8F", "#E30613"
+
+
+def botijao_pict(x, y, w):
+    """Pictograma do botijão da placa (prata chapado com faixa azul), desenho 100x112."""
+    s = w / 100
+    prata = "url(#prata)"
+    return (f'<g transform="translate({x:.1f},{y:.1f}) scale({s:.4f})">'
+            f'<rect x="30" y="0" width="40" height="22" rx="2" fill="{prata}"/>'
+            f'<rect x="38" y="7" width="24" height="5" rx="2.5" fill="{AZUL_PLACA}"/><rect x="48" y="10" width="4" height="12" fill="{AZUL_PLACA}"/>'
+            f'<path d="M5 44 Q5 26 23 26 H77 Q95 26 95 44 V88 Q95 104 79 104 H21 Q5 104 5 88 Z" fill="{prata}"/>'
+            f'<rect x="5" y="61" width="90" height="4" fill="{AZUL_PLACA}"/>'
+            f'<rect x="28" y="106" width="44" height="6" fill="{prata}"/></g>')
+
+
+def quadro_icone(x, y, w):
+    """Quadro azul da placa: botijão + bandeira Paragás, com borda branca. Altura = 1.04*w."""
+    h = w * 1.04
+    b = w * 0.035
+    pict_w = w * 0.54
+    band_h = w * 0.15
+    band, band_w = bandeira(0, 0, band_h)
+    esc = (w - 2 * b - w * 0.12) / band_w
+    band_h2 = band_h * esc
+    by = y + h - b - w * 0.05 - band_h2
+    return (f'<rect x="{x:.1f}" y="{y:.1f}" width="{w:.1f}" height="{h:.1f}" fill="#fff"/>'
+            f'<rect x="{x + b:.1f}" y="{y + b:.1f}" width="{w - 2 * b:.1f}" height="{h - 2 * b:.1f}" fill="{AZUL_PLACA}"/>'
+            + botijao_pict(x + (w - pict_w) / 2, y + b + w * 0.06, pict_w)
+            + f'<rect x="{x + w * 0.06 + b - 3:.1f}" y="{by - 3:.1f}" width="{band_w * esc + 6:.1f}" height="{band_h2 + 6:.1f}" fill="#fff"/>'
+            + f'<g transform="translate({x + w * 0.06 + b:.1f},{by:.1f}) scale({esc:.4f})">{band}</g>')
+
+
+DEFS = ('<defs><linearGradient id="prata" x1="0" x2="1"><stop offset="0" stop-color="#b9b3b3"/>'
+        '<stop offset=".45" stop-color="#e2dddd"/><stop offset="1" stop-color="#a9a3a3"/></linearGradient></defs>')
+
+
+def wordmark(x, base, T, contorno=True):
+    d1, w1, cap = texto(MONT_BLACK, "BRASIL", T, x, base, espaco=T * 0.01)
+    d2, w2, _ = texto(MONT_BLACK, "GÁS", T, x + w1 + T * 0.01, base, espaco=T * 0.01)
+    st = f' stroke="#fff" stroke-width="{T * 0.07:.1f}" stroke-linejoin="round" paint-order="stroke"' if contorno else ""
+    return (f'<path d="{d1}" fill="{AZUL_PLACA}"{st}/><path d="{d2}" fill="{CINZA_PLACA}"{st}/>'), w1 + T * 0.01 + w2, cap
+
+
+def logo_placa():
+    """Faixa vermelha com moldura branca, BRASILGÁS (azul + cinza) e o quadro do botijão com a bandeira Paragás."""
+    T = 128
+    _, ww, cap = wordmark(0, 0, T)
+    H = 240                     # altura da faixa vermelha
+    qw = 250                    # quadro do botijão (passa um pouco da faixa)
+    padx = 46
+    W = padx + ww + 50 + qw + 20
+    top = (1.04 * qw - H) / 2 + 6
+    base = top + H / 2 + cap / 2 + 4
+    wm, _, _ = wordmark(padx, base, T)
+    m = 12
+    alt = 1.04 * qw + 12
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W:.0f} {alt:.0f}" width="{W:.0f}" height="{alt:.0f}">{DEFS}'
+            f'<rect x="0" y="{top:.1f}" width="{W - qw / 2:.1f}" height="{H}" rx="14" fill="{VERM_PLACA}"/>'
+            f'<rect x="{m}" y="{top + m:.1f}" width="{W - qw / 2 - 2 * m:.1f}" height="{H - 2 * m}" rx="6" fill="none" stroke="#fff" stroke-width="7"/>'
+            f'{wm}{quadro_icone(W - qw - 14, 6, qw)}</svg>')
+
+
+def foto_perfil_placa():
+    """Foto de perfil redonda a partir da placa: fundo vermelho, moldura branca, quadro do botijão em cima e BRASILGÁS embaixo."""
+    _, ww0, _ = wordmark(0, 0, 100)
+    T = 100 * 800 / ww0          # nome com 800 px de largura, dentro do círculo
+    wm, ww, cap = wordmark(0, 0, T)
+    W = 1080
+    qw = 420
+    x0 = (W - ww) / 2
+    wm, _, _ = wordmark(x0, 665 + 60 + cap, T)
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {W}" width="{W}" height="{W}">{DEFS}'
+            f'<rect width="{W}" height="{W}" fill="{VERM_PLACA}"/>'
+            f'<circle cx="540" cy="540" r="508" fill="none" stroke="#fff" stroke-width="16"/>'
+            f'{quadro_icone((W - qw) / 2, 215, qw)}{wm}'
+            f'</svg>')
+
+
 if __name__ == "__main__":
     arquivos = {
         "brasilgas-logo.svg": logo(),
@@ -157,6 +236,8 @@ if __name__ == "__main__":
         "brasilgas-logo-negativo.svg": logo(negativo=True),
         "paragas-bandeira.svg": so_bandeira(),
     }
+    arquivos["brasilgas-placa.svg"] = logo_placa()
+    arquivos["brasilgas-perfil-placa.svg"] = foto_perfil_placa()
     for nome, svg in arquivos.items():
         (AQUI / nome).write_text(svg)
     png(arquivos["brasilgas-logo.svg"], AQUI / "brasilgas-logo.png", 2000)
@@ -164,4 +245,6 @@ if __name__ == "__main__":
     png(arquivos["brasilgas-logo-negativo.svg"], AQUI / "brasilgas-logo-negativo.png", 2000)
     foto_perfil()
     png(arquivos["paragas-bandeira.svg"], AQUI / "paragas-bandeira.png", 1200)
+    png(arquivos["brasilgas-placa.svg"], AQUI / "brasilgas-placa.png", 2000)
+    png(arquivos["brasilgas-perfil-placa.svg"], AQUI / "brasilgas-perfil-placa.png", 1080)
     print("ok")

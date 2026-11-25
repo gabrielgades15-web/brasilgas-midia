@@ -1,8 +1,8 @@
-# Logo Brasilgás (25/11/2026)
+# Logo Brasilgás (25/11/2026, 18h)
 
-Aprovado pelo Gabriel: a versão na caixa branca (`brasilgas-logo-caixa`) é a referência e norteia as próximas peças.
-- `brasilgas-logo-caixa.svg/.png` — padrão das artes.
-- `brasilgas-perfil.png` — foto de perfil redonda (branca, anel vermelho e filete azul).
-- `brasilgas-logo.svg` / `paragas-bandeira.svg` — vetores para impressão.
-- `brasilgas-logo-negativo` — reprovado como peça (não usar); fica só como arquivo técnico.
+Base: a placa da loja, único logo original da Brasilgás (pedido do Gabriel).
+- `brasilgas-placa.svg/.png` — logo oficial, usado no topo de todas as artes.
+- `brasilgas-perfil-placa.png` — foto de perfil redonda (1080x1080).
+- `paragas-bandeira.svg` — bandeira Paragás (faixa + ícone azul).
+Aposentados: `brasilgas-logo-caixa`, `brasilgas-logo`, `brasilgas-logo-negativo`, `brasilgas-perfil` (versões de 25/11 à tarde).
 Gerar de novo: `python3 logo/gerar_logo.py`.
