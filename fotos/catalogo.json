@@ -1,145 +1,148 @@
 {
- "_obs": "Fotos reais da revenda (21/11/2026). Usar só 'liberada': true. Nunca mostrar rótulo legível de marca de água.",
- "fotos": [
-  {
-   "arquivo": "fotos/canto-planta-entrada.jpg",
-   "descricao": "Canto da entrada com planta em vaso e caixote de pallet; azulejo vermelho",
-   "uso": "pouco uso; fundo de story calmo",
-   "liberada": true
-  },
-  {
-   "arquivo": "fotos/galoes-agua-close.jpg",
-   "descricao": "Close de galões 20L",
-   "uso": "EVITAR: rótulo da marca da água legível",
-   "liberada": false
-  },
-  {
-   "arquivo": "fotos/galoes-agua-estoque.jpg",
-   "descricao": "Galões 20L no estoque, grade e rua ao fundo",
-   "uso": "só com rótulos desfocados/cortados",
-   "liberada": false
-  },
-  {
-   "arquivo": "fotos/porta-grade-galoes.jpg",
-   "descricao": "Porta gradeada vermelha com galões dentro",
-   "uso": "bom para água (rótulos ilegíveis)",
-   "liberada": true
-  },
-  {
-   "arquivo": "fotos/fachada-frente-gas-do-povo.jpg",
-   "descricao": "Fachada vermelha de frente: banner GÁS DO POVO AQUI TEM e placa Brasil Gás com telefones",
-   "uso": "ÓTIMA: Gás do Povo, prova de loja física",
-   "liberada": true,
-   "motion_reel": true,
-   "foco_letreiro": {
-    "x": 0.42,
-    "y": 0.5
-   }
-  },
-  {
-   "arquivo": "fotos/fachada-esquina-completa.jpg",
-   "descricao": "Esquina inteira: letreiro PARAGÁS + loja Brasil Gás + Gás do Povo",
-   "uso": "ÓTIMA: capa, 'quem somos', anúncios",
-   "liberada": false,
-   "motion_reel": true,
-   "foco_letreiro": {
-    "x": 0.22,
-    "y": 0.47
-   },
-   "obs": "23/11: bloqueada para post/story (foto deitada e de longe; no recorte vertical o letreiro PARAGÁS sai do quadro e sobra só muro vermelho). Reservada para Motion Reel (motion_reel.py): a câmera desliza até foco_letreiro."
-  },
-  {
-   "arquivo": "fotos/fachada-paragas-lateral-1.jpg",
-   "descricao": "Lateral com letreiro PARAGÁS grande, céu azul",
-   "uso": "ótima para posts de confiança",
-   "liberada": false,
-   "motion_reel": true,
-   "foco_letreiro": {
-    "x": 0.18,
-    "y": 0.4
-   },
-   "obs": "23/11: bloqueada para post/story (foto deitada e de longe; no recorte vertical o letreiro PARAGÁS sai do quadro e sobra só muro vermelho). Reservada para Motion Reel (motion_reel.py): a câmera desliza até foco_letreiro."
-  },
-  {
-   "arquivo": "fotos/fachada-paragas-lateral-2.jpg",
-   "descricao": "Lateral com letreiro PARAGÁS, enquadramento parecido",
-   "uso": "alternativa da anterior",
-   "liberada": false,
-   "motion_reel": true,
-   "foco_letreiro": {
-    "x": 0.14,
-    "y": 0.35
-   },
-   "obs": "23/11: bloqueada para post/story (foto deitada e de longe; no recorte vertical o letreiro PARAGÁS sai do quadro e sobra só muro vermelho). Reservada para Motion Reel (motion_reel.py): a câmera desliza até foco_letreiro."
-  },
-  {
-   "arquivo": "fotos/fachada-paragas-contraluz-1.jpg",
-   "descricao": "Letreiro PARAGÁS em contraluz (céu estourado)",
-   "uso": "só com escurecimento",
-   "liberada": false,
-   "motion_reel": true,
-   "foco_letreiro": {
-    "x": 0.45,
-    "y": 0.32
-   },
-   "obs": "23/11: bloqueada para post/story (foto deitada e de longe; no recorte vertical o letreiro PARAGÁS sai do quadro e sobra só muro vermelho). Reservada para Motion Reel (motion_reel.py): a câmera desliza até foco_letreiro."
-  },
-  {
-   "arquivo": "fotos/fachada-paragas-contraluz-2.jpg",
-   "descricao": "Letreiro PARAGÁS em contraluz",
-   "uso": "só com escurecimento",
-   "liberada": false,
-   "motion_reel": true,
-   "foco_letreiro": {
-    "x": 0.43,
-    "y": 0.3
-   },
-   "obs": "23/11: bloqueada para post/story (foto deitada e de longe; no recorte vertical o letreiro PARAGÁS sai do quadro e sobra só muro vermelho). Reservada para Motion Reel (motion_reel.py): a câmera desliza até foco_letreiro."
-  },
-  {
-   "arquivo": "fotos/fachada-paragas-contraluz-3.jpg",
-   "descricao": "Letreiro PARAGÁS em contraluz",
-   "uso": "só com escurecimento",
-   "liberada": false,
-   "motion_reel": true,
-   "foco_letreiro": {
-    "x": 0.43,
-    "y": 0.33
-   },
-   "obs": "23/11: bloqueada para post/story (foto deitada e de longe; no recorte vertical o letreiro PARAGÁS sai do quadro e sobra só muro vermelho). Reservada para Motion Reel (motion_reel.py): a câmera desliza até foco_letreiro."
-  },
-  {
-   "arquivo": "fotos/estoque-p13-pilha-1.jpg",
-   "descricao": "Pilha de botijões P13 prata empilhados",
-   "uso": "ÓTIMA: estoque cheio, 'tem gás'",
-   "liberada": true,
-   "obs": "23/11: em close os botijões parecem enferrujados/gastos; evitar como foto principal (contradiz 'botijão prata')."
-  },
-  {
-   "arquivo": "fotos/estoque-p13-pilha-2.jpg",
-   "descricao": "Pilha de P13 prata, outro ângulo",
-   "uso": "ÓTIMA: fundo de post",
-   "liberada": true,
-   "obs": "24/11: de perto os botijões aparecem gastos/manchados; evitar como foto principal (contradiz 'botijão prata')."
-  },
-  {
-   "arquivo": "fotos/estoque-p13-alcas-ceu.jpg",
-   "descricao": "Alças dos P13 em perspectiva com céu",
-   "uso": "boa para story/fundo",
-   "liberada": true
-  },
-  {
-   "arquivo": "fotos/estoque-p13-alca-close.jpg",
-   "descricao": "Close da alça de um P13",
-   "uso": "detalhe; fundo com texto",
-   "liberada": true
-  },
-  {
-   "arquivo": "fotos/estoque-p13-ceu-azul.jpg",
-   "descricao": "Fileira de P13 prata com céu azul limpo",
-   "uso": "ÓTIMA: espaço para texto em cima",
-   "liberada": true
-  }
- ],
- "_regra_enquadramento": "Fotos novas: tirar EM PÉ (vertical), com o letreiro ou o produto no centro e de perto. Foto deitada de fachada só serve para Motion Reel."
+  "_obs": "Fotos reais da revenda (21/11/2026). Usar só 'liberada': true. Nunca mostrar rótulo legível de marca de água.",
+  "fotos": [
+    {
+      "arquivo": "fotos/canto-planta-entrada.jpg",
+      "descricao": "Canto da entrada com planta em vaso e caixote de pallet; azulejo vermelho",
+      "uso": "pouco uso; fundo de story calmo",
+      "liberada": true
+    },
+    {
+      "arquivo": "fotos/galoes-agua-close.jpg",
+      "descricao": "Close de galões 20L",
+      "uso": "EVITAR: rótulo da marca da água legível",
+      "liberada": false
+    },
+    {
+      "arquivo": "fotos/galoes-agua-estoque.jpg",
+      "descricao": "Galões 20L no estoque, grade e rua ao fundo",
+      "uso": "só com rótulos desfocados/cortados",
+      "liberada": false
+    },
+    {
+      "arquivo": "fotos/porta-grade-galoes.jpg",
+      "descricao": "Porta gradeada vermelha com galões dentro",
+      "uso": "bom para água (rótulos ilegíveis)",
+      "liberada": true
+    },
+    {
+      "arquivo": "fotos/fachada-frente-gas-do-povo.jpg",
+      "descricao": "Fachada vermelha de frente: banner GÁS DO POVO AQUI TEM e placa Brasil Gás com telefones",
+      "uso": "ÓTIMA: Gás do Povo, prova de loja física",
+      "liberada": true,
+      "motion_reel": true,
+      "foco_letreiro": {
+        "x": 0.42,
+        "y": 0.5
+      }
+    },
+    {
+      "arquivo": "fotos/fachada-esquina-completa.jpg",
+      "descricao": "Esquina inteira: letreiro PARAGÁS + loja Brasil Gás + Gás do Povo",
+      "uso": "ÓTIMA: capa, 'quem somos', anúncios",
+      "liberada": false,
+      "motion_reel": true,
+      "foco_letreiro": {
+        "x": 0.22,
+        "y": 0.47
+      },
+      "obs": "23/11: bloqueada para post/story (foto deitada e de longe; no recorte vertical o letreiro PARAGÁS sai do quadro e sobra só muro vermelho). Reservada para Motion Reel (motion_reel.py): a câmera desliza até foco_letreiro."
+    },
+    {
+      "arquivo": "fotos/fachada-paragas-lateral-1.jpg",
+      "descricao": "Lateral com letreiro PARAGÁS grande, céu azul",
+      "uso": "ótima para posts de confiança",
+      "liberada": false,
+      "motion_reel": true,
+      "foco_letreiro": {
+        "x": 0.18,
+        "y": 0.4
+      },
+      "obs": "23/11: bloqueada para post/story (foto deitada e de longe; no recorte vertical o letreiro PARAGÁS sai do quadro e sobra só muro vermelho). Reservada para Motion Reel (motion_reel.py): a câmera desliza até foco_letreiro."
+    },
+    {
+      "arquivo": "fotos/fachada-paragas-lateral-2.jpg",
+      "descricao": "Lateral com letreiro PARAGÁS, enquadramento parecido",
+      "uso": "alternativa da anterior",
+      "liberada": false,
+      "motion_reel": true,
+      "foco_letreiro": {
+        "x": 0.14,
+        "y": 0.35
+      },
+      "obs": "23/11: bloqueada para post/story (foto deitada e de longe; no recorte vertical o letreiro PARAGÁS sai do quadro e sobra só muro vermelho). Reservada para Motion Reel (motion_reel.py): a câmera desliza até foco_letreiro."
+    },
+    {
+      "arquivo": "fotos/fachada-paragas-contraluz-1.jpg",
+      "descricao": "Letreiro PARAGÁS em contraluz (céu estourado)",
+      "uso": "só com escurecimento",
+      "liberada": false,
+      "motion_reel": true,
+      "foco_letreiro": {
+        "x": 0.45,
+        "y": 0.32
+      },
+      "obs": "23/11: bloqueada para post/story (foto deitada e de longe; no recorte vertical o letreiro PARAGÁS sai do quadro e sobra só muro vermelho). Reservada para Motion Reel (motion_reel.py): a câmera desliza até foco_letreiro."
+    },
+    {
+      "arquivo": "fotos/fachada-paragas-contraluz-2.jpg",
+      "descricao": "Letreiro PARAGÁS em contraluz",
+      "uso": "só com escurecimento",
+      "liberada": false,
+      "motion_reel": true,
+      "foco_letreiro": {
+        "x": 0.43,
+        "y": 0.3
+      },
+      "obs": "23/11: bloqueada para post/story (foto deitada e de longe; no recorte vertical o letreiro PARAGÁS sai do quadro e sobra só muro vermelho). Reservada para Motion Reel (motion_reel.py): a câmera desliza até foco_letreiro."
+    },
+    {
+      "arquivo": "fotos/fachada-paragas-contraluz-3.jpg",
+      "descricao": "Letreiro PARAGÁS em contraluz",
+      "uso": "só com escurecimento",
+      "liberada": false,
+      "motion_reel": true,
+      "foco_letreiro": {
+        "x": 0.43,
+        "y": 0.33
+      },
+      "obs": "23/11: bloqueada para post/story (foto deitada e de longe; no recorte vertical o letreiro PARAGÁS sai do quadro e sobra só muro vermelho). Reservada para Motion Reel (motion_reel.py): a câmera desliza até foco_letreiro."
+    },
+    {
+      "arquivo": "fotos/estoque-p13-pilha-1.jpg",
+      "descricao": "Pilha de botijões P13 prata empilhados",
+      "uso": "ÓTIMA: estoque cheio, 'tem gás'",
+      "liberada": false,
+      "obs": "23/11: em close os botijões parecem enferrujados/gastos; evitar como foto principal (contradiz 'botijão prata').",
+      "bloqueio": "24/11: Gabriel vetou — close dos botijões mostra mancha/desgaste; não mostrar ao cliente"
+    },
+    {
+      "arquivo": "fotos/estoque-p13-pilha-2.jpg",
+      "descricao": "Pilha de P13 prata, outro ângulo",
+      "uso": "ÓTIMA: fundo de post",
+      "liberada": true,
+      "obs": "24/11: de perto os botijões aparecem gastos/manchados; evitar como foto principal (contradiz 'botijão prata')."
+    },
+    {
+      "arquivo": "fotos/estoque-p13-alcas-ceu.jpg",
+      "descricao": "Alças dos P13 em perspectiva com céu",
+      "uso": "boa para story/fundo",
+      "liberada": false,
+      "bloqueio": "24/11: Gabriel vetou — close dos botijões mostra mancha/desgaste; não mostrar ao cliente"
+    },
+    {
+      "arquivo": "fotos/estoque-p13-alca-close.jpg",
+      "descricao": "Close da alça de um P13",
+      "uso": "detalhe; fundo com texto",
+      "liberada": false,
+      "bloqueio": "24/11: Gabriel vetou — close dos botijões mostra mancha/desgaste; não mostrar ao cliente"
+    },
+    {
+      "arquivo": "fotos/estoque-p13-ceu-azul.jpg",
+      "descricao": "Fileira de P13 prata com céu azul limpo",
+      "uso": "ÓTIMA: espaço para texto em cima",
+      "liberada": true
+    }
+  ],
+  "_regra_enquadramento": "Fotos novas: tirar EM PÉ (vertical), com o letreiro ou o produto no centro e de perto. Foto deitada de fachada só serve para Motion Reel."
 }

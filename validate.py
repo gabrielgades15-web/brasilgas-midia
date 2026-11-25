@@ -32,12 +32,26 @@ FERIADO_OK = re.compile(r"7h\s*(às|a|–|-)\s*13h", re.I)
 LIMITES = {"KICKER": 30, "HEADLINE": 40, "SUB": 110, "CTA": 40}
 # só para avisar; a regra de quais ofertas valem está em ofertas.json
 def ofertas_confirmadas():
+    """Ofertas confirmadas pelo Gabriel e ainda válidas (fim >= hoje)."""
+    import datetime
     try:
-        return json.loads(pathlib.Path(__file__).with_name("ofertas.json").read_text()).get("ofertas_confirmadas", [])
+        todas = json.loads(pathlib.Path(__file__).with_name("ofertas.json").read_text()).get("ofertas_confirmadas", [])
     except Exception:
         return []
+    hoje = datetime.date.today().isoformat()
+    return [o for o in todas if not isinstance(o, dict) or o.get("fim", "9999") >= hoje]
+
+def valores_permitidos():
+    v = []
+    for o in ofertas_confirmadas():
+        if isinstance(o, dict):
+            v += o.get("valores_permitidos", [])
+    return v
 
 def checar_texto(txt, onde, erros, permitir_oferta):
+    if permitir_oferta:   # o valor do desconto confirmado pode aparecer; preço do botijão, não
+        for v in valores_permitidos():
+            txt = re.sub(re.escape(v).replace(r"\ ", r"\s*") + r"(?!\d|,\d)", "", txt, flags=re.I)
     low = txt.lower()
     for padrao, nome in PROIBIDO:
         if permitir_oferta and nome in ("desconto", "promoção", "porcentagem/desconto"):

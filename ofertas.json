@@ -1,1 +1,18 @@
-{"ofertas_confirmadas": []}
+{
+  "ofertas_confirmadas": [
+    {
+      "id": "black-friday-2026",
+      "nome": "Black Friday Brasilgás",
+      "descricao": "R$ 10 OFF na recarga de gás P13",
+      "valores_permitidos": ["R$ 10"],
+      "inicio": "2026-11-26",
+      "fim": "2026-11-27",
+      "divulgar_a_partir_de": "2026-11-25",
+      "confirmado_por": "Gabriel",
+      "confirmado_em": "2026-11-24",
+      "fonte": "artes do Canva do Gabriel (Story black friday ... / Story para instagram para blackfriday ...)",
+      "base_visual": ["templates/black-friday/base-3d.png", "templates/black-friday/base-selo.png"],
+      "obs": "Só o valor do desconto pode aparecer; preço do botijão continua só no WhatsApp. Não inventar condições extras."
+    }
+  ]
+}

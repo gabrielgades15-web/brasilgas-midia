@@ -1,0 +1,87 @@
+"""Artes da Black Friday Brasilgás a partir das bases do Canva do Gabriel (templates/black-friday/).
+
+Troca o logo antigo do Canva pelo LOGO OFICIAL e acrescenta botão do WhatsApp, horário e endereço.
+Uso: python3 black_friday.py feed|story|quadrado saida.png [--kicker "É AMANHÃ!"]
+"""
+import sys, base64, pathlib, argparse
+from playwright.sync_api import sync_playwright
+
+BASE = pathlib.Path(__file__).parent
+B64 = lambda p: base64.b64encode((BASE / p).read_bytes()).decode()
+WA = ('<svg width="56" height="56" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 '
+      '14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 '
+      '2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>')
+
+CSS = """
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:%(W)dpx;height:%(H)dpx;overflow:hidden;background:#070707;font-family:'Montserrat',sans-serif;color:#fff;position:relative}
+.bg{position:absolute;left:0;width:1080px}
+.logo{position:absolute;background:#fff;border-radius:18px;padding:14px 22px 16px;line-height:1;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.logo .w{font-weight:900;font-size:50px;letter-spacing:1px;color:#1D4FA3}.logo .w i{font-style:normal;color:#E1061A}
+.logo .p{margin-top:8px;background:#E1061A;color:#fff;font-weight:800;font-size:30px;letter-spacing:3px;text-align:center;padding:6px 10px;border-radius:4px}
+.selo{position:absolute;background:#1C3A8C;border-radius:40px;padding:12px 26px;font-weight:800;font-size:24px;letter-spacing:1px}
+.kick{position:absolute;left:50%%;transform:translateX(-50%%) rotate(-3deg);background:#FFC72C;color:#7A0A12;font-family:'Anton';font-size:46px;
+      letter-spacing:2px;padding:6px 30px;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.4);white-space:nowrap}
+.off{position:absolute;left:0;right:0;text-align:center}
+.off b{display:block;font-family:'Anton';font-size:118px;line-height:1;letter-spacing:2px;text-shadow:0 6px 0 #8a0010,0 10px 30px rgba(0,0,0,.6)}
+.off span{display:inline-block;margin-top:10px;background:#E1061A;font-weight:900;font-size:30px;letter-spacing:1px;padding:8px 24px;border-radius:8px}
+.cta{position:absolute;left:64px;right:64px;background:#A30F1C;border:3px solid rgba(255,255,255,.18);border-radius:28px;padding:12px 30px;display:flex;align-items:center;justify-content:center;gap:24px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.wa{width:90px;height:90px;border-radius:50%%;background:#25D366;display:flex;align-items:center;justify-content:center;flex:none}
+.cta b{display:block;font-family:'Anton';font-size:58px;letter-spacing:1px;line-height:1.05}.cta span{display:block;font-weight:800;font-size:26px;margin-top:2px}
+.foot{position:absolute;left:40px;right:40px;text-align:center;font-weight:700;font-size:22px;line-height:1.45;text-shadow:0 2px 8px rgba(0,0,0,.8)}
+"""
+
+FOOT = "Segunda a sábado, das 7h às 20h · Domingos e feriados, das 7h às 13h<br>Alameda Padre Rolim, 139 · Castanhal"
+
+
+def html(fmt, kicker, cta_txt):
+    if fmt == "story":   # base com selo "R$ 10 off 26 e 27/11"; cobre logo antigo (topo) e PARAGÁS (base)
+        W, H = 1080, 1920
+        corpo = f"""
+<img class="bg" style="top:0" src="data:image/png;base64,{B64('templates/black-friday/base-selo.png')}">
+<div style="position:absolute;left:170px;right:150px;top:110px;height:160px;background:linear-gradient(90deg,#000 0%,#000 72%,#2a0203 88%,#5a0304 100%);filter:blur(10px);border-radius:30px"></div>
+<div style="position:absolute;left:180px;right:158px;top:116px;height:150px;background:linear-gradient(90deg,#000 0%,#000 74%,#300203 90%,#5a0304 100%);border-radius:16px;filter:blur(2px)"></div>
+<div class="logo" style="left:50%;top:110px;transform:translateX(-50%) scale(1.15);transform-origin:top center"><div class="w">BRASIL<i>GÁS</i></div><div class="p">PARAGÁS</div></div>
+{f'<div class="kick" style="top:266px;font-size:34px;padding:4px 26px">{kicker}</div>' if kicker else ''}
+<div style="position:absolute;left:0;right:0;top:1640px;height:200px;background:linear-gradient(180deg,rgba(7,7,7,0),#070707 30%)"></div>
+<div class="cta" style="top:1650px;left:110px;right:110px"><div class="wa">{WA}</div><div><b>(91) 98222-7035</b><span>{cta_txt}</span></div></div>"""
+        # rodapé com horário fica fora do story (a barra de resposta cobre a base); vai no texto alternativo
+    else:   # feed 1080x1350 ou quadrado 1080x1080: emblema 3D + valor em texto limpo
+        W, H = (1080, 1350) if fmt == "feed" else (1080, 1080)
+        q = fmt == "quadrado"
+        top_bg = -300 if q else -235
+        off_top = 760 if q else 942
+        cta_top = 905 if q else 1128
+        corpo = f"""
+<img class="bg" style="top:{top_bg}px" src="data:image/png;base64,{B64('templates/black-friday/base-3d.png')}">
+<div style="position:absolute;left:0;right:0;top:0;height:220px;background:linear-gradient(180deg,#070707 55%,rgba(7,7,7,0))"></div>
+<div style="position:absolute;left:0;right:0;top:{off_top-40}px;bottom:0;background:linear-gradient(180deg,rgba(7,7,7,0),rgba(7,7,7,.92) 12%,#070707 40%)"></div>
+<div class="logo" style="left:64px;top:36px"><div class="w">BRASIL<i>GÁS</i></div><div class="p">PARAGÁS</div></div>
+<div class="selo" style="right:64px;top:{70}px">REVENDA AUTORIZADA</div>
+<div class="off" style="top:{off_top}px"><b>R$ 10 OFF</b><span>NA RECARGA DO SEU GÁS P13</span></div>
+<div class="cta" style="top:{cta_top}px"><div class="wa">{WA}</div><div><b>(91) 98222-7035</b><span>{cta_txt}</span></div></div>
+{'' if q else f'<div class="foot" style="top:1268px">{FOOT}</div>'}"""
+        bar_top = 828 + (top_bg + 235)
+        data = (kicker + " · " if kicker else "") + "26 E 27/11"
+        corpo += (f'<div style="position:absolute;left:146px;right:170px;top:{bar_top-2}px;height:100px;border-radius:26px;'
+                  f'background:linear-gradient(90deg,#C8061A,#E1061A);display:flex;align-items:center;justify-content:center;'
+                  f'font-family:Anton;font-size:54px;letter-spacing:4px;box-shadow:0 8px 20px rgba(0,0,0,.4)">{data}</div>')
+    return (f"<!DOCTYPE html><html><head><meta charset='utf-8'><style>{CSS % dict(W=W, H=H)}</style></head>"
+            f"<body>{corpo}</body></html>"), W, H
+
+
+if __name__ == "__main__":
+    ap = argparse.ArgumentParser()
+    ap.add_argument("fmt", choices=["feed", "story", "quadrado"])
+    ap.add_argument("saida")
+    ap.add_argument("--kicker", default="")
+    ap.add_argument("--cta", default="Garanta no WhatsApp")
+    a = ap.parse_args()
+    h, W, H = html(a.fmt, a.kicker, a.cta)
+    with sync_playwright() as p:
+        b = p.chromium.launch(executable_path="/usr/bin/google-chrome", args=["--no-sandbox"])
+        pg = b.new_page(viewport={"width": W, "height": H})
+        pg.set_content(h, wait_until="networkidle")
+        pg.screenshot(path=a.saida, type="png")
+        b.close()
+    print(a.saida)
