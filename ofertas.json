@@ -18,8 +18,9 @@
         "templates/black-friday/base-selo.png"
       ],
       "obs": "Só o valor do desconto pode aparecer; preço do botijão continua só no WhatsApp. Não inventar condições extras.",
-      "status": "suspensa",
-      "obs_suspensao": "25/11: o dono aguarda o faturamento dos novos pedidos para confirmar se dá para fazer o desconto. Não divulgar até o Gabriel reativar."
+      "status": "ativa",
+      "obs_suspensao": "25/11: o dono aguarda o faturamento dos novos pedidos para confirmar se dá para fazer o desconto. Não divulgar até o Gabriel reativar.",
+      "reativada_em": "2026-11-25 19h10 (Gabriel: fazer as artes e agendar para 26/11)"
     }
   ]
 }

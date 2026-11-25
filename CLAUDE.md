@@ -123,7 +123,8 @@ O Gabriel autorizou a publicação automática, desde que exista o verificador e
 - Destaques do perfil: Gás do Povo, Entrega, Água 20L, Onde fica, Horário (e Clientes, quando houver depoimentos).
 - Quando o story do dia combinar com um destaque, incluir no resumo uma linha: "📌 Story de hoje (HHh) cabe no destaque <nome>: abra o story e toque em Destacar."
 
-## Black Friday 2026 — SUSPENSA em 25/11 (não divulgar até o Gabriel reativar em ofertas.json)
+## Black Friday 2026 — REATIVADA em 25/11 às 19h10 pelo Gabriel
+- 26/11 JÁ AGENDADO à mão (story 7h, Google 9h45, post 10h, kicker "É HOJE"). A tarefa de 25/11 não produz nada para 26/11. A de 26/11 produz 27/11 com kicker "ÚLTIMO DIA" (post + Google + story 7h).
 - Oferta confirmada em `ofertas.json`: R$ 10 OFF na recarga P13, dias 26 e 27/11. Só o valor do desconto aparece; preço do botijão continua só no WhatsApp. Não inventar condições.
 - Visual: as duas artes do Canva do Gabriel (`templates/black-friday/`). Gerar com `python3 black_friday.py feed|story|quadrado saida.png --kicker "..."`; o script põe o logo oficial no lugar do antigo. Nada de foto de estoque nessas peças.
 - 26/11 e 27/11: post + story por dia (kicker "É HOJE" / "ÚLTIMO DIA"), Instagram e Google. Depois de 27/11 a oferta expira sozinha no verificador.
