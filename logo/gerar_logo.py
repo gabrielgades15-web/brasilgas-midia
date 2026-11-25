@@ -25,6 +25,8 @@ def fonte(arq, **eixos):
 
 MONT_BLACK = fonte(GF / "montserrat/Montserrat[wght].ttf", wght=900)
 MONT_BOLD = fonte(GF / "montserrat/Montserrat[wght].ttf", wght=700)
+ARCHIVO_BLACK = fonte(GF / "archivoblack/ArchivoBlack-Regular.ttf")
+ROBOTO_LARGA = fonte(GF / "roboto/Roboto[wdth,wght].ttf", wdth=100, wght=560)
 ROBOTO_COND = fonte(GF / "roboto/Roboto[wdth,wght].ttf", wdth=88, wght=640)
 
 
@@ -57,17 +59,18 @@ def icone(x, y, lado, borda_branca=False):
             f'<rect x="45" y="38" width="10" height="24" fill="#fff"/></g>')
 
 
-def bandeira(x, y, altura, negativo=False):
+def bandeira(x, y, altura, negativo=False, font=None):
     """Faixa 'PARAGÁS' + ícone azul, como a marca Paragás usa. Retorna (svg, largura)."""
+    font = font or ROBOTO_COND
     tam = altura * 0.78
-    d, w, cap = texto(ROBOTO_COND, "PARAGÁS", tam, 0, 0, espaco=tam * 0.02)
+    d, w, cap = texto(font, "PARAGÁS", tam, 0, 0, espaco=tam * 0.02)
     pad = altura * 0.22
     larg_faixa = w + 2 * pad
     base = y + altura / 2 + cap / 2
     partes = []
     if not negativo:
         partes.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{larg_faixa:.1f}" height="{altura:.1f}" fill="{VERM_PG}"/>')
-    d, _, _ = texto(ROBOTO_COND, "PARAGÁS", tam, x + pad, base, espaco=tam * 0.02)
+    d, _, _ = texto(font, "PARAGÁS", tam, x + pad, base, espaco=tam * 0.02)
     partes.append(f'<path d="{d}" fill="#fff"/>')
     gap = altura * (0.05 if not negativo else 0.12)
     partes.append(icone(x + larg_faixa + gap, y, altura, borda_branca=negativo))
@@ -229,6 +232,45 @@ def foto_perfil_placa():
             f'</svg>')
 
 
+# ---------- Logo definido pelo dono (25/11, 18h44): BRASIL azul-marinho + GÁS vermelho, bandeira Paragás embaixo ----------
+AZUL_DONO, VERM_DONO = "#33348F", "#ED1C24"
+
+
+def nome_dono(x, base, T):
+    d1, w1, cap = texto(ARCHIVO_BLACK, "BRASIL", T, x, base, espaco=T * 0.02)
+    d2, w2, _ = texto(ARCHIVO_BLACK, "GÁS", T, x + w1 + T * 0.02, base, espaco=T * 0.02)
+    return f'<path d="{d1}" fill="{AZUL_DONO}"/><path d="{d2}" fill="{VERM_DONO}"/>', w1 + T * 0.02 + w2, cap
+
+
+def logo_dono(largura_nome=1000, fundo=True, pad=60):
+    """BRASILGÁS em cima, bandeira Paragás centralizada embaixo (67% da largura do nome), fundo branco."""
+    _, w0, _ = nome_dono(0, 0, 100)
+    T = 100 * largura_nome / w0
+    _, wn, cap = nome_dono(0, 0, T)
+    topo = pad + T * 0.22
+    base = topo + cap
+    nm, _, _ = nome_dono(pad, base, T)
+    _, bw0 = bandeira(0, 0, 100, font=ROBOTO_LARGA)
+    bh = 100 * (wn * 0.67) / bw0
+    band, bw = bandeira(pad + (wn - wn * 0.67) / 2, base + T * 0.30, bh, font=ROBOTO_LARGA)
+    W = wn + 2 * pad
+    H = base + T * 0.30 + bh + pad
+    bg = f'<rect width="{W:.0f}" height="{H:.0f}" fill="#fff"/>' if fundo else ""
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W:.0f} {H:.0f}" width="{W:.0f}" height="{H:.0f}">{bg}{nm}{band}</svg>')
+
+
+def perfil_dono():
+    """Foto de perfil redonda: fundo branco, BRASILGÁS e a bandeira Paragás embaixo, centralizados no círculo."""
+    import re
+    svg = logo_dono(largura_nome=1000, fundo=False, pad=0)
+    w, h = map(float, re.search(r'viewBox="0 0 ([\d.]+) ([\d.]+)"', svg).groups())
+    esc = 860 / w
+    interno = svg.split(">", 1)[1].rsplit("</svg>", 1)[0]
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">'
+            f'<rect width="1080" height="1080" fill="#fff"/>'
+            f'<g transform="translate({(1080 - w * esc) / 2:.1f},{(1080 - h * esc) / 2:.1f}) scale({esc:.4f})">{interno}</g></svg>')
+
+
 if __name__ == "__main__":
     arquivos = {
         "brasilgas-logo.svg": logo(),
@@ -237,6 +279,8 @@ if __name__ == "__main__":
         "paragas-bandeira.svg": so_bandeira(),
     }
     arquivos["brasilgas-placa.svg"] = logo_placa()
+    arquivos["brasilgas-oficial.svg"] = logo_dono()
+    arquivos["brasilgas-perfil-oficial.svg"] = perfil_dono()
     arquivos["brasilgas-perfil-placa.svg"] = foto_perfil_placa()
     for nome, svg in arquivos.items():
         (AQUI / nome).write_text(svg)
@@ -247,4 +291,6 @@ if __name__ == "__main__":
     png(arquivos["paragas-bandeira.svg"], AQUI / "paragas-bandeira.png", 1200)
     png(arquivos["brasilgas-placa.svg"], AQUI / "brasilgas-placa.png", 2000)
     png(arquivos["brasilgas-perfil-placa.svg"], AQUI / "brasilgas-perfil-placa.png", 1080)
+    png(arquivos["brasilgas-oficial.svg"], AQUI / "brasilgas-oficial.png", 2000)
+    png(arquivos["brasilgas-perfil-oficial.svg"], AQUI / "brasilgas-perfil-oficial.png", 1080)
     print("ok")
