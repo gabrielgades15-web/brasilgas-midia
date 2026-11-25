@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 540">
+ <defs>
+  <linearGradient id="corpo" x1="0" x2="1">
+   <stop offset="0" stop-color="#5f656d"/><stop offset=".12" stop-color="#9aa1aa"/><stop offset=".3" stop-color="#eef1f4"/>
+   <stop offset=".42" stop-color="#ffffff"/><stop offset=".58" stop-color="#cfd4da"/><stop offset=".82" stop-color="#8b929b"/><stop offset="1" stop-color="#4e535a"/>
+  </linearGradient>
+  <linearGradient id="alca" x1="0" x2="1">
+   <stop offset="0" stop-color="#6a7078"/><stop offset=".35" stop-color="#e9ecef"/><stop offset=".55" stop-color="#b9bfc6"/><stop offset="1" stop-color="#5b6168"/>
+  </linearGradient>
+  <linearGradient id="pe" x1="0" x2="1">
+   <stop offset="0" stop-color="#4a4f55"/><stop offset=".35" stop-color="#b6bcc3"/><stop offset=".6" stop-color="#8e959d"/><stop offset="1" stop-color="#43474d"/>
+  </linearGradient>
+  <linearGradient id="topo" x1="0" y1="0" x2="0" y2="1">
+   <stop offset="0" stop-color="#ffffff" stop-opacity=".55"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient id="sombra" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".7"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+ </defs>
+ <ellipse cx="200" cy="520" rx="170" ry="18" fill="url(#sombra)"/>
+ <!-- pé (base com furos) -->
+ <path d="M92 448 H308 L314 510 Q200 522 86 510 Z" fill="url(#pe)"/>
+ <rect x="128" y="470" width="34" height="22" rx="10" fill="#26292d" opacity=".85"/>
+ <rect x="183" y="472" width="34" height="22" rx="10" fill="#26292d" opacity=".85"/>
+ <rect x="238" y="470" width="34" height="22" rx="10" fill="#26292d" opacity=".85"/>
+ <!-- corpo -->
+ <path d="M56 205 Q56 150 200 146 Q344 150 344 205 L344 418 Q344 462 200 466 Q56 462 56 418 Z" fill="url(#corpo)"/>
+ <path d="M56 205 Q56 150 200 146 Q344 150 344 205 L344 228 Q200 206 56 228 Z" fill="url(#topo)"/>
+ <!-- solda do meio -->
+ <path d="M56 306 Q200 322 344 306 L344 318 Q200 334 56 318 Z" fill="#6c727a" opacity=".55"/>
+ <path d="M56 303 Q200 319 344 303 L344 307 Q200 323 56 307 Z" fill="#fff" opacity=".5"/>
+ <!-- brilho vertical -->
+ <path d="M128 176 Q122 300 132 446" stroke="#fff" stroke-width="16" stroke-linecap="round" opacity=".55" fill="none"/>
+ <!-- alça (colarinho aberto) com a válvula e o lacre dentro -->
+ <path d="M114 156 L120 42 Q200 30 280 42 L286 156 Q200 168 114 156 Z" fill="#3b3f45"/>
+ <path d="M140 150 L144 70 Q200 62 256 70 L260 150 Q200 158 140 150 Z" fill="#5d636b"/>
+ <rect x="180" y="96" width="40" height="58" rx="7" fill="#a9afb6"/>
+ <rect x="172" y="88" width="56" height="16" rx="6" fill="#d9dde2"/>
+ <rect x="182" y="108" width="36" height="22" rx="4" fill="#E1061A"/>
+ <rect x="182" y="108" width="36" height="6" rx="3" fill="#ff5a66" opacity=".7"/>
+ <path fill="url(#alca)" fill-rule="evenodd" d="M114 156 L120 42 Q200 30 280 42 L286 156 Q200 168 114 156 Z M140 146 L143 66 Q200 58 257 66 L260 146 Q200 154 140 146 Z"/>
+ <path d="M120 42 Q200 30 280 42 L281 52 Q200 40 119 52 Z" fill="#fff" opacity=".5"/>
+</svg>

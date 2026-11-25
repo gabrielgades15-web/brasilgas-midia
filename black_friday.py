@@ -34,8 +34,23 @@ body{width:%(W)dpx;height:%(H)dpx;overflow:hidden;background:#070707;font-family
 FOOT = "Segunda a sábado, das 7h às 20h · Domingos e feriados, das 7h às 13h<br>Alameda Padre Rolim, 139 · Castanhal"
 
 
+def estrela(n=22, r1=50, r2=43):
+    import math
+    pts = []
+    for i in range(n * 2):
+        r = r1 if i % 2 == 0 else r2
+        t = math.pi * i / n
+        pts.append(f"{50 + r * math.cos(t):.1f}% {50 + r * math.sin(t):.1f}%")
+    return "polygon(" + ",".join(pts) + ")"
+
+
+BOT = (BASE / "templates/ilustracoes/botijao-p13.svg").read_text()
+
+
 def html(fmt, kicker, cta_txt):
-    if fmt == "story":   # base com selo "R$ 10 off 26 e 27/11"; cobre logo antigo (topo) e PARAGÁS (base)
+    """Botijão P13 em destaque (ilustração prata com lacre) + elementos das artes do Canva."""
+    data = (kicker + " · " if kicker else "") + "26 E 27/11"
+    if fmt == "story":
         W, H = 1080, 1920
         corpo = f"""
 <img class="bg" style="top:0" src="data:image/png;base64,{B64('templates/black-friday/base-selo.png')}">
@@ -43,29 +58,30 @@ def html(fmt, kicker, cta_txt):
 <div style="position:absolute;left:180px;right:158px;top:116px;height:150px;background:linear-gradient(90deg,#000 0%,#000 74%,#300203 90%,#5a0304 100%);border-radius:16px;filter:blur(2px)"></div>
 <div class="logo" style="left:50%;top:110px;transform:translateX(-50%) scale(1.15);transform-origin:top center"><div class="w">BRASIL<i>GÁS</i></div><div class="p">PARAGÁS</div></div>
 {f'<div class="kick" style="top:266px;font-size:34px;padding:4px 26px">{kicker}</div>' if kicker else ''}
-<div style="position:absolute;left:0;right:0;top:1640px;height:200px;background:linear-gradient(180deg,rgba(7,7,7,0),#070707 30%)"></div>
+<div style="position:absolute;left:0;right:0;top:729px;height:1111px;background:radial-gradient(ellipse 60% 45% at 50% 50%,#7a0a12 0%,#2a0306 55%,#000 80%)"></div>
+<div style="position:absolute;left:180px;top:770px;width:600px;filter:drop-shadow(0 30px 40px rgba(0,0,0,.6))">{BOT}</div>
+<div style="position:absolute;left:640px;top:1150px;width:400px;height:400px;background:#E1061A;clip-path:{estrela()};
+     display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-8deg)">
+  <b style="font-family:Anton;font-size:96px;line-height:.95;text-shadow:0 5px 0 #8a0010">R$ 10</b>
+  <b style="font-family:Anton;font-size:84px;line-height:.95;color:#FFC72C;text-shadow:0 5px 0 #8a0010">OFF</b>
+  <span style="font-weight:900;font-size:34px;margin-top:6px">26 e 27/11</span></div>
 <div class="cta" style="top:1650px;left:110px;right:110px"><div class="wa">{WA}</div><div><b>(91) 98222-7035</b><span>{cta_txt}</span></div></div>"""
-        # rodapé com horário fica fora do story (a barra de resposta cobre a base); vai no texto alternativo
-    else:   # feed 1080x1350 ou quadrado 1080x1080: emblema 3D + valor em texto limpo
+    else:
         W, H = (1080, 1350) if fmt == "feed" else (1080, 1080)
         q = fmt == "quadrado"
-        top_bg = -300 if q else -235
-        off_top = 760 if q else 942
-        cta_top = 905 if q else 1128
+        y = -60 if q else 0        # no quadrado tudo sobe e o rodapé sai (vai no texto do anúncio)
+        bw = 360 if q else 440
         corpo = f"""
-<img class="bg" style="top:{top_bg}px" src="data:image/png;base64,{B64('templates/black-friday/base-3d.png')}">
-<div style="position:absolute;left:0;right:0;top:0;height:220px;background:linear-gradient(180deg,#070707 55%,rgba(7,7,7,0))"></div>
-<div style="position:absolute;left:0;right:0;top:{off_top-40}px;bottom:0;background:linear-gradient(180deg,rgba(7,7,7,0),rgba(7,7,7,.92) 12%,#070707 40%)"></div>
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse 55% 40% at 75% 33%,#8a0b14 0%,rgba(138,11,20,0) 70%),radial-gradient(ellipse 60% 35% at 25% 30%,#4a050b 0%,rgba(0,0,0,0) 70%),#070707"></div>
+<img style="position:absolute;left:{20 if not q else 40}px;top:{185+y}px;width:{570 if not q else 500}px" src="data:image/png;base64,{B64('templates/black-friday/emblema.png')}">
+<div style="position:absolute;left:{580 if not q else 600}px;top:{165+y}px;width:{bw}px;filter:drop-shadow(0 26px 30px rgba(0,0,0,.7))">{BOT}</div>
 <div class="logo" style="left:64px;top:36px"><div class="w">BRASIL<i>GÁS</i></div><div class="p">PARAGÁS</div></div>
-<div class="selo" style="right:64px;top:{70}px">REVENDA AUTORIZADA</div>
-<div class="off" style="top:{off_top}px"><b>R$ 10 OFF</b><span>NA RECARGA DO SEU GÁS P13</span></div>
-<div class="cta" style="top:{cta_top}px"><div class="wa">{WA}</div><div><b>(91) 98222-7035</b><span>{cta_txt}</span></div></div>
-{'' if q else f'<div class="foot" style="top:1268px">{FOOT}</div>'}"""
-        bar_top = 828 + (top_bg + 235)
-        data = (kicker + " · " if kicker else "") + "26 E 27/11"
-        corpo += (f'<div style="position:absolute;left:146px;right:170px;top:{bar_top-2}px;height:100px;border-radius:26px;'
-                  f'background:linear-gradient(90deg,#C8061A,#E1061A);display:flex;align-items:center;justify-content:center;'
-                  f'font-family:Anton;font-size:54px;letter-spacing:4px;box-shadow:0 8px 20px rgba(0,0,0,.4)">{data}</div>')
+<div class="selo" style="right:64px;top:70px">REVENDA AUTORIZADA</div>
+<div style="position:absolute;left:64px;right:64px;top:{(700 if q else 792)+y}px;height:{84 if q else 92}px;border-radius:26px;background:linear-gradient(90deg,#C8061A,#E1061A);
+     display:flex;align-items:center;justify-content:center;font-family:Anton;font-size:{48 if q else 54}px;letter-spacing:4px;box-shadow:0 8px 20px rgba(0,0,0,.4)">{data}</div>
+<div class="off" style="top:{(800 if q else 900)+y}px"><b style="{'font-size:96px' if q else ''}">R$ 10 OFF</b><span>NA RECARGA DO SEU GÁS P13</span></div>
+<div class="cta" style="top:{(965 if q else 1084)+y}px;{'padding:8px 26px' if q else ''}"><div class="wa" style="{'width:72px;height:72px' if q else ''}">{WA}</div><div><b style="{'font-size:48px' if q else ''}">(91) 98222-7035</b><span>{cta_txt}</span></div></div>
+{'' if q else f'<div class="foot" style="top:1262px">{FOOT}</div>'}"""
     return (f"<!DOCTYPE html><html><head><meta charset='utf-8'><style>{CSS % dict(W=W, H=H)}</style></head>"
             f"<body>{corpo}</body></html>"), W, H
 
