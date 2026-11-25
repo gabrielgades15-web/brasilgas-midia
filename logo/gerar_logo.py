@@ -242,7 +242,7 @@ def nome_dono(x, base, T):
     return f'<path d="{d1}" fill="{AZUL_DONO}"/><path d="{d2}" fill="{VERM_DONO}"/>', w1 + T * 0.02 + w2, cap
 
 
-def logo_dono(largura_nome=1000, fundo=True, pad=60):
+def logo_dono(largura_nome=1000, fundo=True, pad=60, rx=0):
     """BRASILGÁS em cima, bandeira Paragás centralizada embaixo (67% da largura do nome), fundo branco."""
     _, w0, _ = nome_dono(0, 0, 100)
     T = 100 * largura_nome / w0
@@ -255,7 +255,7 @@ def logo_dono(largura_nome=1000, fundo=True, pad=60):
     band, bw = bandeira(pad + (wn - wn * 0.67) / 2, base + T * 0.30, bh, font=ROBOTO_LARGA)
     W = wn + 2 * pad
     H = base + T * 0.30 + bh + pad
-    bg = f'<rect width="{W:.0f}" height="{H:.0f}" fill="#fff"/>' if fundo else ""
+    bg = f'<rect width="{W:.0f}" height="{H:.0f}" rx="{rx}" fill="#fff"/>' if fundo else ""
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W:.0f} {H:.0f}" width="{W:.0f}" height="{H:.0f}">{bg}{nm}{band}</svg>')
 
 
@@ -280,6 +280,7 @@ if __name__ == "__main__":
     }
     arquivos["brasilgas-placa.svg"] = logo_placa()
     arquivos["brasilgas-oficial.svg"] = logo_dono()
+    arquivos["brasilgas-oficial-caixa.svg"] = logo_dono(pad=64, rx=36)   # usado no topo das artes
     arquivos["brasilgas-perfil-oficial.svg"] = perfil_dono()
     arquivos["brasilgas-perfil-placa.svg"] = foto_perfil_placa()
     for nome, svg in arquivos.items():

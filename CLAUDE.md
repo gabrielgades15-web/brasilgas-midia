@@ -67,7 +67,7 @@ A tarefa roda às 20h34 (America/Belem) e produz as peças de AMANHÃ. Elas entr
 - Ideias que funcionam no @souparagas: histórias em sequência ("contos da cozinha sem gás"), comidas típicas por data, homenagens.
 
 ## Aprendizados dos prints (19/11/2026)
-- LOGO OFICIAL (25/11, 18h — o da placa da loja, único logo original da Brasilgás): faixa vermelha com moldura branca, "BRASIL" azul + "GÁS" cinza com contorno branco, e o quadro azul com o botijão prata e a bandeira Paragás (faixa PARAGÁS + ícone azul). Vetor em `logo/brasilgas-placa.svg` (gerar_logo.py); as artes usam ele automaticamente. Foto de perfil: `logo/brasilgas-perfil-placa.png`. As versões anteriores (caixa branca, negativo) estão aposentadas. Nunca redesenhar o logo em texto.
+- LOGO OFICIAL (25/11, 19h — definido pelo dono, em teste de aprovação): fundo branco, "BRASIL" azul-marinho (#33348F) + "GÁS" vermelho (#ED1C24) em fonte bem grossa, e a bandeira Paragás (faixa PARAGÁS + ícone azul) centralizada embaixo. Vetor em `logo/brasilgas-oficial.svg`; as artes usam `logo/brasilgas-oficial-caixa.svg` automaticamente. Foto de perfil: `logo/brasilgas-perfil-oficial.png`. Versões anteriores (placa, caixa com "revenda autorizada", negativo) aposentadas. Nunca redesenhar o logo em texto.
 - Mascote prata (botijão com olhos) já é usado pela marca e o público reconhece.
 - No Leo Gás, o que mais engaja é atendente real falando pra câmera (com fundo trocado), muito mais que arte feita só com IA. Priorizar rosto humano nos Reels quando houver fotos ou vídeos em `fotos/`.
 - Se usar imagem gerada por IA, marcar isAiGenerated:true no Metricool.
