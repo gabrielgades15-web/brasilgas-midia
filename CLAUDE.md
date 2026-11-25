@@ -67,7 +67,7 @@ A tarefa roda às 20h34 (America/Belem) e produz as peças de AMANHÃ. Elas entr
 - Ideias que funcionam no @souparagas: histórias em sequência ("contos da cozinha sem gás"), comidas típicas por data, homenagens.
 
 ## Aprendizados dos prints (19/11/2026)
-- LOGO OFICIAL (decidido em 21/11): "BRASIL" azul + "GÁS" vermelho, sobre faixa vermelha "PARAGÁS", numa caixa branca. Nunca usar o logo antigo do Canva (GÁS cinza + ícone azul).
+- LOGO OFICIAL (atualizado em 25/11, pedido do dono): "BRASIL" azul + "GÁS" vermelho, com "REVENDA AUTORIZADA" + a bandeira Paragás original (faixa vermelha PARAGÁS + ícone azul do octógono). Arquivos vetoriais em `logo/` (gerar_logo.py); as artes usam `logo/brasilgas-logo-caixa.svg` automaticamente. Nunca usar o logo antigo do Canva (GÁS cinza + ícone de botijão) nem desenhar o logo em texto.
 - Mascote prata (botijão com olhos) já é usado pela marca e o público reconhece.
 - No Leo Gás, o que mais engaja é atendente real falando pra câmera (com fundo trocado), muito mais que arte feita só com IA. Priorizar rosto humano nos Reels quando houver fotos ou vídeos em `fotos/`.
 - Se usar imagem gerada por IA, marcar isAiGenerated:true no Metricool.
@@ -123,7 +123,7 @@ O Gabriel autorizou a publicação automática, desde que exista o verificador e
 - Destaques do perfil: Gás do Povo, Entrega, Água 20L, Onde fica, Horário (e Clientes, quando houver depoimentos).
 - Quando o story do dia combinar com um destaque, incluir no resumo uma linha: "📌 Story de hoje (HHh) cabe no destaque <nome>: abra o story e toque em Destacar."
 
-## Black Friday 2026 (decidido pelo Gabriel em 24/11)
+## Black Friday 2026 — SUSPENSA em 25/11 (não divulgar até o Gabriel reativar em ofertas.json)
 - Oferta confirmada em `ofertas.json`: R$ 10 OFF na recarga P13, dias 26 e 27/11. Só o valor do desconto aparece; preço do botijão continua só no WhatsApp. Não inventar condições.
 - Visual: as duas artes do Canva do Gabriel (`templates/black-friday/`). Gerar com `python3 black_friday.py feed|story|quadrado saida.png --kicker "..."`; o script põe o logo oficial no lugar do antigo. Nada de foto de estoque nessas peças.
 - 26/11 e 27/11: post + story por dia (kicker "É HOJE" / "ÚLTIMO DIA"), Instagram e Google. Depois de 27/11 a oferta expira sozinha no verificador.

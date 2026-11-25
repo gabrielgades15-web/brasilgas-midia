@@ -39,7 +39,7 @@ def ofertas_confirmadas():
     except Exception:
         return []
     hoje = datetime.date.today().isoformat()
-    return [o for o in todas if not isinstance(o, dict) or o.get("fim", "9999") >= hoje]
+    return [o for o in todas if not isinstance(o, dict) or (o.get("fim", "9999") >= hoje and o.get("status", "ativa") != "suspensa")]
 
 def valores_permitidos():
     v = []

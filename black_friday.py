@@ -44,6 +44,7 @@ def estrela(n=22, r1=50, r2=43):
     return "polygon(" + ",".join(pts) + ")"
 
 
+LOGO = "data:image/svg+xml;base64," + base64.b64encode((BASE / "logo/brasilgas-logo-caixa.svg").read_bytes()).decode()
 BOT = f'<img style="width:100%;display:block" src="data:image/png;base64,{B64("templates/black-friday/botijao-real.png")}">'  # foto real do botijão (asset das artes do Gabriel no Canva)
 
 
@@ -56,8 +57,8 @@ def html(fmt, kicker, cta_txt):
 <img class="bg" style="top:0" src="data:image/png;base64,{B64('templates/black-friday/base-selo.png')}">
 <div style="position:absolute;left:170px;right:150px;top:110px;height:160px;background:linear-gradient(90deg,#000 0%,#000 72%,#2a0203 88%,#5a0304 100%);filter:blur(10px);border-radius:30px"></div>
 <div style="position:absolute;left:180px;right:158px;top:116px;height:150px;background:linear-gradient(90deg,#000 0%,#000 74%,#300203 90%,#5a0304 100%);border-radius:16px;filter:blur(2px)"></div>
-<div class="logo" style="left:50%;top:110px;transform:translateX(-50%) scale(1.15);transform-origin:top center"><div class="w">BRASIL<i>GÁS</i></div><div class="p">PARAGÁS</div></div>
-{f'<div class="kick" style="top:266px;font-size:34px;padding:4px 26px">{kicker}</div>' if kicker else ''}
+<img src="{LOGO}" style="position:absolute;left:50%;top:100px;width:560px;transform:translateX(-50%);filter:drop-shadow(0 8px 20px rgba(0,0,0,.4))">
+{f'<div class="kick" style="top:282px;font-size:32px;padding:3px 24px">{kicker}</div>' if kicker else ''}
 <div style="position:absolute;left:0;right:0;top:729px;height:1111px;background:radial-gradient(ellipse 60% 45% at 50% 50%,#7a0a12 0%,#2a0306 55%,#000 80%)"></div>
 <div style="position:absolute;left:150px;top:760px;width:640px;filter:drop-shadow(0 30px 40px rgba(0,0,0,.6))">{BOT}</div>
 <div style="position:absolute;left:640px;top:1150px;width:400px;height:400px;background:#E1061A;clip-path:{estrela()};
@@ -75,8 +76,7 @@ def html(fmt, kicker, cta_txt):
 <div style="position:absolute;inset:0;background:radial-gradient(ellipse 55% 40% at 75% 33%,#8a0b14 0%,rgba(138,11,20,0) 70%),radial-gradient(ellipse 60% 35% at 25% 30%,#4a050b 0%,rgba(0,0,0,0) 70%),#070707"></div>
 <img style="position:absolute;left:{20 if not q else 40}px;top:{185+y}px;width:{570 if not q else 500}px" src="data:image/png;base64,{B64('templates/black-friday/emblema.png')}">
 <div style="position:absolute;left:{585 if not q else 610}px;top:{170+y}px;width:{bw}px;filter:drop-shadow(0 26px 30px rgba(0,0,0,.7))">{BOT}</div>
-<div class="logo" style="left:64px;top:36px"><div class="w">BRASIL<i>GÁS</i></div><div class="p">PARAGÁS</div></div>
-<div class="selo" style="right:64px;top:70px">REVENDA AUTORIZADA</div>
+<img src="{LOGO}" style="position:absolute;left:50%;top:30px;width:480px;transform:translateX(-50%);filter:drop-shadow(0 8px 20px rgba(0,0,0,.4))">
 <div style="position:absolute;left:64px;right:64px;top:{(700 if q else 792)+y}px;height:{84 if q else 92}px;border-radius:26px;background:linear-gradient(90deg,#C8061A,#E1061A);
      display:flex;align-items:center;justify-content:center;font-family:Anton;font-size:{48 if q else 54}px;letter-spacing:4px;box-shadow:0 8px 20px rgba(0,0,0,.4)">{data}</div>
 <div class="off" style="top:{(800 if q else 900)+y}px"><b style="{'font-size:96px' if q else ''}">R$ 10 OFF</b><span>NA RECARGA DO SEU GÁS P13</span></div>
