@@ -242,7 +242,7 @@ def nome_dono(x, base, T):
     return f'<path d="{d1}" fill="{AZUL_DONO}"/><path d="{d2}" fill="{VERM_DONO}"/>', w1 + T * 0.02 + w2, cap
 
 
-def logo_dono(largura_nome=1000, fundo=True, pad=60, rx=0):
+def logo_dono(largura_nome=1000, fundo=True, pad=60, rx=0, prop_band=0.67):
     """BRASILGÁS em cima, bandeira Paragás centralizada embaixo (67% da largura do nome), fundo branco."""
     _, w0, _ = nome_dono(0, 0, 100)
     T = 100 * largura_nome / w0
@@ -251,8 +251,8 @@ def logo_dono(largura_nome=1000, fundo=True, pad=60, rx=0):
     base = topo + cap
     nm, _, _ = nome_dono(pad, base, T)
     _, bw0 = bandeira(0, 0, 100, font=ROBOTO_LARGA)
-    bh = 100 * (wn * 0.67) / bw0
-    band, bw = bandeira(pad + (wn - wn * 0.67) / 2, base + T * 0.30, bh, font=ROBOTO_LARGA)
+    bh = 100 * (wn * prop_band) / bw0
+    band, bw = bandeira(pad + (wn - wn * prop_band) / 2, base + T * 0.30, bh, font=ROBOTO_LARGA)
     W = wn + 2 * pad
     H = base + T * 0.30 + bh + pad
     bg = f'<rect width="{W:.0f}" height="{H:.0f}" rx="{rx}" fill="#fff"/>' if fundo else ""
@@ -297,7 +297,8 @@ if __name__ == "__main__":
         "paragas-bandeira.svg": so_bandeira(),
     }
     arquivos["brasilgas-placa.svg"] = logo_placa()
-    arquivos["brasilgas-instagram.svg"] = logo_instagram()
+    arquivos["brasilgas-instagram.svg"] = logo_dono(pad=44, rx=40, prop_band=1.0)   # 25/11 20h47: modelo do post "Horário de atendimento"
+    arquivos["brasilgas-instagram-quadro.svg"] = logo_instagram()
     arquivos["brasilgas-oficial.svg"] = logo_dono()
     arquivos["brasilgas-oficial-caixa.svg"] = logo_dono(pad=64, rx=36)   # usado no topo das artes
     arquivos["brasilgas-perfil-oficial.svg"] = perfil_dono()

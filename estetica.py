@@ -31,12 +31,12 @@ WA = ('<svg viewBox="0 0 24 24" fill="#fff" width="100%" height="100%"><path d="
 
 FORMATOS = {
     # y de cada bloco
-    "story": dict(W=1080, H=1920, tick=80, logo_y=100, logo_w=720, kick_y=286, t_y=350, t_size=230, t_w=960,
-                  prod_x=80, prod_y=800, prod_w=640, selo_x=620, selo_y=1060, selo=400,
-                  cta_y=1600, cta_h=150, par_y=1772, par_w=360),
-    "feed": dict(W=1080, H=1350, tick=60, logo_y=74, logo_w=600, kick_y=226, t_y=284, t_size=150, t_w=960,
-                 prod_x=70, prod_y=580, prod_w=420, selo_x=560, selo_y=640, selo=380,
-                 cta_y=1098, cta_h=128, par_y=1238, par_w=280),
+    "story": dict(W=1080, H=1920, tick=80, logo_y=100, logo_w=460, kick_y=0, t_y=0, t_size=200, t_w=960,
+                  prod_x=90, prod_y=0, prod_w=600, selo_x=620, selo_y=0, selo=390,
+                  cta_y=1640, cta_h=150, par_y=0, par_w=0),
+    "feed": dict(W=1080, H=1350, tick=60, logo_y=72, logo_w=330, kick_y=0, t_y=0, t_size=130, t_w=960,
+                 prod_x=90, prod_y=0, prod_w=390, selo_x=560, selo_y=0, selo=360,
+                 cta_y=1146, cta_h=128, par_y=0, par_w=0),
 }
 
 
@@ -49,8 +49,20 @@ def estrela(n=22, r1=50, r2=43):
     return "polygon(" + ",".join(pts) + ")"
 
 
+def _proporcao_logo():
+    import re
+    w, h = map(float, re.search(r'viewBox="0 0 ([\d.]+) ([\d.]+)"', (BASE / "logo/brasilgas-instagram.svg").read_text()).groups())
+    return h / w
+
+
 def html(spec, fmt, com_ticker=True):
-    f = FORMATOS[fmt]
+    f = dict(FORMATOS[fmt])
+    lh = f["logo_w"] * _proporcao_logo()
+    story = fmt == "story"
+    f["kick_y"] = f["logo_y"] + lh + (24 if story else 18)
+    f["t_y"] = f["kick_y"] + (72 if story else 58)
+    f["prod_y"] = f["t_y"] + f["t_size"] * 1.8 + (40 if story else 24)
+    f["selo_y"] = f["prod_y"] + (260 if story else 90)
     W, H = f["W"], f["H"]
     prod = spec.get("PRODUTO", "botijao")
     prod_src = B64("templates/black-friday/botijao-real.png") if prod == "botijao" else B64(prod)
@@ -97,7 +109,7 @@ body{{width:{W}px;height:{H}px;overflow:hidden;position:relative;font-family:Mon
 <img src="data:image/png;base64,{prod_src}" style="position:absolute;left:{f['prod_x']}px;top:{f['prod_y']}px;width:{f['prod_w']}px;filter:drop-shadow(0 30px 40px rgba(0,0,0,.7))">
 {selo_html}
 <div class="cta"><div class="wa">{WA}</div><div><b>(91) 98222 7035</b><span>{spec.get('CTA_SUB','peça no WhatsApp')}</span></div></div>
-<img src="{PARAGAS}" style="position:absolute;left:50%;top:{f['par_y']}px;width:{f['par_w']}px;transform:translateX(-50%)">
+{f'<img src="{PARAGAS}" style="position:absolute;left:50%;top:{f["par_y"]}px;width:{f["par_w"]}px;transform:translateX(-50%)">' if f["par_w"] else ''}
 <script>
 document.querySelectorAll('[data-fit]').forEach(el=>{{let s={t_size};el.style.fontSize=s+'px';
   while(el.scrollWidth>{f['t_w']}&&s>40){{s-=4;el.style.fontSize=s+'px';}}}});
