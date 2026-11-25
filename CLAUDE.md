@@ -122,3 +122,9 @@ O Gabriel autorizou a publicação automática, desde que exista o verificador e
 ## Destaques (manual, o Metricool não alimenta)
 - Destaques do perfil: Gás do Povo, Entrega, Água 20L, Onde fica, Horário (e Clientes, quando houver depoimentos).
 - Quando o story do dia combinar com um destaque, incluir no resumo uma linha: "📌 Story de hoje (HHh) cabe no destaque <nome>: abra o story e toque em Destacar."
+
+## Black Friday 2026 (decidido pelo Gabriel em 24/11)
+- Oferta confirmada em `ofertas.json`: R$ 10 OFF na recarga P13, dias 26 e 27/11. Só o valor do desconto aparece; preço do botijão continua só no WhatsApp. Não inventar condições.
+- Visual: as duas artes do Canva do Gabriel (`templates/black-friday/`). Gerar com `python3 black_friday.py feed|story|quadrado saida.png --kicker "..."`; o script põe o logo oficial no lugar do antigo. Nada de foto de estoque nessas peças.
+- 26/11 e 27/11: post + story por dia (kicker "É HOJE" / "ÚLTIMO DIA"), Instagram e Google. Depois de 27/11 a oferta expira sozinha no verificador.
+- Fotos de close de botijão real ficam bloqueadas (mancha/desgaste).
