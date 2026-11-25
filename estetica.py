@@ -143,7 +143,7 @@ def faixa(texto, alto, tam, saida):
     return u
 
 
-def video(spec, fmt, saida):
+def video(spec, fmt, saida, dur=5):
     f = FORMATOS[fmt]
     W, H = f["W"], f["H"]
     tmp = pathlib.Path(tempfile.mkdtemp())
@@ -154,16 +154,40 @@ def video(spec, fmt, saida):
     u = faixa(tick, hl, tam, tmp / "t.png")
     v = 90  # px por segundo
     ys = [6, hl + 4, H - f["tick"] + 2, H - hl]
-    filtros = (f"[0:v]scale={W*2}:{H*2},zoompan=z='1+0.00025*on':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=150:s={W}x{H}:fps=30[bg];"
+    filtros = (f"[0:v]scale={W*2}:{H*2},zoompan=z='1+0.00025*on':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={dur*30}:s={W}x{H}:fps=30[bg];"
                f"[bg][1:v]overlay=x='-mod(t*{v}\\,{u})':y={ys[0]}[a];"
                f"[a][1:v]overlay=x='-{u}+mod(t*{v}\\,{u})':y={ys[1]}[b];"
                f"[b][1:v]overlay=x='-mod(t*{v}\\,{u})':y={ys[2]}[c];"
                f"[c][1:v]overlay=x='-{u}+mod(t*{v}\\,{u})':y={ys[3]},format=yuv420p[v]")
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-loop", "1", "-i", str(tmp / "base.png"), "-loop", "1", "-i", str(tmp / "t.png"),
-                    "-filter_complex", filtros, "-map", "[v]", "-t", "5", "-r", "30", "-c:v", "libx264", "-preset", "veryfast",
+                    "-filter_complex", filtros, "-map", "[v]", "-t", str(dur), "-r", "30", "-c:v", "libx264", "-preset", "veryfast",
                     "-crf", "20", "-movflags", "+faststart", str(saida)], check=True)
     capa = pathlib.Path(str(saida).rsplit(".", 1)[0] + "-capa.png")
     shot(html(spec, fmt), W, H, capa)
+    return capa
+
+
+def reel(specs, saida, dur=4, trans=0.5):
+    """Reel vertical com várias cenas (uma por spec), transição suave entre elas. Gera também a capa (1ª cena)."""
+    tmp = pathlib.Path(tempfile.mkdtemp())
+    clipes = []
+    for i, sp in enumerate(specs):
+        c = tmp / f"c{i}.mp4"
+        video(sp, "story", c, dur=dur)
+        clipes.append(c)
+    entradas, filtros, ant, off = [], [], "[0:v]", 0.0
+    for c in clipes:
+        entradas += ["-i", str(c)]
+    for i in range(1, len(clipes)):
+        off += dur - trans
+        saida_lbl = f"[x{i}]"
+        filtros.append(f"{ant}[{i}:v]xfade=transition=fade:duration={trans}:offset={off:.2f}{saida_lbl}")
+        ant = saida_lbl
+    subprocess.run(["ffmpeg", "-v", "error", "-y", *entradas, "-filter_complex", ";".join(filtros) + f";{ant}format=yuv420p[v]",
+                    "-map", "[v]", "-r", "30", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-movflags", "+faststart",
+                    str(saida)], check=True)
+    capa = pathlib.Path(str(saida).rsplit(".", 1)[0] + "-capa.png")
+    shot(html(specs[0], "story"), 1080, 1920, capa)
     return capa
 
 
@@ -171,9 +195,12 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("spec"); ap.add_argument("saida"); ap.add_argument("fmt", choices=list(FORMATOS))
     ap.add_argument("--video", action="store_true")
+    ap.add_argument("--reel", action="store_true", help="spec é uma LISTA de cenas")
     a = ap.parse_args()
     spec = json.loads(pathlib.Path(a.spec).read_text())
-    if a.video:
+    if a.reel:
+        print(a.saida, reel(spec, a.saida))
+    elif a.video:
         print(a.saida, video(spec, a.fmt, a.saida))
     else:
         f = FORMATOS[a.fmt]
