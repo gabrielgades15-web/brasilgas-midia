@@ -124,19 +124,16 @@ def perfil(svg_neg):
 
 
 def foto_perfil():
-    """Foto de perfil 1080x1080: fundo vermelho, botijão real e logo em negativo (cabe no círculo do Instagram)."""
-    from PIL import Image, ImageDraw, ImageFilter
-    W = 1080
-    bg = Image.new("RGBA", (W, W), (225, 6, 26, 255))
-    glow = Image.new("L", (W, W), 0); ImageDraw.Draw(glow).ellipse((140, 60, 940, 860), fill=90)
-    bg = Image.composite(Image.new("RGBA", (W, W), (255, 70, 80, 255)), bg, glow.filter(ImageFilter.GaussianBlur(120)))
-    bot = Image.open(AQUI.parent / "templates/black-friday/botijao-real.png"); h = 430
-    bot = bot.resize((int(bot.size[0] * h / bot.size[1]), h), Image.LANCZOS)
-    bg.alpha_composite(bot, ((W - bot.size[0]) // 2, 150))
-    neg = Image.open(AQUI / "brasilgas-logo-negativo.png"); w = 820
-    neg = neg.resize((w, int(neg.size[1] * w / neg.size[0])), Image.LANCZOS)
-    bg.alpha_composite(neg, ((W - w) // 2, 600))
-    bg.convert("RGB").save(AQUI / "brasilgas-perfil.png")
+    """Foto de perfil redonda (aprovada pelo Gabriel em 25/11): fundo branco, anel vermelho + filete azul, logo horizontal no centro."""
+    from PIL import Image, ImageDraw
+    W = 2160
+    bg = Image.new("RGBA", (W, W), (255, 255, 255, 255)); d = ImageDraw.Draw(bg)
+    d.ellipse((24, 24, W - 24, W - 24), outline=(225, 6, 26, 255), width=56)
+    d.ellipse((104, 104, W - 104, W - 104), outline=(29, 79, 163, 255), width=14)
+    lg = Image.open(AQUI / "brasilgas-logo.png"); w = 1700
+    lg = lg.resize((w, int(lg.size[1] * w / lg.size[0])), Image.LANCZOS)
+    bg.alpha_composite(lg, ((W - w) // 2, (W - lg.size[1]) // 2))
+    bg.resize((1080, 1080), Image.LANCZOS).convert("RGB").save(AQUI / "brasilgas-perfil.png")
 
 
 def png(svg_txt, saida, largura):
