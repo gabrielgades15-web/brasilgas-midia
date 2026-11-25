@@ -74,7 +74,7 @@ A tarefa roda às 20h34 (America/Belem) e produz as peças de AMANHÃ. Elas entr
 - Ideias que funcionam no @souparagas: histórias em sequência ("contos da cozinha sem gás"), comidas típicas por data, homenagens.
 
 ## Aprendizados dos prints (19/11/2026)
-- LOGO DO INSTAGRAM (25/11, 20h34 — modelo de vídeo do Gabriel): caixa branca com "BRASIL" azul + "GÁS" cinza (fonte bem grossa) e o quadro azul do botijão com a bandeira Paragás à direita. Vetor `logo/brasilgas-instagram.svg`. A bandeira Paragás (`logo/paragas-bandeira.svg`) vai sozinha embaixo do botão do WhatsApp. Logo do dono em branco (`logo/brasilgas-oficial.svg`) fica para materiais impressos. Nunca redesenhar o logo em texto.
+- LOGO DO INSTAGRAM (25/11, 20h47 — o do post "Horário de atendimento", escolhido pelo Gabriel): caixa branca arredondada com "BRASIL" azul-marinho + "GÁS" vermelho e, embaixo, a bandeira Paragás (faixa PARAGÁS + ícone azul) na largura do nome. Vetor `logo/brasilgas-instagram.svg` (estetica.py usa ele). Como o logo já tem a Paragás, a bandeira não se repete embaixo do botão. Versão com quadro do botijão (`brasilgas-instagram-quadro.svg`) reprovada. Nunca redesenhar o logo em texto.
 - Mascote prata (botijão com olhos) já é usado pela marca e o público reconhece.
 - No Leo Gás, o que mais engaja é atendente real falando pra câmera (com fundo trocado), muito mais que arte feita só com IA. Priorizar rosto humano nos Reels quando houver fotos ou vídeos em `fotos/`.
 - Se usar imagem gerada por IA, marcar isAiGenerated:true no Metricool.
@@ -131,8 +131,8 @@ O Gabriel autorizou a publicação automática, desde que exista o verificador e
 - Quando o story do dia combinar com um destaque, incluir no resumo uma linha: "📌 Story de hoje (HHh) cabe no destaque <nome>: abra o story e toque em Destacar."
 
 ## Black Friday 2026 — REATIVADA em 25/11 às 19h10 pelo Gabriel
-- 26/11 JÁ AGENDADO à mão (story 7h, Google 9h45, post 10h, kicker "É HOJE"). A tarefa de 25/11 não produz nada para 26/11. A de 26/11 produz 27/11 com kicker "ÚLTIMO DIA" (post + Google + story 7h).
+- 25/11 21h story "É AMANHÃ". 26/11 JÁ AGENDADO à mão na estética nova (story em vídeo 7h, Google 9h45, post 10h, reel de 3 cenas 12h, kicker "É HOJE"). A tarefa de 25/11 não produz nada para 26/11. A de 26/11 produz 27/11 com kicker "ÚLTIMO DIA" (post + Google + story 7h).
 - Oferta confirmada em `ofertas.json`: R$ 10 OFF na recarga P13, dias 26 e 27/11. Só o valor do desconto aparece; preço do botijão continua só no WhatsApp. Não inventar condições.
-- Visual: as duas artes do Canva do Gabriel (`templates/black-friday/`). Gerar com `python3 black_friday.py feed|story|quadrado saida.png --kicker "..."`; o script põe o logo oficial no lugar do antigo. Nada de foto de estoque nessas peças.
+- Visual: estetica.py (estética nova). Spec de exemplo em `midia/2026-11-26/bf-hoje.json` e reel em `midia/2026-11-26/reel-bf.json` (para 27/11 trocar KICKER por "Último dia").
 - 26/11 e 27/11: post + story por dia (kicker "É HOJE" / "ÚLTIMO DIA"), Instagram e Google. Depois de 27/11 a oferta expira sozinha no verificador.
 - Fotos de close de botijão real ficam bloqueadas (mancha/desgaste).

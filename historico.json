@@ -144,20 +144,41 @@
     "pilar": "Calendário",
     "headline": "BLACK FRIDAY · É HOJE · R$ 10 OFF",
     "evento": "black-friday-2026:D0:post",
-    "metricool_id": 442390945,
-    "metricool_id_gmb": 442390953,
+    "metricool_id": 442477263,
+    "metricool_id_gmb": 442477278,
     "publicado_automatico": true,
     "horario": "10:00",
-    "obs": "feito à mão em 25/11 19h (logo do dono)"
+    "obs": "v4 estética nova, logo do post Horário de atendimento"
   },
   {
     "data": "2026-11-26",
-    "formato": "story",
+    "formato": "story-video",
     "pilar": "Calendário",
     "headline": "BLACK FRIDAY · É HOJE",
     "evento": "black-friday-2026:D0:story",
-    "metricool_id": 442390970,
+    "metricool_id": 442477251,
     "publicado_automatico": true,
     "horario": "07:00"
+  },
+  {
+    "data": "2026-11-25",
+    "formato": "story",
+    "pilar": "Calendário",
+    "headline": "BLACK FRIDAY · É AMANHÃ",
+    "evento": "black-friday-2026:D-1:story",
+    "metricool_id": 442476073,
+    "publicado_automatico": true,
+    "horario": "21:00"
+  },
+  {
+    "data": "2026-11-26",
+    "formato": "reel",
+    "pilar": "Calendário",
+    "headline": "BLACK FRIDAY · É HOJE (3 cenas)",
+    "evento": "black-friday-2026:D0:reel",
+    "metricool_id": 442477395,
+    "publicado_automatico": true,
+    "horario": "12:00",
+    "obs": "sem música: catálogo de áudio ainda 403"
   }
 ]
