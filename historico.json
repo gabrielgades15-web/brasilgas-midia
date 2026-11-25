@@ -1,141 +1,163 @@
 [
- {
-  "data": "2026-11-19",
-  "formato": "post",
-  "pilar": "Gás do Povo",
-  "headline": "TEM GÁS DO POVO AQUI",
-  "metricool_id": 433906906
- },
- {
-  "data": "2026-11-19",
-  "formato": "story",
-  "pilar": "Calendário",
-  "headline": "GARANTA SEU GÁS HOJE! (amanhã é feriado)",
-  "evento": "consciencia-negra-2026:D-1:story",
-  "metricool_id": 434293765
- },
- {
-  "data": "2026-11-20",
-  "formato": "story",
-  "pilar": "Calendário",
-  "headline": "ABERTOS ATÉ 13H.",
-  "evento": "consciencia-negra-2026:D0:story",
-  "metricool_id": 434293783
- },
- {
-  "data": "2026-11-20",
-  "formato": "reel",
-  "pilar": "Urgência e fim de semana",
-  "headline": "FIM DE SEMANA GARANTIDO",
-  "metricool_id": 435258053
- },
- {
-  "data": "2026-11-21",
-  "formato": "story",
-  "pilar": "Água 20L e combo",
-  "headline": "GÁS E ÁGUA NUM PEDIDO SÓ (v3)",
-  "gancho": "Benefício",
-  "metricool_id": 436607808,
-  "publicado_automatico": true
- },
- {
-  "data": "2026-11-21",
-  "formato": "post",
-  "pilar": "Confiança / estoque",
-  "headline": "GÁS NÃO FALTA POR AQUI",
-  "gancho": "Prova local",
-  "foto": "fotos/estoque-p13-ceu-azul.jpg",
-  "metricool_id": 436607600,
-  "publicado_automatico": true
- },
- {
-  "data": "2026-11-21",
-  "formato": "story",
-  "pilar": "Gás do Povo",
-  "headline": "TEM GÁS DO POVO AQUI",
-  "gancho": "Benefício",
-  "foto": "fotos/fachada-frente-gas-do-povo.jpg",
-  "metricool_id": 436607615,
-  "publicado_automatico": true
- },
- {
-  "data": "2026-11-22",
-  "formato": "story",
-  "pilar": "Domingo aberto",
-  "headline": "ABERTO ATÉ 13H",
-  "gancho": "Urgência leve",
-  "foto": "fotos/fachada-esquina-completa.jpg",
-  "metricool_id": 437370677,
-  "publicado_automatico": true
- },
- {
-  "data": "2026-11-23",
-  "formato": "post",
-  "pilar": "Entrega e atendimento",
-  "headline": "FAZ ENTREGA? FAZ SIM!",
-  "gancho": "Pergunta direta (demanda real do WhatsApp)",
-  "foto": "fotos/fachada-frente-gas-do-povo.jpg",
-  "metricool_id": 438279690,
-  "metricool_id_gmb": 438279698,
-  "publicado_automatico": true,
-  "obs": "arte refeita (v2) em 23/11 de madrugada: a lateral virava muro vermelho"
- },
- {
-  "data": "2026-11-24",
-  "formato": "reel",
-  "pilar": "Produto / entrega (Motion Reel plugin)",
-  "headline": "ACABOU O GÁS? A GENTE LEVA SUA RECARGA",
-  "gancho": "Dor imediata (gás acabou) + solução",
-  "fotos": [
-   "estoque-p13-ceu-azul",
-   "fachada-paragas-lateral-1",
-   "fachada-frente-gas-do-povo",
-   "estoque-p13-alcas-ceu",
-   "porta-grade-galoes"
-  ],
-  "metricool_id": 439539856,
-  "publicado_automatico": true,
-  "musica": "trilha sintetizada dentro do vídeo (plugin Motion Reel), sem catálogo do Instagram",
-  "obs": "substituiu 'A loja vermelha da esquina' a pedido do Gabriel em 23/11 (o termo não dizia que é revenda de gás)",
-  "arquivo": "midia/2026-11-24/reel-recarga-motion-v2.mp4",
-  "duracao_s": 22.5,
-  "obs2": "23/11 20h34: no Metricool está como RASCUNHO (draft:true) às 18h; só publica se o Gabriel aprovar",
-  "obs3": "24/11: publicado às 18h pelo Metricool (id 439765792, reel DgI4LbLh2Eu)"
- },
- {
-  "data": "2026-11-24",
-  "formato": "story",
-  "pilar": "Indicação / comunidade",
-  "headline": "INDICA A GENTE?",
-  "gancho": "Pergunta direta",
-  "foto": "fotos/estoque-p13-ceu-azul.jpg",
-  "evento": null,
-  "metricool_id": 439587887,
-  "publicado_automatico": true,
-  "horario": "11:00"
- },
- {
-  "data": "2026-11-25",
-  "formato": "post",
-  "pilar": "Calendário",
-  "headline": "RECARGA ORIGINAL, SEM SUSTO",
-  "gancho": "Data/cultura (Black Friday sem desconto inventado)",
-  "evento": "black-friday-2026:D-2:post",
-  "foto": "fotos/estoque-p13-alcas-ceu.jpg",
-  "metricool_id": 441054410,
-  "metricool_id_gmb": 441054419,
-  "publicado_automatico": true,
-  "horario": "10:00"
- },
- {
-  "data": "2026-11-25",
-  "formato": "story",
-  "pilar": "Segurança e dicas",
-  "headline": "MANGUEIRA VENCIDA?",
-  "gancho": "Pergunta direta",
-  "evento": null,
-  "metricool_id": 441054430,
-  "publicado_automatico": true,
-  "horario": "18:00"
- }
+  {
+    "data": "2026-11-19",
+    "formato": "post",
+    "pilar": "Gás do Povo",
+    "headline": "TEM GÁS DO POVO AQUI",
+    "metricool_id": 433906906
+  },
+  {
+    "data": "2026-11-19",
+    "formato": "story",
+    "pilar": "Calendário",
+    "headline": "GARANTA SEU GÁS HOJE! (amanhã é feriado)",
+    "evento": "consciencia-negra-2026:D-1:story",
+    "metricool_id": 434293765
+  },
+  {
+    "data": "2026-11-20",
+    "formato": "story",
+    "pilar": "Calendário",
+    "headline": "ABERTOS ATÉ 13H.",
+    "evento": "consciencia-negra-2026:D0:story",
+    "metricool_id": 434293783
+  },
+  {
+    "data": "2026-11-20",
+    "formato": "reel",
+    "pilar": "Urgência e fim de semana",
+    "headline": "FIM DE SEMANA GARANTIDO",
+    "metricool_id": 435258053
+  },
+  {
+    "data": "2026-11-21",
+    "formato": "story",
+    "pilar": "Água 20L e combo",
+    "headline": "GÁS E ÁGUA NUM PEDIDO SÓ (v3)",
+    "gancho": "Benefício",
+    "metricool_id": 436607808,
+    "publicado_automatico": true
+  },
+  {
+    "data": "2026-11-21",
+    "formato": "post",
+    "pilar": "Confiança / estoque",
+    "headline": "GÁS NÃO FALTA POR AQUI",
+    "gancho": "Prova local",
+    "foto": "fotos/estoque-p13-ceu-azul.jpg",
+    "metricool_id": 436607600,
+    "publicado_automatico": true
+  },
+  {
+    "data": "2026-11-21",
+    "formato": "story",
+    "pilar": "Gás do Povo",
+    "headline": "TEM GÁS DO POVO AQUI",
+    "gancho": "Benefício",
+    "foto": "fotos/fachada-frente-gas-do-povo.jpg",
+    "metricool_id": 436607615,
+    "publicado_automatico": true
+  },
+  {
+    "data": "2026-11-22",
+    "formato": "story",
+    "pilar": "Domingo aberto",
+    "headline": "ABERTO ATÉ 13H",
+    "gancho": "Urgência leve",
+    "foto": "fotos/fachada-esquina-completa.jpg",
+    "metricool_id": 437370677,
+    "publicado_automatico": true
+  },
+  {
+    "data": "2026-11-23",
+    "formato": "post",
+    "pilar": "Entrega e atendimento",
+    "headline": "FAZ ENTREGA? FAZ SIM!",
+    "gancho": "Pergunta direta (demanda real do WhatsApp)",
+    "foto": "fotos/fachada-frente-gas-do-povo.jpg",
+    "metricool_id": 438279690,
+    "metricool_id_gmb": 438279698,
+    "publicado_automatico": true,
+    "obs": "arte refeita (v2) em 23/11 de madrugada: a lateral virava muro vermelho"
+  },
+  {
+    "data": "2026-11-24",
+    "formato": "reel",
+    "pilar": "Produto / entrega (Motion Reel plugin)",
+    "headline": "ACABOU O GÁS? A GENTE LEVA SUA RECARGA",
+    "gancho": "Dor imediata (gás acabou) + solução",
+    "fotos": [
+      "estoque-p13-ceu-azul",
+      "fachada-paragas-lateral-1",
+      "fachada-frente-gas-do-povo",
+      "estoque-p13-alcas-ceu",
+      "porta-grade-galoes"
+    ],
+    "metricool_id": 439539856,
+    "publicado_automatico": true,
+    "musica": "trilha sintetizada dentro do vídeo (plugin Motion Reel), sem catálogo do Instagram",
+    "obs": "substituiu 'A loja vermelha da esquina' a pedido do Gabriel em 23/11 (o termo não dizia que é revenda de gás)",
+    "arquivo": "midia/2026-11-24/reel-recarga-motion-v2.mp4",
+    "duracao_s": 22.5,
+    "obs2": "23/11 20h34: no Metricool está como RASCUNHO (draft:true) às 18h; só publica se o Gabriel aprovar",
+    "obs3": "24/11: publicado às 18h pelo Metricool (id 439765792, reel DgI4LbLh2Eu)"
+  },
+  {
+    "data": "2026-11-24",
+    "formato": "story",
+    "pilar": "Indicação / comunidade",
+    "headline": "INDICA A GENTE?",
+    "gancho": "Pergunta direta",
+    "foto": "fotos/estoque-p13-ceu-azul.jpg",
+    "evento": null,
+    "metricool_id": 439587887,
+    "publicado_automatico": true,
+    "horario": "11:00"
+  },
+  {
+    "data": "2026-11-25",
+    "formato": "post",
+    "pilar": "Calendário",
+    "headline": "RECARGA ORIGINAL, SEM SUSTO",
+    "gancho": "Data/cultura (Black Friday sem desconto inventado)",
+    "evento": "black-friday-2026:D-2:post",
+    "foto": "fotos/estoque-p13-alcas-ceu.jpg",
+    "metricool_id": 441054410,
+    "metricool_id_gmb": 441054419,
+    "publicado_automatico": true,
+    "horario": "10:00"
+  },
+  {
+    "data": "2026-11-25",
+    "formato": "story",
+    "pilar": "Segurança e dicas",
+    "headline": "MANGUEIRA VENCIDA?",
+    "gancho": "Pergunta direta",
+    "evento": null,
+    "metricool_id": 441054430,
+    "publicado_automatico": true,
+    "horario": "18:00"
+  },
+  {
+    "data": "2026-11-26",
+    "formato": "post",
+    "pilar": "Calendário",
+    "headline": "BLACK FRIDAY · É HOJE · R$ 10 OFF",
+    "evento": "black-friday-2026:D0:post",
+    "metricool_id": 442390945,
+    "metricool_id_gmb": 442390953,
+    "publicado_automatico": true,
+    "horario": "10:00",
+    "obs": "feito à mão em 25/11 19h (logo do dono)"
+  },
+  {
+    "data": "2026-11-26",
+    "formato": "story",
+    "pilar": "Calendário",
+    "headline": "BLACK FRIDAY · É HOJE",
+    "evento": "black-friday-2026:D0:story",
+    "metricool_id": 442390970,
+    "publicado_automatico": true,
+    "horario": "07:00"
+  }
 ]
