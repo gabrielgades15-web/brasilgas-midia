@@ -271,6 +271,24 @@ def perfil_dono():
             f'<g transform="translate({(1080 - w * esc) / 2:.1f},{(1080 - h * esc) / 2:.1f}) scale({esc:.4f})">{interno}</g></svg>')
 
 
+# ---------- Logo do Instagram (25/11, 20h34 — modelo de vídeo do Gabriel) ----------
+def logo_instagram():
+    """Caixa branca: BRASIL azul + GÁS cinza (fonte grossa) e o quadro azul do botijão com a bandeira Paragás à direita."""
+    T = 150
+    d1, w1, cap = texto(ARCHIVO_BLACK, "BRASIL", T, 0, 0, espaco=T * 0.01)
+    d2, w2, _ = texto(ARCHIVO_BLACK, "GÁS", T, 0, 0, espaco=T * 0.01)
+    padx, H = 52, 250
+    qw = 214
+    base = H / 2 + cap / 2 + 6
+    d1, _, _ = texto(ARCHIVO_BLACK, "BRASIL", T, padx, base, espaco=T * 0.01)
+    d2, _, _ = texto(ARCHIVO_BLACK, "GÁS", T, padx + w1 + T * 0.01, base, espaco=T * 0.01)
+    W = padx + w1 + T * 0.01 + w2 + 34 + qw + 16
+    qx, qy = W - qw - 16, (H - qw * 1.04) / 2
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W:.0f} {H}" width="{W:.0f}" height="{H}">{DEFS}'
+            f'<rect width="{W:.0f}" height="{H}" fill="#fff"/>'
+            f'<path d="{d1}" fill="#1E3A9C"/><path d="{d2}" fill="#5A5A5A"/>{quadro_icone(qx, qy, qw)}</svg>')
+
+
 if __name__ == "__main__":
     arquivos = {
         "brasilgas-logo.svg": logo(),
@@ -279,6 +297,7 @@ if __name__ == "__main__":
         "paragas-bandeira.svg": so_bandeira(),
     }
     arquivos["brasilgas-placa.svg"] = logo_placa()
+    arquivos["brasilgas-instagram.svg"] = logo_instagram()
     arquivos["brasilgas-oficial.svg"] = logo_dono()
     arquivos["brasilgas-oficial-caixa.svg"] = logo_dono(pad=64, rx=36)   # usado no topo das artes
     arquivos["brasilgas-perfil-oficial.svg"] = perfil_dono()
@@ -294,4 +313,5 @@ if __name__ == "__main__":
     png(arquivos["brasilgas-perfil-placa.svg"], AQUI / "brasilgas-perfil-placa.png", 1080)
     png(arquivos["brasilgas-oficial.svg"], AQUI / "brasilgas-oficial.png", 2000)
     png(arquivos["brasilgas-perfil-oficial.svg"], AQUI / "brasilgas-perfil-oficial.png", 1080)
+    png(arquivos["brasilgas-instagram.svg"], AQUI / "brasilgas-instagram.png", 2000)
     print("ok")

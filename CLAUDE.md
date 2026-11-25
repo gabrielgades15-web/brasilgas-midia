@@ -38,6 +38,13 @@ A tarefa roda às 20h34 (America/Belem) e produz as peças de AMANHÃ. Elas entr
 - Datas regionais têm peso: Círio (maniçoba cozinha por dias, então o gás não pode faltar), Semana Santa, quadra junina, Aniversário de Castanhal (28/01), Adesão do Pará (15/08).
 - Em dezembro, completar o calendário do ano seguinte (regras de cálculo em `_manutencao`) e avisar o Gabriel.
 
+## ESTÉTICA NOVA (desde 25/11, 20h34 — vídeo-modelo do Gabriel) — padrão de TODAS as peças
+- Gerar com `python3 estetica.py spec.json saida.png story|feed` (imagem) ou `... saida.mp4 story|feed --video` (5 s com as faixas correndo + zoom leve; gera também `-capa.png`). Story de preferência em vídeo.
+- Visual: fundo preto com fumaça vermelha; faixas de texto vermelhas correndo no topo e na base (TICKER); logo do Instagram; faixa amarela (KICKER); título em 2 linhas grandes (L1 vermelho, L2 branco); botijão real; selo em estrela opcional (SELO, 1 a 3 linhas); botão vermelho "(91) 98222 7035" + frase curta minúscula (CTA_SUB); bandeira Paragás embaixo.
+- Horário e endereço vão na legenda e no alt (não na arte), como no modelo.
+- Pode REAPROVEITAR temas já postados (entrega, Gás do Povo, água 20L, loja, segurança), refeitos nessa estética; evitar repetir a mesma manchete em menos de 14 dias.
+- render.py (estética antiga vermelha) fica só como reserva.
+
 ## Água (regra do Gabriel, 21/11)
 - Divulgar só "Água", "Água 20L", "Galão 20L", "Galão de água 20L" e variações. NUNCA citar marca da água (a marca é informada no atendimento).
 - Foto real com rótulo de marca de água legível não pode ser usada (ver fotos/catalogo.json).
@@ -67,7 +74,7 @@ A tarefa roda às 20h34 (America/Belem) e produz as peças de AMANHÃ. Elas entr
 - Ideias que funcionam no @souparagas: histórias em sequência ("contos da cozinha sem gás"), comidas típicas por data, homenagens.
 
 ## Aprendizados dos prints (19/11/2026)
-- LOGO OFICIAL (25/11, 19h — definido pelo dono, em teste de aprovação): fundo branco, "BRASIL" azul-marinho (#33348F) + "GÁS" vermelho (#ED1C24) em fonte bem grossa, e a bandeira Paragás (faixa PARAGÁS + ícone azul) centralizada embaixo. Vetor em `logo/brasilgas-oficial.svg`; as artes usam `logo/brasilgas-oficial-caixa.svg` automaticamente. Foto de perfil: `logo/brasilgas-perfil-oficial.png`. Versões anteriores (placa, caixa com "revenda autorizada", negativo) aposentadas. Nunca redesenhar o logo em texto.
+- LOGO DO INSTAGRAM (25/11, 20h34 — modelo de vídeo do Gabriel): caixa branca com "BRASIL" azul + "GÁS" cinza (fonte bem grossa) e o quadro azul do botijão com a bandeira Paragás à direita. Vetor `logo/brasilgas-instagram.svg`. A bandeira Paragás (`logo/paragas-bandeira.svg`) vai sozinha embaixo do botão do WhatsApp. Logo do dono em branco (`logo/brasilgas-oficial.svg`) fica para materiais impressos. Nunca redesenhar o logo em texto.
 - Mascote prata (botijão com olhos) já é usado pela marca e o público reconhece.
 - No Leo Gás, o que mais engaja é atendente real falando pra câmera (com fundo trocado), muito mais que arte feita só com IA. Priorizar rosto humano nos Reels quando houver fotos ou vídeos em `fotos/`.
 - Se usar imagem gerada por IA, marcar isAiGenerated:true no Metricool.
