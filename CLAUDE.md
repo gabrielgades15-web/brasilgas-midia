@@ -131,7 +131,7 @@ O Gabriel autorizou a publicação automática, desde que exista o verificador e
 - Quando o story do dia combinar com um destaque, incluir no resumo uma linha: "📌 Story de hoje (HHh) cabe no destaque <nome>: abra o story e toque em Destacar."
 
 ## Black Friday 2026 — REATIVADA em 25/11 às 19h10 pelo Gabriel
-- 25/11 21h story "É AMANHÃ". 26/11 JÁ AGENDADO à mão na estética nova (story em vídeo 7h, Google 9h45, post 10h, reel de 3 cenas 12h, kicker "É HOJE"). A tarefa de 25/11 não produz nada para 26/11. A de 26/11 produz 27/11 com kicker "ÚLTIMO DIA" (post + Google + story 7h).
+- 25/11 21h story "É AMANHÃ". 26/11 JÁ AGENDADO à mão na estética nova (story em vídeo 7h, Google 9h45, post 10h, reel de 3 cenas 12h, kicker "É HOJE"). A tarefa de 25/11 não produz nada para 26/11. 27/11 TAMBÉM JÁ AGENDADO à mão em 26/11 18h45 (story vídeo 7h, Google 9h45, post 10h, reel 12h, story "Últimas horas" 17h): a tarefa de 26/11 não produz nada para 27/11.
 - Oferta confirmada em `ofertas.json`: R$ 10 OFF na recarga P13, dias 26 e 27/11. Só o valor do desconto aparece; preço do botijão continua só no WhatsApp. Não inventar condições.
 - Visual: estetica.py (estética nova). Spec de exemplo em `midia/2026-11-26/bf-hoje.json` e reel em `midia/2026-11-26/reel-bf.json` (para 27/11 trocar KICKER por "Último dia").
 - 26/11 e 27/11: post + story por dia (kicker "É HOJE" / "ÚLTIMO DIA"), Instagram e Google. Depois de 27/11 a oferta expira sozinha no verificador.
