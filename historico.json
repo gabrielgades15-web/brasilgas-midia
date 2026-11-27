@@ -221,5 +221,17 @@
     "metricool_id": 443680084,
     "publicado_automatico": true,
     "horario": "17:00"
+  },
+  {
+    "data": "2026-11-28",
+    "formato": "story-video",
+    "pilar": "Água 20L e combo",
+    "headline": "ACABOU A ÁGUA? A GENTE LEVA",
+    "gancho": "Dor do momento: Acabou a água? A gente leva",
+    "evento": null,
+    "metricool_id": 444988345,
+    "publicado_automatico": true,
+    "horario": "10:00",
+    "foto": "fotos/galoes-agua-estoque-sem-marca.jpg"
   }
 ]
