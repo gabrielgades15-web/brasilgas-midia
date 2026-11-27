@@ -17,6 +17,7 @@ Spec (JSON):
            abaixo do título (com FOTO, o padrão do PRODUTO vira "nenhum")
   FOTO_POS enquadramento da foto no quadro (CSS object-position)  ex.: "50% 40%"
   INFO     lista de 1 a 3 linhas curtas em branco abaixo da foto (destaques: endereço, horário)
+  CARTOES  lista de [rótulo, valor] em quadros grandes no lugar do produto (ex.: horário)
   T_SIZE   tamanho máximo do título (padrão 200 no story, 130 no feed)
 
 Uso:
@@ -72,7 +73,7 @@ def html(spec, fmt, com_ticker=True):
         f["prod_y"] = f["t_y"] + f["t_size"] * 1.8 + (40 if story else 24)
     f["selo_y"] = f["prod_y"] + (260 if story else 90)
     W, H = f["W"], f["H"]
-    prod = spec.get("PRODUTO", "nenhum" if spec.get("FOTO") else "botijao")
+    prod = spec.get("PRODUTO", "nenhum" if (spec.get("FOTO") or spec.get("CARTOES")) else "botijao")
     prod_src = "" if prod == "nenhum" else (B64("templates/black-friday/botijao-real.png") if prod == "botijao" else B64(prod))
     foto_html = ""
     if spec.get("FOTO"):
@@ -91,6 +92,31 @@ def html(spec, fmt, com_ticker=True):
                           + "<br>".join(info) + '</div>')
         f["selo_y"] = fy + fh - f["selo"] * .75
         f["selo_x"] = W - f["selo"] - 20
+    elif spec.get("CARTOES"):
+        # quadro de informação grande (ex.: horário): linhas [rótulo, valor]
+        cards = spec["CARTOES"]
+        fy = f["prod_y"] + 10
+        livre = f["cta_y"] - fy - (50 if story else 30)
+        gap = 30 if story else 18
+        ch = (livre - gap * (len(cards) - 1)) / len(cards)
+        for i, (rot, val) in enumerate(cards):
+            y = fy + i * (ch + gap)
+            foto_html += (f'<div style="position:absolute;left:70px;right:70px;top:{y:.0f}px;height:{ch:.0f}px;border-radius:30px;'
+                          f'background:linear-gradient(180deg,rgba(40,0,4,.9),rgba(15,0,2,.9));border:4px solid #E30B13;'
+                          f'box-shadow:0 16px 40px rgba(0,0,0,.6);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">'
+                          f'<div style="background:#FFD23F;color:#D90812;font-weight:900;font-size:{40 if story else 30}px;padding:6px 26px;border-radius:12px;'
+                          f'text-transform:uppercase;letter-spacing:1px">{rot}</div>'
+                          f'<div data-fit2 style="font-family:Anton;font-size:{150 if story else 100}px;line-height:1.05;margin-top:14px;white-space:nowrap">{val}</div></div>')
+    elif spec.get("INFO"):
+        info = spec["INFO"]
+        lh_ = 58 if story else 44
+        iy = f["cta_y"] - len(info) * lh_ - (40 if story else 26)
+        foto_html = (f'<div style="position:absolute;left:50px;right:50px;top:{iy:.0f}px;text-align:center;font-weight:800;'
+                     f'font-size:{46 if story else 34}px;line-height:1.22;text-shadow:0 4px 14px rgba(0,0,0,.8)">' + "<br>".join(info) + '</div>')
+        # o produto e o selo cabem acima do texto
+        alto = iy - f["prod_y"] - 20
+        f["prod_w"] = min(f["prod_w"], int(alto * 975 / 1200))
+        f["selo_y"] = f["prod_y"] + alto * .25
     tick = (spec.get("TICKER") or "GÁS P13 PARAGÁS > BRASILGAS > ENTREGA EM CASTANHAL").upper()
     tick_txt = (" > ".join([tick] * 6))
     selo = spec.get("SELO") or []
@@ -141,6 +167,8 @@ body{{width:{W}px;height:{H}px;overflow:hidden;position:relative;font-family:Mon
 <script>
 document.querySelectorAll('[data-fit]').forEach(el=>{{let s={t_size};el.style.fontSize=s+'px';
   while(el.scrollWidth>{f['t_w']}&&s>40){{s-=4;el.style.fontSize=s+'px';}}}});
+document.querySelectorAll('[data-fit2]').forEach(el=>{{let s=parseFloat(el.style.fontSize);
+  while(el.scrollWidth>{W-200}&&s>30){{s-=4;el.style.fontSize=s+'px';}}}});
 </script></body></html>"""
 
 

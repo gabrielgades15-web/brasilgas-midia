@@ -130,3 +130,14 @@ Datas de `calendario.json` têm prioridade sobre a pauta.
 - [ ] Legenda no formato da seção 5 (post/carrossel/reel) e `mediaAltText` preenchido.
 - [ ] Passou no verificador → agendado na véspera (`draft:false, autoPublish:true`); reprovado 3 vezes → `draft:true` e aviso ao Gabriel.
 - [ ] Gancho diferente dos últimos 7 dias (`historico.json`).
+
+## 9. Olhar de diretor de arte (reprovações do Gabriel, 27/11/2026)
+Antes de agendar, olhe a imagem final como o Gabriel olharia e responda SIM a todas:
+- [ ] **A foto mostra o assunto de perto e com clareza?** Fachada de longe, com céu, fios e rua tomando o quadro = reprovada (destaque Gás do Povo com a foto da frente de longe foi reprovado). Se não houver foto boa do assunto, use o botijão real + selo, sem foto.
+- [ ] **O produto do tema aparece grande?** Água 20L tem que mostrar os galões em primeiro plano (rótulo de marca desfocado: `galoes-agua-estoque-sem-marca.jpg`), nunca galão pequeno atrás de grade (`porta-grade-galoes.jpg` foi reprovada para água).
+- [ ] **A manchete é verdadeira ao pé da letra?** "Abertos todo dia" foi reprovado: domingo e feriado o horário é reduzido. Prefira o fato exato ("Horário de atendimento" + os horários).
+- [ ] **A informação principal está grande?** Se a peça existe para informar horário ou endereço, essa informação é o destaque da arte (quadros grandes com `CARTOES`), não uma linha pequena embaixo da foto.
+- [ ] **Sem repetição boba:** a mesma expressão não aparece no título e no selo (ex.: "Gás do Povo" duas vezes).
+- [ ] **Texto cabe no lugar:** selo, faixa e quadros sem palavra saindo da forma; nenhuma palavra sozinha numa linha.
+- [ ] **Nada de preço em segundo plano:** quadro de preços da fachada, plaquinha ou anotação na foto → desfocar antes de usar.
+Na dúvida entre duas opções, escolha a mais simples e clara. Peça que você mesmo acharia "mais ou menos" não sai: refaça.

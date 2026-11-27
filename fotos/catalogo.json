@@ -23,7 +23,8 @@
    "arquivo": "fotos/porta-grade-galoes.jpg",
    "descricao": "Porta gradeada vermelha com galões dentro",
    "uso": "bom para água (rótulos ilegíveis)",
-   "liberada": true
+   "liberada": false,
+   "obs": "27/11: reprovada pelo Gabriel para peça de água (galões pequenos atrás da grade). Usar galoes-agua-estoque-sem-marca.jpg."
   },
   {
    "arquivo": "fotos/fachada-frente-gas-do-povo.jpg",
@@ -34,7 +35,8 @@
    "foco_letreiro": {
     "x": 0.42,
     "y": 0.5
-   }
+   },
+   "obs": "27/11: Gabriel reprovou o destaque Gás do Povo com esta foto (de longe, céu e fios demais). Só usar recortada de perto no banner, ou no Motion Reel."
   },
   {
    "arquivo": "fotos/fachada-esquina-completa.jpg",
@@ -184,6 +186,13 @@
    "uso": "DESCARTADA",
    "liberada": false,
    "obs": "27/11: botijões gastos, com manchas e arranhões, igual às pilhas 1 e 2."
+  },
+  {
+   "arquivo": "fotos/galoes-agua-estoque-sem-marca.jpg",
+   "descricao": "Galões 20L em primeiro plano no estoque, tampas e adesivos com a marca DESFOCADOS (27/11)",
+   "uso": "ÓTIMA para água 20L",
+   "liberada": true,
+   "recorte": "FOTO_POS 50% 55%"
   }
  ],
  "_regra_enquadramento": "Fotos novas: tirar EM PÉ (vertical), com o letreiro ou o produto no centro e de perto. Foto deitada de fachada só serve para Motion Reel.",
