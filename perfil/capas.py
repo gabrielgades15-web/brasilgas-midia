@@ -1,4 +1,4 @@
-"""Capas dos destaques do Instagram (1080x1920; o Instagram mostra o círculo central)."""
+"""Capas dos destaques do Instagram (1080x1920; o Instagram mostra o círculo central). Estética nova (27/11): fundo preto com fumaça vermelha."""
 import pathlib
 from playwright.sync_api import sync_playwright
 ICONES = {
@@ -10,9 +10,9 @@ ICONES = {
  "clientes": ("CLIENTES", '<path d="M50 86S12 62 12 36a19 19 0 0 1 38-6 19 19 0 0 1 38 6c0 26-38 50-38 50z" fill="#fff"/><path d="M50 30l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z" fill="#FFC72C"/>'),
 }
 HTML = """<html><head><meta charset=utf-8><style>*{margin:0}body{width:1080px;height:1920px;display:flex;align-items:center;justify-content:center;
-background:radial-gradient(circle at 50%% 45%%,#F2283A 0%%,#E1061A 40%%,#A30F1C 100%%);font-family:Montserrat}
-.c{width:640px;height:640px;border-radius:50%%;background:rgba(0,0,0,.12);box-shadow:inset 0 0 0 14px rgba(255,255,255,.9);display:flex;flex-direction:column;align-items:center;justify-content:center}
-svg{width:300px;height:300px}b{margin-top:22px;color:#fff;font-family:Anton;font-size:64px;letter-spacing:2px}</style></head>
+background:radial-gradient(ellipse 60%% 35%% at 85%% 30%%,rgba(150,8,16,.8),transparent 70%%),radial-gradient(ellipse 60%% 35%% at 10%% 70%%,rgba(140,6,14,.75),transparent 72%%),#050505;font-family:Montserrat}
+.c{width:640px;height:640px;border-radius:50%%;background:radial-gradient(circle at 50%% 40%%,#F2283A,#E30B13 55%%,#A30F1C);box-shadow:inset 0 0 0 14px #fff,0 20px 60px rgba(0,0,0,.7);display:flex;flex-direction:column;align-items:center;justify-content:center}
+svg{width:300px;height:300px}b{margin-top:22px;color:#fff;font-family:Anton;font-size:64px;letter-spacing:2px;text-shadow:0 5px 0 #8a0010}</style></head>
 <body><div class=c><svg viewBox="0 0 100 100">%s</svg><b>%s</b></div></body></html>"""
 out = pathlib.Path(__file__).parent / "capas"; out.mkdir(exist_ok=True)
 with sync_playwright() as p:

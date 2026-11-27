@@ -56,6 +56,12 @@ A tarefa roda às 20h34 (America/Belem) e produz as peças de AMANHÃ. Elas entr
 - Usar foto real em pelo menos metade das peças da semana (gente real e loja real engajam mais que desenho).
 - Prioridade: fachada com Gás do Povo e letreiro PARAGÁS (confiança, loja física) e pilhas de P13 prata (tem gás).
 
+## Fotos e vídeos novos (27/11/2026, lote do Gabriel)
+- Liberadas: `fachada-paragas-vertical.jpg` (em pé, letreiro PARAGÁS + placa Brasil Gás: Onde fica, confiança), `entregador-moto-fachada.jpg` (gente real; o quadro de PREÇOS já foi desfocado, nunca usar o original), `estoque-p13-lacre-close.jpg` (só o topo: alça, rótulo e lacre), `estoque-p13-topo-horizontal.jpg` (estoque visto de cima; feed e Motion Reel).
+- Descartadas: `estoque-p13-pilha-3.jpg` (botijões gastos) e a foto tirada da tela do computador (moiré, sem nitidez).
+- Vídeos verticais em `fotos/videos/` (ver `videos` no catálogo): entregador saindo da loja (o quadro de preços aparece nos primeiros ~3,5 s: desfocar ou cortar), rótulo do P13 recuando até a pilha e lacre visto de cima. Reel com vídeo real tem prioridade sobre Motion Reel.
+- estetica.py aceita `FOTO` (quadro com borda branca), `FOTO_POS`, `INFO` (até 3 linhas curtas) e `T_SIZE`.
+
 ## Motion Reel (desde 23/11/2026)
 - Fotos de fachada deitadas e de longe estão BLOQUEADAS para post e story (no recorte vertical o letreiro sai do quadro e sobra muro vermelho). Ficam reservadas para o Motion Reel: `motion_reel.py` + `skills/motion-reel/SKILL.md`. A câmera desliza até o `foco_letreiro` do catálogo.
 - Reel sem vídeo gravado = Motion Reel. A cada lote novo de fotos, marcar no catálogo as que servem para Motion Reel.
@@ -127,6 +133,7 @@ O Gabriel autorizou a publicação automática, desde que exista o verificador e
 - Se o Metricool recusar o post no Google, publicar só no Instagram e avisar o Gabriel no resumo.
 
 ## Destaques (manual, o Metricool não alimenta)
+- Artes atuais (27/11, estética nova, com fotos reais): `perfil/destaques/v2/<nome>.png` e `.mp4` (story em vídeo de 5 s), capas em `perfil/capas/` (fundo preto com fumaça vermelha). As de `perfil/destaques/*.png` são da estética antiga.
 - Destaques do perfil: Gás do Povo, Entrega, Água 20L, Onde fica, Horário (e Clientes, quando houver depoimentos).
 - Quando o story do dia combinar com um destaque, incluir no resumo uma linha: "📌 Story de hoje (HHh) cabe no destaque <nome>: abra o story e toque em Destacar."
 

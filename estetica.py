@@ -12,7 +12,12 @@ Spec (JSON):
   SELO     lista de 1 a 3 linhas do selo (opcional) ex.: ["Gás do", "Povo", "aqui"]
   CTA_SUB  frase do botão                        ex.: "peça sua recarga"
   TICKER   texto das faixas                      ex.: "GÁS P13 PARAGÁS > BRASILGAS"
-  PRODUTO  "botijao" (padrão) ou caminho de PNG com fundo transparente
+  PRODUTO  "botijao" (padrão), "nenhum" ou caminho de PNG com fundo transparente
+  FOTO     foto real (fotos/<arquivo>.jpg), tratada com tratar_foto.py e mostrada num quadro com borda branca
+           abaixo do título (com FOTO, o padrão do PRODUTO vira "nenhum")
+  FOTO_POS enquadramento da foto no quadro (CSS object-position)  ex.: "50% 40%"
+  INFO     lista de 1 a 3 linhas curtas em branco abaixo da foto (destaques: endereço, horário)
+  T_SIZE   tamanho máximo do título (padrão 200 no story, 130 no feed)
 
 Uso:
   python3 estetica.py spec.json saida.png story|feed
@@ -62,10 +67,30 @@ def html(spec, fmt, com_ticker=True):
     f["kick_y"] = f["logo_y"] + lh + (24 if story else 18)
     f["t_y"] = f["kick_y"] + (72 if story else 58)
     f["prod_y"] = f["t_y"] + f["t_size"] * 1.8 + (40 if story else 24)
+    if spec.get("T_SIZE"):
+        f["t_size"] = spec["T_SIZE"]
+        f["prod_y"] = f["t_y"] + f["t_size"] * 1.8 + (40 if story else 24)
     f["selo_y"] = f["prod_y"] + (260 if story else 90)
     W, H = f["W"], f["H"]
-    prod = spec.get("PRODUTO", "botijao")
-    prod_src = B64("templates/black-friday/botijao-real.png") if prod == "botijao" else B64(prod)
+    prod = spec.get("PRODUTO", "nenhum" if spec.get("FOTO") else "botijao")
+    prod_src = "" if prod == "nenhum" else (B64("templates/black-friday/botijao-real.png") if prod == "botijao" else B64(prod))
+    foto_html = ""
+    if spec.get("FOTO"):
+        from tratar_foto import tratar
+        tf = tratar(BASE / spec["FOTO"])
+        info = spec.get("INFO") or []
+        info_h = (len(info) * (58 if story else 44) + 30) if info else 0
+        fy = f["prod_y"]
+        fh = f["cta_y"] - fy - info_h - (40 if story else 26)
+        foto_html = (f'<div style="position:absolute;left:70px;right:70px;top:{fy:.0f}px;height:{fh:.0f}px;border:8px solid #fff;border-radius:34px;'
+                     f'overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.7)"><img src="data:image/jpeg;base64,{base64.b64encode(tf.read_bytes()).decode()}" '
+                     f'style="width:100%;height:100%;object-fit:cover;object-position:{spec.get("FOTO_POS","50% 50%")}"></div>')
+        if info:
+            foto_html += (f'<div style="position:absolute;left:50px;right:50px;top:{fy + fh + (22 if story else 14):.0f}px;text-align:center;'
+                          f'font-weight:800;font-size:{46 if story else 34}px;line-height:1.22;text-shadow:0 4px 14px rgba(0,0,0,.8)">'
+                          + "<br>".join(info) + '</div>')
+        f["selo_y"] = fy + fh - f["selo"] * .75
+        f["selo_x"] = W - f["selo"] - 20
     tick = (spec.get("TICKER") or "GÁS P13 PARAGÁS > BRASILGAS > ENTREGA EM CASTANHAL").upper()
     tick_txt = (" > ".join([tick] * 6))
     selo = spec.get("SELO") or []
@@ -81,6 +106,8 @@ def html(spec, fmt, com_ticker=True):
           f'<div class="tk" style="top:{H - f["tick"] + 2}px">{tick_txt}</div><div class="tk r" style="top:{H - f["tick"]//2}px">{tick_txt}</div>'
           if com_ticker else "")
     t_size = f["t_size"]
+    prod_img = (f'<img src="data:image/png;base64,{prod_src}" style="position:absolute;left:{f["prod_x"]}px;top:{f["prod_y"]}px;'
+                f'width:{f["prod_w"]}px;filter:drop-shadow(0 30px 40px rgba(0,0,0,.7))">') if prod_src else ""
     return f"""<!DOCTYPE html><html><head><meta charset="utf-8"><style>
 *{{margin:0;padding:0;box-sizing:border-box}}
 body{{width:{W}px;height:{H}px;overflow:hidden;position:relative;font-family:Montserrat,sans-serif;color:#fff;
@@ -106,7 +133,8 @@ body{{width:{W}px;height:{H}px;overflow:hidden;position:relative;font-family:Mon
 <img src="{LOGO}" style="position:absolute;left:50%;top:{f['logo_y']}px;width:{f['logo_w']}px;transform:translateX(-50%);box-shadow:0 10px 30px rgba(0,0,0,.5)">
 {f'<div class="kick">{spec["KICKER"]}</div>' if spec.get("KICKER") else ''}
 <div class="tit"><div class="l1" data-fit>{spec.get('L1','')}</div><div class="l2" data-fit>{spec.get('L2','')}</div></div>
-<img src="data:image/png;base64,{prod_src}" style="position:absolute;left:{f['prod_x']}px;top:{f['prod_y']}px;width:{f['prod_w']}px;filter:drop-shadow(0 30px 40px rgba(0,0,0,.7))">
+{foto_html}
+{prod_img}
 {selo_html}
 <div class="cta"><div class="wa">{WA}</div><div><b>(91) 98222 7035</b><span>{spec.get('CTA_SUB','peça no WhatsApp')}</span></div></div>
 {f'<img src="{PARAGAS}" style="position:absolute;left:50%;top:{f["par_y"]}px;width:{f["par_w"]}px;transform:translateX(-50%)">' if f["par_w"] else ''}
